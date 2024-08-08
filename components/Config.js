@@ -4,7 +4,7 @@ import fs from 'node:fs'
 import lodash from 'lodash'
 
 const Path = process.cwd();
-const Plugin_Name = 'luoluoi-plugin'
+const Plugin_Name = 'luoluo-plugin'
 const Plugin_Path = `${Path}/plugins/${Plugin_Name}`;
 
 if(!Bot.ql_plugin) Bot.luoluo_plugin = {};
