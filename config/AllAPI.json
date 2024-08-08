@@ -1,0 +1,38 @@
+{
+    "api1": {
+        "name": "歌词API",
+        "url": "https://xiaobapi.top/api/xb/api/geci.php"
+    },
+    "api2": {
+        "name": "一言API",
+        "url": "https://xiaobapi.top/api/xb/api/aword.php"
+    },
+    "api3": {
+        "name": "网易云音乐热评API",
+        "url": "https://api.xingzhige.com/API/NetEase_CloudMusic_hotReview/"
+    },
+    "api4": {
+        "name": "攻受短文API",
+        "url": "https://xiaobapi.top/api/xb/api/cp.php"
+    },
+    "api5": {
+        "name": "甘城猫猫表情包API",
+        "url": "https://xiaobapi.top/api/xb/api/gcmm.php"
+    },
+    "api6": {
+        "name": "天气API",
+        "url": "https://v2.api-m.com/api/weather"
+    },
+    "api7": {
+        "name": "网页截图API",
+        "url": "https://xiaoapi.cn/API/wzjp.php"
+    },
+    "api8": {
+        "name": "PingAPI",
+        "url": "https://api.gumengya.com/Api/Ping"
+    },
+    "api9": {
+        "name": "垃圾分类API",
+        "url": "https://api.gumengya.com/Api/AiLaji"
+    }
+}
