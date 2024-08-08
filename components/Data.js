@@ -2,7 +2,7 @@ import lodash from 'lodash'
 import fs from 'fs'
 
 const _path = process.cwd()
-const plugin = 'xiaoye-plugin'
+const plugin = 'luoluo-plugin'
 const getRoot = (root = '') => {
   if (root === 'root' || root === 'yunzai') {
     root = `${_path}/`
