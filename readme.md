@@ -3,7 +3,7 @@
 ## 插件简介  
 - 介绍...什么介绍我不知道
 - 额...就一初生写的插件要什么介绍
-- 鸣谢xwy(https://gitee.com/xwy231321)抄介果大哥哥的ql-plugin(https://gitee.com/xwy231321/ql-plugin)
+- 鸣谢[xwy](https://gitee.com/xwy231321)抄介果大哥哥的[ql-plugin](https://gitee.com/xwy231321/ql-plugin)
 -
 ## 插件功能
 <img src='https://gitee.com/yll0614/img/raw/master/xiaoye-pluginv1.0.0-help.jpg'  alt='Help'></img>  
