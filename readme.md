@@ -19,6 +19,6 @@ git clone https://gitee.com/yll0614/luoluo-plugin.git ./plugins/luoluo-pluhgin/
 git clone未更新就别看了 https://github.com/yll0614/luoluo-plugin.git ./plugins/luoluo-pluhgin/
 ```
 - ### 方式二:手动下载插件
-下载仓库解压zip文件将xiaoye-plugin放入Yunzai/Miao-Yunzai的/plugins目录下  
+下载仓库解压zip文件将luoluo-plugin-master放入Yunzai/Miao-Yunzai的/plugins目录下重命名去掉后面的-master
 
 <img src='https://gitee.com/yll0614/img/raw/master/Download%E4%BB%93%E5%BA%93.png'  alt='Download'></img>
