@@ -7,13 +7,13 @@ const Path = process.cwd();
 const Plugin_Name = 'luoluo-plugin'
 const Plugin_Path = `${Path}/plugins/${Plugin_Name}`;
 
-if(!Bot.ql_plugin) Bot.luoluo_plugin = {};
+if(!Bot.luoluo_plugin) Bot.luoluo_plugin = {};
 
 class Config {
 	constructor () {
     this.config = {}
 	
-	Bot.ql_plugin['config'] = this.config;
+	Bot.luoluo_plugin['config'] = this.config;
 
     /** 监听文件 */
     this.watcher = {}
