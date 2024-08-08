@@ -9,11 +9,11 @@
 在Yunzai/Miao-Yunzai根目录执行以下命令
 - Gitee
 ```sh
-git clone https://gitee.com/yll0614/xiaoye-plugin.git ./plugins/xioaye-pluhgin/
+git clone https://gitee.com/yll0614/luoluo-plugin.git ./plugins/xioaye-pluhgin/
 ```
 - Github
 ```sh
-git clone https://github.com/yll0614/xiaoye-plugin.git ./plugins/xioaye-pluhgin/
+git clone https://github.com/yll0614/luoluo-plugin.git ./plugins/xioaye-pluhgin/
 ```
 - ### 方式二:手动下载插件
 下载仓库解压zip文件将xiaoye-plugin放入Yunzai/Miao-Yunzai的/plugins目录下  
