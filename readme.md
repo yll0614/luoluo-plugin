@@ -13,11 +13,11 @@
 在云崽根目录执行命令(二选一)
 - Gitee
 ```sh
-git clone https://gitee.com/yll0614/luoluo-plugin.git ./plugins/luoluo-pluhgin/
+git clone https://gitee.com/yll0614/luoluo-plugin.git ./plugins/luoluo-plugin/
 ```
 - Github(仓库未更新项目地址404)
 ```sh
-git clone https://github.com/yll0614/luoluo-plugin.git ./plugins/luoluo-pluhgin/
+git clone https://github.com/yll0614/luoluo-plugin.git ./plugins/luoluo-plugin/
 ```
 - ### 方式二:手动下载插件
 下载仓库解压zip文件将luoluo-plugin-master放入Yunzai/Miao-Yunzai的/plugins目录下重命名去掉后面的-master
