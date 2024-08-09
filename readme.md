@@ -5,8 +5,8 @@
 - 额...就一初生写的插件要什么介绍
 - 鸣谢[xwy](https://gitee.com/xwy231321)抄介果大哥哥的[ql-plugin](https://gitee.com/xwy231321/ql-plugin)
 - 咕咕咕
- ## 插件功能(未更新)
-<img src='https://gitee.com/yll0614/img/raw/master/xiaoye-pluginv1.0.0-help.jpg'  alt='Help'></img>  
+ ## 插件功能
+<img src='https://gitee.com/yll0614/img/raw/master/luoluo-pluginv1.0.0-help.jpg'  alt='Help'></img>  
  ## 下载方式  
 - ### 方式一:通过git下载插件  
 在云崽根目录执行命令(二选一)
