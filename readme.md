@@ -14,7 +14,7 @@
 ```sh
 git clone https://gitee.com/yll0614/luoluo-plugin.git ./plugins/luoluo-plugin/
 ```
-- Github(仓库未更新项目地址404)
+- Github
 ```sh
 git clone https://github.com/yll0614/luoluo-plugin.git ./plugins/luoluo-plugin/
 ```
