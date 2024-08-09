@@ -1,14 +1,14 @@
 <div align="center">
 <h1>落落插件(luoluo-plugin)</h1>
-## 访问量:<br><img src="https://count.moeyy.cn/get/@:yueyuez/"/></br>
-## 插件简介  
+ ## 访问量:<br><img src="https://count.moeyy.cn/get/@:yueyuez/"/></br>
+ ## 插件简介  
 - 介绍...什么介绍我不知道
 - 额...就一初生写的插件要什么介绍
 - 鸣谢[xwy](https://gitee.com/xwy231321)抄介果大哥哥的[ql-plugin](https://gitee.com/xwy231321/ql-plugin)
 - 咕咕咕
-## 插件功能(未更新)
+ ## 插件功能(未更新)
 <img src='https://gitee.com/yll0614/img/raw/master/xiaoye-pluginv1.0.0-help.jpg'  alt='Help'></img>  
-## 下载方式  
+ ## 下载方式  
 - ### 方式一:通过git下载插件  
 在云崽根目录执行命令(二选一)
 - Gitee
