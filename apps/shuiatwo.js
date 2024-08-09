@@ -1,4 +1,4 @@
-import plugin from '../../lib/plugins/plugin.js'
+import plugin from '../../../lib/plugins/plugin.js'
 import moment from "moment"
 
 let time = 240 //这里设置at数据保留多久,默认24小时后清除,单位:小时。填大于0的纯数字
