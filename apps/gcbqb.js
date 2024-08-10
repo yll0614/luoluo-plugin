@@ -32,15 +32,12 @@ export class gcbqb extends plugin {
     /***甘城猫猫表情包***/
     async gcbqb(e) {
         // 读取API配置文件
-        let data = await fs.readFileSync(`./plugins/\$\{Plugin_Name\}/config/AllAPI\.json`)
+        let pluginName = 'luoluo-plugin'; // 确定插件名称
+        let filePath = `./plugins/${pluginName}/config/AllAPI.json`;
+        let data = await fs.readFileSync(filePath);
         const API = JSON.parse(data)
-        // 读取Token配置文件
-        let TK = await fs.readFileSync(`./plugins/${Plugin_Name}/config/APITP.json`)
-        const TP = JSON.parse(TK)
-        let token = TP.Token
-        let password = TP.PassWord
-        // 根据配置文件选择API，并添加查询参数
-        let api = API.api5.url + `?token=${token}&password=${password}`
+        //直接使用api，不需要其他参数
+        let api = API.api5.url;
         /***发送消息***/
         e.reply([segment.image(`${api}`)])
         /***阻止消息继续往下***/
