@@ -29,7 +29,7 @@ git clone https://github.com/yll0614/luoluo-plugin.git ./plugins/luoluo-plugin/
 
  - 注意 如果您发起Pr来更改API链接 您在进行Pr之前须经本地测试以保证这是一个可供使用的API 若确认某API失效 发起Pr后作者也会审查后才将其合并
 
- - 发起Pr修改API后 请确认该功能现有代码是否能够正确获取数据并返回 若不能请更改代码使其适配 或联系作者进行适配
+ - 发起Pr修改API时 请确认该功能现有代码是否能够正确获取数据并返回 若不能请更改代码使其适配 或联系作者进行适配
 <br/>
 
 - QQ：[2443958507(高一小白)](https://qm.qq.com/cgi-bin/qm/qr?k=Vzr6Z6yISyfTNKic29xQEattdPxHldPW)
