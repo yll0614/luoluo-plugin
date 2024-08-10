@@ -31,10 +31,11 @@ export class gcbqb extends plugin {
     }
     /***甘城猫猫表情包***/
     async gcbqb(e) {
-        const type = e.msg.match(/^#?(.+)表情包$/)[1];//通过发送不同来获取不同表情包
+        const type = e.msg.match(/^#?(.+)表情包$/)[1];//通过发送不同指令来获取不同表情包
         const api = {
             甘城猫猫: 'https://yugan.love?name=猫羽雫',
-            fufu: 'https://yugan.love?name=fufu'
+            fufu: 'https://yugan.love?name=fufu',
+            龙图:'https://yugan.love/?name=龙图'
         };
         //检查是否有对应url
         if (!api[type]) {
@@ -42,8 +43,8 @@ export class gcbqb extends plugin {
             return;
         }
         // 读取API配置文件
-        //let pluginName = 'luoluo-plugin'; // 假设这是你从某处获取的插件名称
-        //let filePath = `./plugins/${pluginName}/config/AllAPI.json`;
+        //let pluginName = 'luoluo-plugin'; // 确定插件名称
+        //let filePath = `./plugins/${pluginName}/config/AllAPI.json`;//读取API配置文件
         //let data = await fs.readFileSync(filePath);
         //const API = JSON.parse(data)
         //直接使用api，不需要其他参数
