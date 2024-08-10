@@ -1,8 +1,6 @@
 <div align="center">
 <h1>落落插件V2.2.0(luoluo-plugin)</h1>
 
-<a href="https://www.murphysec.com/console/report/1671125207802994688/1671125207849132032" alt="Security Status"><img src="https://www.murphysec.com/platform3/v31/badge/1671125207849132032.svg" /></a>
-
 [![Gitee](https://img.shields.io/badge/Gitee-落落插件-black?style=flat-square&logo=gitee)](https://gitee.com/xwy231321/ql-plugin) [![云崽bot](https://img.shields.io/badge/云崽-v3-black?style=flat-square&logo=dependabot)](https://gitee.com/Le-niao/Yunzai-Bot) [![Group](https://img.shields.io/badge/联系方式-2443958507-red?style=flat-square&logo=GroupMe&logoColor=white)](https://qm.qq.com/cgi-bin/qm/qr?k=Vzr6Z6yISyfTNKic29xQEattdPxHldPW)<a href='https://gitee.com/yll0614/luoluo-plugin/stargazers'><img src='https://gitee.com/yll0614/luoluo-plugin/badge/star.svg?theme=dark' alt='star'></img></a>
  ###### 访问量<br><img src="https://count.moeyy.cn/get/@:yueyuez/"/></br>
  ## 插件功能 [V2.2.0](./CHANGELOG.md)
