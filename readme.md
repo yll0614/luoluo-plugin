@@ -1,4 +1,4 @@
-# 落落插件(luoluo-plugin)
+# 落落插件V.2.0(luoluo-plugin)
  ## 访问量:<br><img src="https://count.moeyy.cn/get/@:yueyuez/"/></br>
  ## 插件简介  
 - 介绍...什么介绍我不知道
@@ -6,7 +6,7 @@
 - 鸣谢[xwy](https://gitee.com/xwy231321)抄介果大哥哥的[ql-plugin](https://gitee.com/xwy231321/ql-plugin)
 - 咕咕咕
  ## 插件功能
-<img src='https://gitee.com/yll0614/img/raw/master/luoluo-pluginv1.0.0-help.jpg'  alt='Help'></img>  
+<img src='https://gitee.com/yll0614/img/raw/master/v2.2.0help.jpg'  alt='Help'></img>  
  ## 下载方式  
 - ### 方式一:通过git下载插件  
 在云崽根目录执行命令(二选一)
