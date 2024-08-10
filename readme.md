@@ -23,11 +23,13 @@ git clone https://github.com/yll0614/luoluo-plugin.git ./plugins/luoluo-plugin/
 </div>
 
  ## 其他  
- - 由于插件性质 某些API可能会失效 若发现失效API 可联系作者或发起pr以更改失效api
+ - 由于插件性质 某些API可能会失效 若发现失效API 可联系作者或发起Pr以更改失效API
 
  - 当然 为了功能稳定性 若是有新的api提供 也可联系作者或按照格式发起pr以更换API链接
 
- - 注意 如果您发起pr来更改API链接 您在进行pr之前须经本地测试以保证这是一个可供使用的api 若确认某api失效 发起pr后作者也会审查后才将其合并
+ - 注意 如果您发起Pr来更改API链接 您在进行Pr之前须经本地测试以保证这是一个可供使用的API 若确认某API失效 发起Pr后作者也会审查后才将其合并
+
+ - 发起Pr修改API后 请确认该功能现有代码是否能够正确获取数据并返回 若不能请更改代码使其适配 或联系作者进行适配
 <br/>
 
 - QQ：[2443958507(高一小白)](https://qm.qq.com/cgi-bin/qm/qr?k=Vzr6Z6yISyfTNKic29xQEattdPxHldPW)
