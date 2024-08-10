@@ -75,6 +75,31 @@ export const helpList = [
       desc: "随机获取一张动漫图 "
     },
     {
+      icon: 89,
+      title: "#哔哩哔哩热搜榜",
+      desc: "哔哩哔哩热搜榜TOP10"
+    },
+    {
+      icon: 89,
+      title: "#知乎热搜榜",
+      desc: "知乎热搜榜TOP10"
+    },
+    {
+      icon: 89,
+      title: "#抖音热搜榜",
+      desc: "抖音热搜榜TOP10"
+    },
+    {
+      icon: 89,
+      title: "#今日头条热搜榜",
+      desc: "今日头条热搜榜TOP10"
+    },
+    {
+      icon: 89,
+      title: "#今日头条热点新闻",
+      desc: "今日头条热点新闻TOP10"
+    },
+    {
       icon: 83,
       title: "#生成二维码",
       desc: "生成二维码 在生成二维码后面加内容/网址"
@@ -93,6 +118,11 @@ export const helpList = [
       icon: 78,
       title: "#群头像",
       desc: "获取QQ群头像"
+    },
+    {
+      icon: 78,
+      title: "#举牌",
+      desc: "生成一张小人举牌图片 在举牌后面加内容"
     },
     {
       icon: 94,

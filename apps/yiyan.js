@@ -59,7 +59,7 @@ export class yiyan extends plugin {
     async yiyan(e) {
         // 提取用户查询的歌曲名
         const emsg = e.msg.match(/^[#/]?一言(.*)$/)[1]
-        let data = await fs.readFileSync('./plugins/${Plugin_Name}/config/AllAPI.json')
+        let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
         const API = JSON.parse(data)
         if (emsg == 'json') {
             return LLAPITOGO(e, API);

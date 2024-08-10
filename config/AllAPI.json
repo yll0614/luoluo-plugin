@@ -50,5 +50,37 @@
     "api13": {
         "name": "二维码生成API",
         "url": "https://tenapi.cn/v2/qrcode"
+    },
+    "api14": {
+        "name": "哔哩哔哩热搜榜API",
+        "url": "https://tenapi.cn/v2/bilihot"
+    },
+    "api15": {
+        "name": "知乎热搜榜API",
+        "url": "https://tenapi.cn/v2/zhihuhot"
+    },
+    "api16": {
+        "name": "抖音热搜榜API",
+        "url": "https://tenapi.cn/v2/douyinhot"
+    },
+    "api17": {
+        "name": "今日头条热搜榜API",
+        "url": "https://tenapi.cn/v2/toutiaohot"
+    },
+    "api18": {
+        "name": "今日头条热点新闻API",
+        "url": "https://tenapi.cn/v2/toutiaohotnew"
+    },
+    "api19": {
+        "name": "#小人举牌API",
+        "url": "http://shanhe.kim/api/qq/ju2.php"
+    },
+    "api20": {
+        "name": "#网站图标API",
+        "url": "http://shanhe.kim/api/wz/ico.php"
+    },
+    "api21": {
+        "name": "#疯狂星期四API",
+        "url": "http://shanhe.kim/api/za/kfc.php"
     }
 }

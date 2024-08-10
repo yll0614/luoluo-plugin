@@ -33,7 +33,7 @@ export class wyjt extends plugin {
         /***定义msgtq函数***/
         const msg = e.msg.match(/^[#/]?截图(.*)$/)[1]
         // 读取API配置文件
-        let data = await fs.readFileSync('./plugins/${Plugin_Name}/config/AllAPI.json')
+        let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
         const API = JSON.parse(data)
         let api = API.api9.url + `?url=${msg}`
         e.reply([segment.image(`${api}`)])

@@ -33,7 +33,7 @@ export class wyyrp extends plugin {
 
     /***网易云音乐热评***/
     async wyyrp(e) {
-        let data = await fs.readFileSync('./plugins/${Plugin_Name}/config/AllAPI.json')
+        let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
         const API = JSON.parse(data)
         let api = API.api3.url
         /***解析JSON***/
