@@ -8,10 +8,12 @@
  ## 安装教程  
 ### 方式一:通过git下载插件  
 在云崽根目录执行命令(二选一)
+
 ***Gitee***
 ```sh
 git clone https://gitee.com/yll0614/luoluo-plugin.git ./plugins/luoluo-plugin/
 ```
+
 ***Github***
 ```sh
 git clone https://github.com/yll0614/luoluo-plugin.git ./plugins/luoluo-plugin/
