@@ -2,6 +2,8 @@
 import fetch from "node-fetch"
 import fs from 'fs'
 import plugin from '../../../lib/plugins/plugin.js'
+import { Plugin_Name } from '../components/index.js'
+
 
 // 定义example类，继承自plugin
 export class ping extends plugin {
@@ -34,10 +36,10 @@ export class ping extends plugin {
         /***定义pingmsg函数***/
         const msg = e.msg.match(/^[#/]?ping地址(.*)$/)[1]
         // 读取API配置文件
-        let data = await fs.readFileSync('./plugins/xiaoye-plugin/config/AllAPI.json')
+        let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
         const API = JSON.parse(data)
         // 根据配置文件选择API，并添加查询参数
-        let api = API.api8.url + `?format=json&ip=${msg}&type=ipv4`
+        let api = API.api7.url + `?format=json&ip=${msg}&type=ipv4`
         /***解析JSON***/
         let jx = await fetch(api)
         /***定义Data函数***/

@@ -70,6 +70,31 @@ export const helpList = [
       desc: "垃圾分类 在是什么垃圾前面加垃圾名称 "
     },
     {
+      icon: 93,
+      title: "#随机动漫图",
+      desc: "随机获取一张动漫图 "
+    },
+    {
+      icon: 83,
+      title: "#生成二维码",
+      desc: "生成二维码 在生成二维码后面加内容/网址"
+    },
+    {
+      icon: 84,
+      title: "哔哩哔哩视频解析",
+      desc: "发送视频链接即可 注:需将你的FFmpeg所在的文件夹在PATH环境变量中"
+    },
+    {
+      icon: 80,
+      title: "#头像",
+      desc: "获取群友的QQ头像 at就是拿群友的 不艾特就是自己的"
+    },
+    {
+      icon: 78,
+      title: "#群头像",
+      desc: "获取QQ群头像"
+    },
+    {
       icon: 94,
       title: "若发现Bug 请反馈或更改后提出pr谢谢您的帮助",  
       desc: "反馈方式QQ:2243958507"

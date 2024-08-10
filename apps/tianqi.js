@@ -2,6 +2,8 @@
 import fetch from "node-fetch"
 import fs from 'fs'
 import plugin from '../../../lib/plugins/plugin.js'
+import { Plugin_Name } from '../components/index.js'
+
 
 // 定义example类，继承自plugin
 export class tianqi extends plugin {
@@ -33,7 +35,7 @@ export class tianqi extends plugin {
         /***定义msgtq函数***/
         const msg = e.msg.match(/^[#/]?(.*)天气$/)[1]
         // 读取API配置文件
-        let data = await fs.readFileSync('./plugins/xiaoye-plugin/config/AllAPI.json')
+        let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
         const API = JSON.parse(data)
         let api = API.api6.url + `?city=${msg}`
         /***解析JSON***/

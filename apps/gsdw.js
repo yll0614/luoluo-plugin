@@ -2,6 +2,8 @@
 import fetch from "node-fetch"
 import fs from 'fs'
 import plugin from '../../../lib/plugins/plugin.js'
+import { Plugin_Name } from '../components/index.js'
+
 
 // 定义example类，继承自plugin
 export class gsdw extends plugin {
@@ -36,11 +38,11 @@ export class gsdw extends plugin {
         const msgb = e.msg.match(/^[#/]?(.*)与(.*)攻受(短)?文$/)[2];
 
         // 读取API配置文件
-        let data = await fs.readFileSync('./plugins/xiaoye-plugin/config/AllAPI.json');
+        let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`);
         const API = JSON.parse(data);
 
         // 读取Token配置文件
-        let TK = await fs.readFileSync('./plugins/xiaoye-plugin/config/APITP.json');
+        let TK = await fs.readFileSync(`./plugins/${Plugin_Name}/config/APITP.json`);
         const TP = JSON.parse(TK);
 
         // 获取Token和密码
@@ -65,6 +67,18 @@ export class gsdw extends plugin {
         if (text === '密钥密码不正确，请检查参数是否填入password') {
             // 提示用户检查密码是否正确
             e.reply([`${text}(检查config下APITP.json文件)是否正确填入`]);
+            // 阻止消息继续往下处理
+            return true;
+        }
+        if (text === '您的余额已用完，请联系站长进行充值') {
+            // 提示用户检查密码是否正确
+            e.reply([`${text}又或者是你没填APITP.json`]);
+            // 阻止消息继续往下处理
+            return true;
+        }
+        if (text === '请输入完整昵称！') {
+            // 提示用户检查密码是否正确
+            e.reply([`${text}`]);
             // 阻止消息继续往下处理
             return true;
         }

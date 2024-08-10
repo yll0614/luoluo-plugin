@@ -2,6 +2,8 @@
 import fetch from "node-fetch"
 import fs from 'fs'
 import plugin from '../../../lib/plugins/plugin.js'
+import { Plugin_Name } from '../components/index.js'
+
 
 // 定义example类，继承自plugin
 export class ljfl extends plugin {
@@ -33,9 +35,9 @@ async ljfl(e) {
     /***定义ljflmsg函数***/
     const msg = e.msg.match(/^[#/]?(.*)是什么垃圾$/)[1]
     // 读取API配置文件
-    let data = await fs.readFileSync('./plugins/xiaoye-plugin/config/AllAPI.json')
+    let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
     const API = JSON.parse(data)
-     let api = API.api9.url + `?format=json&kw=${msg}`
+     let api = API.api8.url + `?format=json&kw=${msg}`
     /***解析JSON***/
     let jx = await fetch(api)
     /***定义Data函数***/

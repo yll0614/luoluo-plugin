@@ -2,6 +2,8 @@
 import fetch from "node-fetch"
 import fs from 'fs'
 import plugin from '../../../lib/plugins/plugin.js'
+import { Plugin_Name } from '../components/index.js'
+
 
 // 定义example类，继承自plugin
 export class wyyrp extends plugin {
@@ -31,7 +33,7 @@ export class wyyrp extends plugin {
 
     /***网易云音乐热评***/
     async wyyrp(e) {
-        let data = await fs.readFileSync('./plugins/xiaoye-plugin/config/AllAPI.json')
+        let data = await fs.readFileSync('./plugins/${Plugin_Name}/config/AllAPI.json')
         const API = JSON.parse(data)
         let api = API.api3.url
         /***解析JSON***/

@@ -2,6 +2,8 @@
 import fetch from "node-fetch"
 import fs from 'fs'
 import plugin from '../../../lib/plugins/plugin.js'
+import { Plugin_Name } from '../components/index.js'
+
 
 // 定义example类，继承自plugin
 export class geci extends plugin {
@@ -34,10 +36,10 @@ export class geci extends plugin {
         // 提取用户查询的歌曲名
         const msg = e.msg.match(/^[#/]?(.*)歌词$/)[1]
         // 读取API配置文件
-        let data = await fs.readFileSync('./plugins/xiaoye-plugin/config/AllAPI.json')
+        let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
         const API = JSON.parse(data)
         // 读取Token配置文件
-        let TK = await fs.readFileSync('./plugins/xiaoye-plugin/config/APITP.json')
+        let TK = await fs.readFileSync(`./plugins/${Plugin_Name}/config/APITP.json`)
         const TP = JSON.parse(TK)
         let token = TP.Token
         let password = TP.PassWord
