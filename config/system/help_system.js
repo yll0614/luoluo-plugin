@@ -163,72 +163,72 @@ export const bqbhelpList = [
     group: '可不加#前缀',
     list: [
       {
-        icon: 88,
+        icon: 8,
         title: "#随机龙图",
         desc: "攻击性有待提高"
       },
       {
-        icon: 88,
+        icon: 79,
         title: "#随机甘城猫猫",
         desc: "来点Nacho！"
       },
       {
-        icon: 88,
+        icon: 42,
         title: "#随机fufu",
         desc: "你就是歌姬吧！"
       },
       {
-        icon: 88,
+        icon: 19,
         title: "#随机丛雨",
         desc: "Ciallo～(∠・ω< )⌒☆"
       },
       {
-        icon: 88,
+        icon: 318,
         title: "#随机小南梁",
         desc: "被小南梁害惨了"
       },
       {
-        icon: 88,
+        icon: 345,
         title: "#随机千恋万花",
         desc: "柚子厨蒸鹅心"
       },
       {
-        icon: 88,
+        icon: 294,
         title: "#随机古拉",
         desc: "来点gura！"
       },
       {
-        icon: 88,
+        icon: 131,
         title: "#随机心海",
         desc: "诶嘿嘿心海~"
       },
       {
-        icon: 88,
+        icon: 101,
         title: "#随机柴郡",
         desc: "搞什么啊我只是猫咪"
       },
       {
-        icon: 88,
+        icon: 56,
         title: "#随机满穗",
         desc: "参见万穗爷"
       },
       {
-        icon: 88,
+        icon: 296,
         title: "#随机猫猫虫",
         desc: "咖波"
       },
       {
-        icon: 88,
+        icon: 90,
         title: "#随机纳西妲",
         desc: "分享智慧"
       },
       {
-        icon: 88,
+        icon: 324,
         title: "#随机诗歌剧",
         desc: "曼波！"
       },
       {
-        icon: 88,
+        icon: 321,
         title: "#随机kemomimi",
         desc: "兽耳酱"
       },
