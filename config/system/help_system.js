@@ -125,6 +125,11 @@ export const helpList = [
       desc: "生成一张小人举牌图片 在举牌后面加内容"
     },
     {
+    icon: 129,
+    title: "#落落|luoluo更新",
+    desc: "更新落落插件"
+    },
+    {
       icon: 94,
       title: "若发现Bug 请反馈或更改后提出pr谢谢您的帮助",  
       desc: "反馈方式QQ:2243958507"

@@ -1,7 +1,5 @@
 // 引入必要的模块
 import plugin from '../../../lib/plugins/plugin.js';
-import fetch from "node-fetch";
-import { Plugin_Name } from '../components/index.js'
 
 
 // 定义example类，继承自plugin
