@@ -46,7 +46,7 @@ git clone https://github.com/yll0614/luoluo-plugin.git ./plugins/luoluo-plugin/
 |-----|-----------|
 | [@xwy](https://gitee.com/xwy231321) | 技术支持   | 
 | [@Tloml-Starry](https://gitee.com/Tloml-Starry) | JSON读取方式  |
-| [@XY-API]（https://api.yugan.love）| 提供各种表情包api |
+| [@XY-API](https://api.yugan.love) | 提供各种表情包api |
 
 
 ## 免责声明
