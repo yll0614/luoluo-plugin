@@ -11,10 +11,10 @@
 
 ***Gitee***
 ```sh
-git clone https://gitee.com/yll0614/luoluo-plugin.git ./plugins/luoluo-plugin/
+git clone https://gitee.com/hgh123520/luoluo-plugin.git ./plugins/luoluo-plugin/
 ```
 
-***Github***
+***Github***（本人暂无GitHub仓库，因为懒）
 ```sh
 git clone https://github.com/yll0614/luoluo-plugin.git ./plugins/luoluo-plugin/
 ```
@@ -26,6 +26,7 @@ git clone https://github.com/yll0614/luoluo-plugin.git ./plugins/luoluo-plugin/
 </div>
 
  ## 其他  
+ - 本库为本人fork源库的，更改部分api的URL
  - 由于插件性质 某些API可能会失效 若发现失效API 可联系作者或发起Pr以更改失效API
 
  - 当然 为了功能稳定性 若是有新的api提供 也可联系作者或按照格式发起pr以更换API链接
@@ -45,6 +46,7 @@ git clone https://github.com/yll0614/luoluo-plugin.git ./plugins/luoluo-plugin/
 |-----|-----------|
 | [@xwy](https://gitee.com/xwy231321) | 技术支持   | 
 | [@Tloml-Starry](https://gitee.com/Tloml-Starry) | JSON读取方式  |
+| [@XY-API]（https://api.yugan.love）| 提供各种表情包api |
 
 
 ## 免责声明
