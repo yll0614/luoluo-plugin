@@ -1,10 +1,9 @@
 <div align="center">
 <h1>落落插件V2.2.0(luoluo-plugin)</h1>
+<h1>明日进行一次大更新 预计插件全面更改 主要是删除注释修改readme.me 将会添加几个GitHub加速地址 方便国内用户拉取GitHub仓库</h1>
 
 [![Gitee](https://img.shields.io/badge/Gitee-落落插件-black?style=flat-square&logo=gitee)](https://gitee.com/xwy231321/ql-plugin) [![云崽bot](https://img.shields.io/badge/云崽-v3-black?style=flat-square&logo=dependabot)](https://gitee.com/Le-niao/Yunzai-Bot) [![Group](https://img.shields.io/badge/联系方式-2443958507-red?style=flat-square&logo=GroupMe&logoColor=white)](https://qm.qq.com/cgi-bin/qm/qr?k=Vzr6Z6yISyfTNKic29xQEattdPxHldPW)<a href='https://gitee.com/yll0614/luoluo-plugin/stargazers'><img src='https://gitee.com/yll0614/luoluo-plugin/badge/star.svg?theme=dark' alt='star'></img></a>
-![Nodejs](https://img.shields.io/badge/-Node.js-3C873A?style=flat&logo=Node.js&logoColor=white)
-![JavaScript](https://img.shields.io/badge/-JavaScript-eed718?style=flat&logo=javascript&logoColor=ffffff)
- ###### 访问量<br><img src="https://count.moeyy.cn/get/@:XYXY/"/></br>
+ ###### 访问量<br><img src="https://count.moeyy.cn/get/@:yeluoluo/"/></br>
  ## 插件功能 [V2.2.0](./CHANGELOG.md)
 <img src='https://gitee.com/yll0614/img/raw/master/v2.2.0help.jpg'  alt='Help'></img>  
  ## 安装教程  
@@ -13,10 +12,10 @@
 
 ***Gitee***
 ```sh
-git clone https://gitee.com/hgh123520/luoluo-plugin.git ./plugins/luoluo-plugin/
+git clone https://gitee.com/yll0614/luoluo-plugin.git ./plugins/luoluo-plugin/
 ```
 
-***Github***（本人暂无GitHub仓库，因为懒）
+***Github***
 ```sh
 git clone https://github.com/yll0614/luoluo-plugin.git ./plugins/luoluo-plugin/
 ```
@@ -28,7 +27,6 @@ git clone https://github.com/yll0614/luoluo-plugin.git ./plugins/luoluo-plugin/
 </div>
 
  ## 其他  
- - 本库为本人fork源库的，更改部分api的URL
  - 由于插件性质 某些API可能会失效 若发现失效API 可联系作者或发起Pr以更改失效API
 
  - 当然 为了功能稳定性 若是有新的api提供 也可联系作者或按照格式发起pr以更换API链接
@@ -48,7 +46,6 @@ git clone https://github.com/yll0614/luoluo-plugin.git ./plugins/luoluo-plugin/
 |-----|-----------|
 | [@xwy](https://gitee.com/xwy231321) | 技术支持   | 
 | [@Tloml-Starry](https://gitee.com/Tloml-Starry) | JSON读取方式  |
-| [@XY-API](https://api.yugan.love) | 提供各种表情包api |
 
 
 ## 免责声明
