@@ -3,7 +3,6 @@ import plugin from '../../../lib/plugins/plugin.js'
 import _ from 'lodash'
 
 const returnVideo = true //是否返回原视频
-
 const regB23 = /b23\.tv\\?\/\w{7}/
 const regBV = /BV1\w{9}/
 const regAV = /av\d+/
@@ -54,7 +53,6 @@ export class bilitv extends plugin {
             ]
         })
     }
-
     async jxsp(e){
         let bvid = ""
         if(e.msg.match(regAV)){

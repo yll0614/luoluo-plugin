@@ -29,116 +29,125 @@ export const helpList = [
   group: '可不加#前缀或使用/代替',
   list: [
     {
-      icon: 88,
+      icon: 31,
       title: "#一言",
-      desc: "顾名思义 就是一言啦"
+      desc: "顾名思义 就是一言啦 可获取JSON数据更详细"
     },
     {
-      icon: 63,
+      icon: 32,
+      title: "#疯狂星期四",
+      desc: "输出一句疯狂星期四"
+    },
+    {
+      icon: 17,
       title: "#网易云热评",
       desc: "顾名思义 就是网易云热评啦"
     }, 
     {
-      icon: 66,
+      icon: 18,
       title: "#天气",
       desc: "天气查询 在天气前面加城市名 (仅国内城市)"
     },
     {
-      icon: 65,
+      icon: 38,
       title: "#歌词",
       desc: "获取歌曲歌词 再歌词前面加歌曲名 [因版本原因可能有些许不同]"
     },{
-      icon: 79,
-      title: "#甘城表情包",
-      desc: "顾名思义 就是获取甘城猫猫表情包啦"
+      icon: 39,
+      title: "#表情包",
+      desc: "获取表情包 支持的表情包有'fufu,丛雨,甘城猫猫表情包类型,小南梁,千恋万花,古拉,心海,柴郡猫,满穗,猫猫虫,纳西妲,诗歌剧,龙图,kemomimi'"
     },{
-      icon: 83,
+      icon: 91,
       title: "#xx与xx攻受短文",
       desc: "写一段攻受短文[请输入名称]"
     },{
-      icon: 78,
+      icon: 92,
       title: "#ping地址",
       desc: "在地址后面加IP或域名 仅支持iPv4地址和域名"
     },
     {
-      icon: 90,
+      icon: 132,
       title: "#谁艾特我",  
       desc: "查看10天内的艾特你的人及其内容"
     },
     {
-      icon: 62,
+      icon: 164,
       title: "#是什么垃圾",
       desc: "垃圾分类 在是什么垃圾前面加垃圾名称 "
     },
     {
-      icon: 93,
+      icon: 171,
       title: "#随机动漫图",
       desc: "随机获取一张动漫图 "
     },
     {
-      icon: 89,
+      icon: 207,
       title: "#哔哩哔哩热搜榜",
       desc: "哔哩哔哩热搜榜TOP10"
     },
     {
-      icon: 89,
+      icon: 167,
       title: "#知乎热搜榜",
       desc: "知乎热搜榜TOP10"
     },
     {
-      icon: 89,
+      icon: 168,
       title: "#抖音热搜榜",
       desc: "抖音热搜榜TOP10"
     },
     {
-      icon: 89,
+      icon: 185,
       title: "#今日头条热搜榜",
       desc: "今日头条热搜榜TOP10"
     },
     {
-      icon: 89,
+      icon: 172,
       title: "#今日头条热点新闻",
       desc: "今日头条热点新闻TOP10"
     },
     {
-      icon: 83,
+      icon: 131,
       title: "#生成二维码",
       desc: "生成二维码 在生成二维码后面加内容/网址"
     },
     {
-      icon: 84,
+      icon: 133,
       title: "哔哩哔哩视频解析",
       desc: "发送视频链接即可 注:需将你的FFmpeg所在的文件夹在PATH环境变量中"
     },
     {
-      icon: 80,
+      icon: 2,
       title: "#头像",
       desc: "获取群友的QQ头像 at就是拿群友的 不艾特就是自己的"
     },
     {
-      icon: 78,
+      icon: 3,
       title: "#群头像",
       desc: "获取QQ群头像"
     },
     {
-      icon: 78,
+      icon: 25,
       title: "#举牌",
       desc: "生成一张小人举牌图片 在举牌后面加内容"
     },
     {
-    icon: 129,
-    title: "#落落|luoluo更新",
-    desc: "更新落落插件"
+      icon: 211,
+      title: "#落落表情包帮助",
+      desc: "表情包帮助"
     },
     {
-      icon: 94,
+      icon: 67,
+      title: "#落落插件更新",
+      desc: "更新插件"
+    },
+    {
+      icon: 26,
       title: "若发现Bug 请反馈或更改后提出pr谢谢您的帮助",  
       desc: "反馈方式QQ:2243958507"
     }
   ]
 }
 ]
-
 export const bqbhelpCfg = {
   title: '表情包帮助',
   subTitle: 'Yunzai-Bot & luoluo-Plugin',
@@ -169,7 +178,7 @@ export const bqbhelpList = [
       },
       {
         icon: 79,
-        title: "#随机甘城猫猫",
+        title: "#随机猫羽雫(甘城猫猫)",
         desc: "来点Nacho！"
       },
       {
@@ -235,5 +244,4 @@ export const bqbhelpList = [
     ]
   }
 ]
-
 export const isSys = true

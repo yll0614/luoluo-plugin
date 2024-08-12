@@ -16,7 +16,7 @@ export class luoluo_help extends plugin {
           fnc: 'ahelp'
         },
         {
-          reg: '^#?表情包帮助$',
+          reg: '^#?(ll|LL|Ll|lL|luoluo|落落|luoluo插件|ll插件|LL插件|Ll插件|lL插件|luoluo插件)表情包帮助$',
           fnc : 'bqbhelp'
         }
       ]

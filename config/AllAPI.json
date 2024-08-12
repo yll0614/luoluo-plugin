@@ -16,8 +16,8 @@
         "url": "https://xiaobapi.top/api/xb/api/cp.php"
     },
     "api5": {
-        "name": "甘城猫猫表情包API",
-        "url": "https://yugan.love?name=猫羽雫"
+        "name": "表情包API",
+        "url": "https://yugan.love"
     },
     "api6": {
         "name": "天气API",
