@@ -1,5 +1,7 @@
-# v2.3.1
+# v2.3.2
+* 添加随机表情包API
 
+# v2.3.1
 * 更换攻受短文API [小冰API](https://xiaobapi.top/api/xb/api/cp.php) :fa-arrow-right: [星之阁API](https://api.xingzhige.com/API/cp_generate)
 * 更改gsdw.js读取方式 TEXT :fa-arrow-right: JSON
 * 解决 tianqi同名导出 问题

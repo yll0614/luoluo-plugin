@@ -72,15 +72,19 @@
         "url": "https://tenapi.cn/v2/toutiaohotnew"
     },
     "api19": {
-        "name": "#小人举牌API",
+        "name": "小人举牌API",
         "url": "http://shanhe.kim/api/qq/ju2.php"
     },
     "api20": {
-        "name": "#网站图标API",
+        "name": "网站图标API",
         "url": "http://shanhe.kim/api/wz/ico.php"
     },
     "api21": {
-        "name": "#疯狂星期四API",
+        "name": "疯狂星期四API",
         "url": "http://shanhe.kim/api/za/kfc.php"
+    },
+    "api22": {
+        "name": "随机表情包君昭API",
+        "url": "https://api.junzhao.icu/aili"
     }
 }

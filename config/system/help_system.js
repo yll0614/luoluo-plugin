@@ -55,8 +55,8 @@ export const helpList = [
     },
     {
       icon: 39,
-      title: "#表情包",
-      desc: "获取表情包 支持请查看落落表情包帮助"
+      title: "#随机表情包",
+      desc: "获取表情包 详情请查看落落表情包帮助"
     },
     {
       icon: 91,
@@ -176,72 +176,72 @@ export const bqbhelpList = [
     list: [
       {
         icon: 8,
-        title: "#随机龙图",
+        title: "#随机龙图表情包",
         desc: "攻击性有待提高"
       },
       {
         icon: 79,
-        title: "#随机猫羽雫(甘城猫猫)",
+        title: "#随机猫羽雫(甘城猫猫)表情包",
         desc: "来点Nacho！"
       },
       {
         icon: 42,
-        title: "#随机fufu",
+        title: "#随机fufu表情包",
         desc: "你就是歌姬吧！"
       },
       {
         icon: 19,
-        title: "#随机丛雨",
+        title: "#随机丛雨表情包",
         desc: "Ciallo～(∠・ω< )⌒☆"
       },
       {
         icon: 318,
-        title: "#随机小南梁",
+        title: "#随机小南梁表情包",
         desc: "被小南梁害惨了"
       },
       {
         icon: 345,
-        title: "#随机千恋万花",
+        title: "#随机千恋万花表情包",
         desc: "柚子厨蒸鹅心"
       },
       {
         icon: 294,
-        title: "#随机古拉",
+        title: "#随机古拉表情包",
         desc: "来点gura！"
       },
       {
         icon: 131,
-        title: "#随机心海",
+        title: "#随机心海表情包",
         desc: "诶嘿嘿心海~"
       },
       {
         icon: 101,
-        title: "#随机柴郡",
+        title: "#随机柴郡表情包",
         desc: "搞什么啊我只是猫咪"
       },
       {
         icon: 56,
-        title: "#随机满穗",
+        title: "#随机满穗表情包",
         desc: "参见万穗爷"
       },
       {
         icon: 296,
-        title: "#随机猫猫虫",
+        title: "#随机猫猫虫表情包",
         desc: "咖波"
       },
       {
         icon: 90,
-        title: "#随机纳西妲",
+        title: "#随机纳西妲表情包",
         desc: "分享智慧"
       },
       {
         icon: 324,
-        title: "#随机诗歌剧",
+        title: "#随机诗歌剧表情包",
         desc: "曼波！"
       },
       {
         icon: 321,
-        title: "#随机kemomimi",
+        title: "#随机kemomimi表情包",
         desc: "兽耳酱"
       },
     ]

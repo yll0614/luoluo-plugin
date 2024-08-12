@@ -18,9 +18,10 @@ export class bqb extends plugin {
         })
     }
     async bqb(e) {
-        const type = e.msg.match(/^#?随机(.*)$/)[1];
+        const type = e.msg.match(/^#?随机(.*)表情包$/)[1];
         if (
             type !== '甘城' &&
+            type !== '' &&
             type !== '猫羽雫' &&
             type !== '甘城猫猫' &&
             type !== 'fufu' &&
@@ -51,10 +52,18 @@ export class bqb extends plugin {
             await e.reply(segment.image(api));
             return true
         }
+        if (!type) {
+            let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`);
+            const API = JSON.parse(data)
+            let api = API.api22.url
+            await e.reply(segment.image(api));
+            return true
+        }
         let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`);
         const API = JSON.parse(data)
         let api = API.api5.url + `?name=${type}`
         await e.reply(segment.image(api));
         return true
+        
     }
 }
