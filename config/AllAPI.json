@@ -13,7 +13,7 @@
     },
     "api4": {
         "name": "攻受短文API",
-        "url": "https://xiaobapi.top/api/xb/api/cp.php"
+        "url": "https://api.xingzhige.com/API/cp_generate"
     },
     "api5": {
         "name": "表情包API",

@@ -2,7 +2,7 @@ import fs from 'fs'
 import plugin from '../../../lib/plugins/plugin.js'
 import { Plugin_Name } from '../components/index.js'
 
-export class tianqi extends plugin {
+export class qrcode extends plugin {
     constructor() {
         super({
             name: '二维码生成',
