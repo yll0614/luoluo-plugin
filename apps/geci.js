@@ -28,7 +28,7 @@ export class geci extends plugin {
         const msg = e.msg.match(/^[#/]?(.*)歌词$/)[1]
         let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
         const API = JSON.parse(data)
-        let api = API.api1.url + `?name=${msg}&format=lrc&n=1&br=2`
+        let api = API.api1.url + `?name=${msg}&format=lrc&n=1&br=4`
         let jx = await fetch(api)
         const Data = await (jx).json()
         let code = Data['code']
@@ -41,6 +41,7 @@ export class geci extends plugin {
             e.reply(['没有找到歌词数据，请确认歌曲名称是否正确。']);
             return true;
         }
+        e.reply(segment.record(Data['data']['src']))
         const cleaned = clean(lyrics);
         e.reply(cleaned)
         return true
