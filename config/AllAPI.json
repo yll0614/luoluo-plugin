@@ -1,7 +1,7 @@
 {
     "api1": {
         "name": "歌词API",
-        "url": "https://xiaobapi.top/api/xb/api/geci.php"
+        "url": "https://api.xingzhige.com/API/QQmusicVIP"
     },
     "api2": {
         "name": "一言API",

@@ -1,3 +1,9 @@
+# v2.3.3
+* 更换歌词API [小冰API](https://xiaobapi.top/api/xb/api/lyric.php) :fa-arrow-right: [星之阁API](https://api.xingzhige.com/API/lrc)
+* 完全重构geci.js
+* 成功脱离API付费
+
+
 # v2.3.2
 * 添加随机表情包API
 
