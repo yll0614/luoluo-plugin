@@ -1,6 +1,5 @@
 import { Plugin_Name } from "../components/index.js"
 import { update as Update } from "../../other/update.js"
-
 export class luoluoupdate extends plugin {
   constructor() {
     super({
