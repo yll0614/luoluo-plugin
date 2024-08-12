@@ -58,11 +58,10 @@ git clone https://github.moeyy.xyz/https://github.com/yll0614/luoluo-plugin.git 
 | [@TenAPI](https://tenapi.cn/) | 部分API*10 |
 | [@山河API](https://shanhey.cn/) | 部分API*3  |
 | [@故梦API](https://www.gumengya.com/) | 部分API*2  |
-| [@星之阁API](https://api.xingzhige.com/) | 部分API*2  |
+| [@星之阁API](https://api.xingzhige.com/) | 部分API*3  |
 | [@君昭](https://gitee.com/jun-zhaojinzhaoei) | 部分API*1 |
 | [@XY-API](https://api.yugan.love/) | 部分API*1  |
 | [@小小API](https://api-m.com/) | 部分API*1  |
-| [@小冰API](https://xiaobapi.top/) | 部分API*1(付费api) |
 
 
 
