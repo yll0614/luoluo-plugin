@@ -1,11 +1,5 @@
-import { Plugin_Name } from '../components/index.js'
-let Update
-
-try {
-  Update = (await import("../../other/update.js")).update
-} catch {
-  logger.warn(`[${Plugin_Name}] 导入本体更新模块失败，将无法使用 #落落更新 命令`)
-}
+import { Plugin_Name } from "../components/index.js"
+import { update as Update } from "../../other/update.js"
 
 export class luoluoupdate extends plugin {
   constructor() {
