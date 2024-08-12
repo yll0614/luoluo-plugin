@@ -20,7 +20,7 @@ if (!global.segment) {
     global.segment = (await import("oicq")).segment
 }
 logger.info('------（-＾〇＾-）-----')
-logger.info('落落插件初始化ing···')
+logger.info('落落插件初始化完成')
 logger.info('-----(/^▽^)/------')
 let AppName = 'luoluo-plugin'
 const startTime = Date.now();

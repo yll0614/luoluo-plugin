@@ -1,29 +1,18 @@
-// 引入必要的模块
 import fetch from "node-fetch"
 import fs from 'fs'
 import plugin from '../../../lib/plugins/plugin.js'
 import { Plugin_Name } from '../components/index.js'
 
-
-// 定义example类，继承自plugin
 export class douyinhot extends plugin {
-    // 构造函数，初始化插件的属性
     constructor() {
         super({
-            // 插件名称
             name: '抖音热搜榜',
-            // 插件描述
             dsc: 'douyinhot',
-            // 监听方式
             event: 'message',
-            // 插件优先级
             priority: 5000,
-            // 匹配正则
             rule: [
                 {
-                    /***匹配正则***/
                     reg: '^[#/]?抖音热搜榜$',
-                    /***执行方式***/
                     fnc: 'douyinhot'
                 }
             ]
@@ -35,17 +24,11 @@ export class douyinhot extends plugin {
         let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
         const API = JSON.parse(data)
         let api = API.api16.url
-        /***解析JSON***/
         let jx = await fetch(api)
-        /***定义Data函数***/
         const Data = await (jx).json()
-        /***定义code***/
         let code = Data['code']
-        /***判断返回code值***/
         if (code != '200') {
-            /***发送消息***/
             e.reply([`请求失败,请稍后再试或联系管理员!`])
-            /***阻止消息继续往下***/
             return true
         }
         //name
@@ -70,7 +53,6 @@ export class douyinhot extends plugin {
         let msgh = '热搜词链接:' + Data['data'][7]['url']
         let msgi = '热搜词链接:' + Data['data'][8]['url']
         let msgj = '热搜词链接:' + Data['data'][9]['url']
-        /***发送消息***/
         e.reply([`${msg0}\n` + `${msga}\n
 ${msg1}\n` + `${msgb}\n
 ${msg2}\n` + `${msgc}\n
@@ -81,7 +63,6 @@ ${msg6}\n` + `${msgg}\n
 ${msg7}\n` + `${msgh}\n
 ${msg8}\n` + `${msgi}\n
 ${msg9}` + `${msgj}`])
-        /***阻止消息继续往下***/
         return true
     }
 }

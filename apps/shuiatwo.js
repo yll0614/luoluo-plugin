@@ -1,7 +1,7 @@
 import plugin from '../../../lib/plugins/plugin.js'
 import moment from "moment"
 
-let time = 240 //这里设置at数据保留多久,默认24小时后清除,单位:小时。填大于0的纯数字
+let time = 240 //这里设置at数据保留多久 单位:小时 填大于0的纯数字
 
 Bot.on("message.group", async (e) => {
   let imgUrls = []
