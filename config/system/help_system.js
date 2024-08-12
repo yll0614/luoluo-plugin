@@ -32,7 +32,8 @@ export const helpList = [
       icon: 88,
       title: "#一言",
       desc: "顾名思义 就是一言啦"
-    },{
+    },
+    {
       icon: 63,
       title: "#网易云热评",
       desc: "顾名思义 就是网易云热评啦"
@@ -125,12 +126,114 @@ export const helpList = [
       desc: "生成一张小人举牌图片 在举牌后面加内容"
     },
     {
+    icon: 129,
+    title: "#落落|luoluo更新",
+    desc: "更新落落插件"
+    },
+    {
       icon: 94,
       title: "若发现Bug 请反馈或更改后提出pr谢谢您的帮助",  
       desc: "反馈方式QQ:2243958507"
     }
   ]
 }
+]
+
+export const bqbhelpCfg = {
+  title: '表情包帮助',
+  subTitle: 'Yunzai-Bot & luoluo-Plugin',
+  columnCount: 3,
+  colWidth: 265,
+  theme: 'all',
+  themeExclude: ['default'],
+  style: {
+    fontColor: '#ceb78b',
+    descColor: '#eee',
+    contBgColor: 'rgba(6, 21, 31, .5)',
+    contBgBlur: 3,
+    headerBgColor: 'rgba(6, 21, 31, .4)',
+    rowBgColor1: 'rgba(6, 21, 31, .2)',
+    rowBgColor2: 'rgba(6, 21, 31, .35)'
+  },
+  bgBlur: false
+}
+
+export const bqbhelpList = [
+  {
+    group: '可不加#前缀',
+    list: [
+      {
+        icon: 8,
+        title: "#随机龙图",
+        desc: "攻击性有待提高"
+      },
+      {
+        icon: 79,
+        title: "#随机甘城猫猫",
+        desc: "来点Nacho！"
+      },
+      {
+        icon: 42,
+        title: "#随机fufu",
+        desc: "你就是歌姬吧！"
+      },
+      {
+        icon: 19,
+        title: "#随机丛雨",
+        desc: "Ciallo～(∠・ω< )⌒☆"
+      },
+      {
+        icon: 318,
+        title: "#随机小南梁",
+        desc: "被小南梁害惨了"
+      },
+      {
+        icon: 345,
+        title: "#随机千恋万花",
+        desc: "柚子厨蒸鹅心"
+      },
+      {
+        icon: 294,
+        title: "#随机古拉",
+        desc: "来点gura！"
+      },
+      {
+        icon: 131,
+        title: "#随机心海",
+        desc: "诶嘿嘿心海~"
+      },
+      {
+        icon: 101,
+        title: "#随机柴郡",
+        desc: "搞什么啊我只是猫咪"
+      },
+      {
+        icon: 56,
+        title: "#随机满穗",
+        desc: "参见万穗爷"
+      },
+      {
+        icon: 296,
+        title: "#随机猫猫虫",
+        desc: "咖波"
+      },
+      {
+        icon: 90,
+        title: "#随机纳西妲",
+        desc: "分享智慧"
+      },
+      {
+        icon: 324,
+        title: "#随机诗歌剧",
+        desc: "曼波！"
+      },
+      {
+        icon: 321,
+        title: "#随机kemomimi",
+        desc: "兽耳酱"
+      },
+    ]
+  }
 ]
 
 export const isSys = true

@@ -3,7 +3,7 @@
 <h1>明日进行一次大更新 预计插件全面更改 主要是删除注释修改readme.me 将会添加几个GitHub加速地址 方便国内用户拉取GitHub仓库</h1>
 
 [![Gitee](https://img.shields.io/badge/Gitee-落落插件-black?style=flat-square&logo=gitee)](https://gitee.com/xwy231321/ql-plugin) [![云崽bot](https://img.shields.io/badge/云崽-v3-black?style=flat-square&logo=dependabot)](https://gitee.com/Le-niao/Yunzai-Bot) [![Group](https://img.shields.io/badge/联系方式-2443958507-red?style=flat-square&logo=GroupMe&logoColor=white)](https://qm.qq.com/cgi-bin/qm/qr?k=Vzr6Z6yISyfTNKic29xQEattdPxHldPW)<a href='https://gitee.com/yll0614/luoluo-plugin/stargazers'><img src='https://gitee.com/yll0614/luoluo-plugin/badge/star.svg?theme=dark' alt='star'></img></a>
- ###### 访问量<br><img src="https://count.moeyy.cn/get/@:yueyuez/"/></br>
+ ###### 访问量<br><img src="https://count.moeyy.cn/get/@:yeluoluo/"/></br>
  ## 插件功能 [V2.2.0](./CHANGELOG.md)
 <img src='https://gitee.com/yll0614/img/raw/master/v2.2.0help.jpg'  alt='Help'></img>  
  ## 安装教程  
