@@ -6,6 +6,7 @@
  ###### 访问量<br><img src="https://count.moeyy.cn/get/@:yueyuez/"/></br>
  ## 插件功能 [V2.3.0](./CHANGELOG.md)
 <img src='https://gitee.com/yll0614/img/raw/master/v2.3.0help.jpg'  alt='Help'></img>  
+***提示:攻受短文与歌词使用的为付费API,请自行配置config/APITP.json,若无密钥可联系我获取密钥(短期免费提供)***
 <img src='https://gitee.com/yll0614/img/raw/master/v2.3.0bqbhelp.jpg'  alt='Help'></img>  
  ## 安装教程  
 ### 方式一:通过git下载插件  
