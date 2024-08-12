@@ -4,7 +4,7 @@ let Update
 try {
   Update = (await import("../../other/update.js")).update
 } catch {
-  logger.warn(`[${Plugin_Name}] 导入本体更新模块失败，将无法使用 #luoluo更新 命令`)
+  logger.warn(`[${Plugin_Name}] 导入本体更新模块失败，将无法使用 #落落更新 命令`)
 }
 
 export class luoluoupdate extends plugin {
@@ -15,11 +15,11 @@ export class luoluoupdate extends plugin {
       priority: 1000,
       rule: [
         {
-          reg: "^#(luoluo|落落)(插件)?(强制)?更新$",
+          reg: "^#?(ll|LL|Ll|lL|luoluo|落落|luoluo插件|ll插件|LL插件|Ll插件|lL插件|luoluo插件)(强制)?更新$",
           fnc: "update"
         },
         {
-          reg: "^#(luoluo|落落)(插件)?更新日志$",
+          reg: "^#?(ll|LL|Ll|lL|luoluo|落落|luoluo插件|ll插件|LL插件|Ll插件|lL插件|luoluo插件)更新日志$",
           fnc: "updateLog"
         }
       ]
