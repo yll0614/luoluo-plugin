@@ -11,7 +11,7 @@ export class bqb extends plugin {
             priority: 5000,
             rule: [
                 {
-                    reg: /^#?随机(.*)$/,
+                    reg: /^#?随机(.*)表情包$/,
                     fnc: 'bqb'
                 }
             ]
