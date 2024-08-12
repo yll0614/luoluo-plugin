@@ -11,14 +11,14 @@ export class bqb extends plugin {
             priority: 5000,
             rule: [
                 {
-                    reg: /^#?(随机)?(.*)表情包$/,
+                    reg: /^#?随机(.*)$/,
                     fnc: 'bqb'
                 }
             ]
         })
     }
     async bqb(e) {
-        const type = e.msg.match(/^#?(随机)?(.*)表情包$/)[2];
+        const type = e.msg.match(/^#?随机(.*)$/)[1];
         if (
             type !== '甘城' &&
             type !== '猫羽雫' &&
