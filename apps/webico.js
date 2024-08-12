@@ -2,7 +2,7 @@ import fs from 'fs'
 import plugin from '../../../lib/plugins/plugin.js'
 import { Plugin_Name } from '../components/index.js'
 
-export class qqtx extends plugin {
+export class webico extends plugin {
     constructor() {
         super({
             name: '网站图标',
