@@ -1,6 +1,7 @@
 import lodash from 'lodash'
 import fs from 'fs'
 import { Data , Plugin_Name} from '../../components/index.js'
+
 let Theme = {
   async getThemeCfg (theme, exclude) {
     let dirPath = `./plugins/${Plugin_Name}/resources/help/theme/`
