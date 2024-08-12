@@ -8,7 +8,6 @@ const Plugin_Name = 'luoluo-plugin'
 const Plugin_Path = `${Path}/plugins/${Plugin_Name}`;
 
 if(!Bot.luoluo_plugin) Bot.luoluo_plugin = {};
-
 class Config {
 	constructor () {
     this.config = {}

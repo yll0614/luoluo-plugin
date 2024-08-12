@@ -1,6 +1,7 @@
 import YAML from 'yaml'
 import chokidar from 'chokidar'
 import fs from 'node:fs'
+
 const _path = process.cwd().replace(/\\/g, '/')
 class Setting {
   constructor () {

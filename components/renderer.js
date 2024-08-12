@@ -1,6 +1,7 @@
 import { Data, Version, Plugin_Name } from './index.js'
 import puppeteer from '../../../lib/puppeteer/puppeteer.js'
 import fs from 'fs'
+
 const _path = process.cwd()
 export default async function (path, params, cfg) {
   let [app, tpl] = path.split('/')

@@ -1,6 +1,7 @@
 import fs from 'fs'
 import lodash from 'lodash'
 import cfg from '../../../lib/config/config.js'
+
 const Plugin_Path = `${process.cwd()}/plugins/luoluo-plugin`;
 const README_path = `${Plugin_Path}/README.md`
 const CHANGELOG_path = `${Plugin_Path}/CHANGELOG.md`

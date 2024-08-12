@@ -3,7 +3,6 @@ import fs from 'fs'
 import puppeteer from '../../../../lib/puppeteer/puppeteer.js'
 
 const _path = process.cwd()
-
 export default async function (path, params, cfg) {
   let [app, tpl] = path.split('/')
   let { e } = cfg
