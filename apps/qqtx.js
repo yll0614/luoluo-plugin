@@ -23,6 +23,7 @@ export class qqtx extends plugin {
         user_id = Number(user_id) || String(user_id)
         let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
         const API = JSON.parse(data)
+        let api = API.api10.url + `?qq=${user_id}`
          e.reply([segment.image(`${api}`)])
          return true
      }
