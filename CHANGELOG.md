@@ -1,3 +1,7 @@
+# v2.3.4
+* 二次重构geci.js
+* 新增QQskey.json 可不进行配置
+
 # v2.3.3
 * 更换歌词API [小冰API](https://xiaobapi.top/api/xb/api/lyric.php) :fa-arrow-right: [星之阁API](https://api.xingzhige.com/API/lrc)
 * 完全重构geci.js
