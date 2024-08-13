@@ -64,8 +64,8 @@ export const helpList = [
     },
     {
       icon: 46,
-      title: "#歌词音频",
-      desc: "前面两个的综合版本"
+      title: "#歌曲",
+      desc: "获取歌词+音频 可配合列表使用 在歌词后方加数字选取不同版本"
     },
     {
       icon: 39,
