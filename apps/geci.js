@@ -18,7 +18,7 @@ export class geci extends plugin {
             priority: 5000,
             rule: [
                 {
-                    reg: '^[#/]?(.*)歌词$',
+                    reg: '^[#/]?(.*)歌词(.*)$',
                     fnc: 'geci'
                 },
                 {
@@ -26,11 +26,11 @@ export class geci extends plugin {
                     fnc: 'gecilb'
                 },
                 {
-                    reg: '^[#/]?(.*)歌词音频$',
+                    reg: '^[#/]?(.*)歌词音频(.*)$',
                     fnc: 'geciyp'
                 },
                 {
-                    reg: '^[#/]?(.*)音频$',
+                    reg: '^[#/]?(.*)音频(.*)$',
                     fnc: 'yp'
                 }
             ]
@@ -40,13 +40,14 @@ export class geci extends plugin {
         const type = e.msg.match(/^[#/]?(.*)歌词(.*)?$/)[1]
         const n = e.msg.match(/^[#/]?(.*)歌词(.*)?$/)[2]
         let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
-        let QQskey = await fs.readFileSync(`./plugins/${Plugin_Name}/config/QQskey.json`)
-        const Qskey = JSON.parse(QQskey)
-        let skey = Qskey.data
         const API = JSON.parse(data)
-        let api = API.api1.url + `?name=${type}&skey=${skey}&skey=${skey}&skey=${skey}&format=lrc&n=${n}&br=4`
-        if (n == '') {
-            let api = API.api1.url + `?name=${type}&skey=${skey}&skey=${skey}&format=lrc&n=1&br=4`
+        let api;
+        if (!n) {
+            api = `${API.api1.url}?name=${type}&format=lrc&n=1&br=4`;
+        } else {
+            api = `${API.api1.url}?name=${type}&format=lrc&n=${n}&br=4`;
+        }
+        try {
             let jx = await fetch(api)
             const Data = await (jx).json()
             let code = Data['code']
@@ -54,46 +55,29 @@ export class geci extends plugin {
                 e.reply([`请求失败,请稍后再试或联系管理员!`])
                 return true
             }
+            if (code == '-201') {
+                e.reply([`暂无搜索结果`])
+                return true
+            }
             const lyrics = Data['data']['lrc']['content']
             if (lyrics === undefined) {
                 e.reply(['没有找到歌词数据，请确认歌曲名称是否正确。']);
                 return true;
             }
-            e.reply(segment.record(Data['data']['src']))
             const cleaned = clean(lyrics);
             e.reply(cleaned)
             return true
-        }
-        let jx = await fetch(api)
-        const Data = await (jx).json()
-        let code = Data['code']
-        if (code != '0') {
-            e.reply([`请求失败,请稍后再试或联系管理员!`])
+        } catch (error) {
+            console.error('Error occurred:', error);
+            e.reply(['操作失败，请检查输入或稍后重试。']);
             return true
         }
-        if (code == '-201') {
-            e.reply([`暂无搜索结果`])
-            return true
-        }
-        const lyrics = Data['data']['lrc']['content']
-        if (lyrics === undefined) {
-            e.reply(['没有找到歌词数据，请确认歌曲名称是否正确。']);
-            return true;
-        }
-        const cleaned = clean(lyrics);
-        e.reply(cleaned)
-        return true
     }
-
-
-
     async gecilb(e) {
         const type = e.msg.match(/^[#/]?(.*)列表$/)[1]
         let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
-        let QQskey = await fs.readFileSync(`./plugins/${Plugin_Name}/config/QQskey.json`)
-        const Qskey = JSON.parse(QQskey)
         const API = JSON.parse(data)
-        let api = API.api1.url + `?name=${type}&skey=${skey}&skey=${skey}`
+        let api = API.api1.url + `?name=${type}`
         let jx = await fetch(api)
         const Data = await (jx).json()
         let code = Data['code']
@@ -106,12 +90,10 @@ export class geci extends plugin {
             return true
         }
         let msg = [];
-
         for (let i = 0; i < Math.min(Data['data'].length, 10); i++) {
             const song = Data['data'][i];
             msg.push(`${i + 1}. 歌名: ${song.songname}, 歌手: ${song.name}, 专辑: ${song.album}`);
         }
-
         e.reply(msg.join('\n\n'));
         return true
     }
@@ -120,14 +102,22 @@ export class geci extends plugin {
         const n = e.msg.match(/^[#/]?(.*)歌词音频(.*)?$/)[2]
         let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
         const API = JSON.parse(data)
-        let api = API.api1.url + `?name=${type}&skey=${skey}&skey=${skey}&format=lrc&n=${n}&br=4`
-        if (n == '') {
-            let api = API.api1.url + `?name=${type}&skey=${skey}&skey=${skey}&format=lrc&n=1&br=4`
+        let api;
+        if (!n) {
+            api = `${API.api1.url}?name=${type}&format=lrc&n=1&br=4`;
+        } else {
+            api = `${API.api1.url}?name=${type}&format=lrc&n=${n}&br=4`;
+        }
+        try {
             let jx = await fetch(api)
             const Data = await (jx).json()
             let code = Data['code']
             if (code != '0') {
                 e.reply([`请求失败,请稍后再试或联系管理员!`])
+                return true
+            }
+            if (code == '-201') {
+                e.reply([`暂无搜索结果`])
                 return true
             }
             const lyrics = Data['data']['lrc']['content']
@@ -139,70 +129,41 @@ export class geci extends plugin {
             const cleaned = clean(lyrics);
             e.reply(cleaned)
             return true
-        }
-        let jx = await fetch(api)
-        const Data = await (jx).json()
-        let code = Data['code']
-        if (code != '0') {
-            e.reply([`请求失败,请稍后再试或联系管理员!`])
+        } catch (error) {
+            console.error('Error occurred:', error);
+            e.reply(['操作失败，请检查输入或稍后重试。']);
             return true
         }
-        if (code == '-201') {
-            e.reply([`暂无搜索结果`])
+    }
+    async yp(e) {
+        const type = e.msg.match(/^[#/]?(.*)音频(.*)?$/)[1]
+        const n = e.msg.match(/^[#/]?(.*)音频(.*)?$/)[2]
+        let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
+        const API = JSON.parse(data)
+        let api;
+        if (!n) {
+            api = `${API.api1.url}?name=${type}&format=lrc&n=1&br=4`;
+        } else {
+            api = `${API.api1.url}?name=${type}&format=lrc&n=${n}&br=4`;
+        }
+        try {
+            let jx = await fetch(api)
+            const Data = await (jx).json()
+            let code = Data['code']
+            if (code != '0') {
+                e.reply([`请求失败,请稍后再试或联系管理员!`])
+                return true
+            }
+            if (code == '-201') {
+                e.reply([`暂无搜索结果`])
+                return true
+            }
+            e.reply(segment.record(Data['data']['src']))
+            return true
+        } catch (error) {
+            console.error('Error occurred:', error);
+            e.reply(['操作失败，请检查输入或稍后重试。']);
             return true
         }
-        const lyrics = Data['data']['lrc']['content']
-        if (lyrics === undefined) {
-            e.reply(['没有找到歌词数据，请确认歌曲名称是否正确。']);
-            return true;
-        }
-        e.reply(segment.record(Data['data']['src']))
-        const cleaned = clean(lyrics);
-        e.reply(cleaned)
-        return true
     }
-
-
-async yp(e) {
-    const type = e.msg.match(/^[#/]?(.*)音频(.*)?$/)[1]
-    const n = e.msg.match(/^[#/]?(.*)音频(.*)?$/)[2]
-    let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
-    let QQskey = await fs.readFileSync(`./plugins/${Plugin_Name}/config/QQskey.json`)
-    const Qskey = JSON.parse(QQskey)
-    let skey = Qskey.data
-    const API = JSON.parse(data)
-    let api = API.api1.url + `?name=${type}&skey=${skey}&format=lrc&n=${n}&br=4`
-    if (n == '') {
-        let api = API.api1.url + `?name=${type}&skey=${skey}&format=lrc&n=1&br=4`
-        let jx = await fetch(api)
-        const Data = await (jx).json()
-        let code = Data['code']
-        if (code != '0') {
-            e.reply([`请求失败,请稍后再试或联系管理员!`])
-            return true
-        }
-        const lyrics = Data['data']['lrc']['content']
-        if (lyrics === undefined) {
-            e.reply(['没有找到歌词数据，请确认歌曲名称是否正确。']);
-            return true;
-        }
-        e.reply(segment.record(Data['data']['src']))
-        const cleaned = clean(lyrics);
-        e.reply(cleaned)
-        return true
-    }
-    let jx = await fetch(api)
-    const Data = await (jx).json()
-    let code = Data['code']
-    if (code != '0') {
-        e.reply([`请求失败,请稍后再试或联系管理员!`])
-        return true
-    }
-    if (code == '-201') {
-        e.reply([`暂无搜索结果`])
-        return true
-    }
-    e.reply(segment.record(Data['data']['src']))
-    return true
-}
 }
