@@ -244,6 +244,11 @@ export const bqbhelpList = [
         title: "#随机kemomimi表情包",
         desc: "兽耳酱"
       },
+      {
+        icon: 312,
+        title: "#随机表情包",
+        desc: "随机输出一张表情包"
+      }
     ]
   }
 ]
