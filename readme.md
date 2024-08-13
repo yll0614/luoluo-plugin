@@ -28,9 +28,9 @@ git clone https://mirror.ghproxy.com/https://github.com/yll0614/luoluo-plugin.gi
 git clone https://github.moeyy.xyz/https://github.com/yll0614/luoluo-plugin.git ./plugins/luoluo-plugin/
 ```
 ### 方式二:手动下载插件
-下载仓库解压zip文件将luoluo-plugin-master放入Yunzai/Miao-Yunzai的/plugins目录下重命名去掉后面的-main
+下载仓库解压zip文件将luoluo-plugin-main放入Yunzai/Miao-Yunzai的/plugins目录下重命名去掉后面的<u>-main</u>
 
-<img src='https://gitee.com/yll0614/img/raw/master/Download%E4%BB%93%E5%BA%93.png'  alt='Download'></img>
+<img src='https://gitee.com/yll0614/img/raw/master/Download-luoluo-plugin.png'  alt='Download-luoluo-plugin.png'></img>
 </div>
 
  ## 其他  
