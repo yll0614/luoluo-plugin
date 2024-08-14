@@ -3,7 +3,7 @@ import fs from 'fs'
 import plugin from '../../../lib/plugins/plugin.js'
 import { Plugin_Name } from '../components/index.js'
 
-export class geci extends plugin {
+export class changya extends plugin {
     constructor() {
         super({
             name: '唱鸭',
