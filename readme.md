@@ -62,6 +62,7 @@ git clone https://github.moeyy.xyz/https://github.com/yll0614/luoluo-plugin.git 
 | [@君昭](https://gitee.com/jun-zhaojinzhaoei) | 部分API*1 |
 | [@XY-API](https://api.yugan.love/) | 部分API*1  |
 | [@小小API](https://api-m.com/) | 部分API*1  |
+| [@ZuzoAPI](https://api.zuzo.cc/) | 部分API*1  |
 
 
 
