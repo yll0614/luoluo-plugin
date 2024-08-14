@@ -68,7 +68,7 @@ export class geci extends plugin {
             return true
         } catch (error) {
             console.error('Error occurred:', error);
-            e.reply(['操作失败，请检查输入或稍后重试。']);
+            e.reply([`发生错误: ${error.message}`]);
             return true
         }
     }
@@ -109,7 +109,7 @@ export class geci extends plugin {
         try {
             let jx = await fetch(api)
             const Data = await (jx).json()
-            //不知道为什么则一段不注释就一直返回 请求失败,请稍后再试或联系管理员!
+            //不知道为什么这一段不注释就一直返回 请求失败,请稍后再试或联系管理员!
             /* if (Data['code'] !== '0') {
                  if (Data['code'] === '-201') {
                      e.reply(['暂无搜索结果']);
@@ -125,11 +125,12 @@ export class geci extends plugin {
             }
             const cleaned = clean(lyrics);
             e.reply(cleaned)
+            e.reply(`请等待音频输出 具体所需时间视设备性能而定`)
             e.reply(segment.record(Data['data']['src']))
             return true
         } catch (error) {
             console.error('Error occurred:', error);
-            e.reply(['操作失败，请检查输入或稍后重试。']);
+            e.reply([`发生错误: ${error.message}`]);
             return true
         }
     } async yp(e) {
@@ -154,11 +155,12 @@ export class geci extends plugin {
                 }
                 return true;
             }
+            e.reply(`请等待音频输出 具体所需时间视设备性能而定`)
             e.reply(segment.record(Data['data']['src']))
             return true
         } catch (error) {
             console.error('Error occurred:', error);
-            e.reply(['操作失败，请检查输入或稍后重试。']);
+            e.reply([`发生错误: ${error.message}`]);
             return true
         }
     }
