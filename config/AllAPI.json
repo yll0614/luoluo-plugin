@@ -86,5 +86,9 @@
     "api22": {
         "name": "随机表情包君昭API",
         "url": "https://api.junzhao.icu/aili"
+    },
+    "api23": {
+        "name": "唱鸭API",
+        "url": "https://free.wqwlkj.cn/wqwlapi/singduck.php"
     }
 }
