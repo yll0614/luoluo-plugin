@@ -151,7 +151,7 @@ export class geci extends plugin {
                 if (Data['code'] === '-201') {
                     e.reply(['暂无搜索结果']);
                 } else {
-                    e.reply([`请求失败,请稍后再试或联系管理员!${type}`]);
+                    e.reply([`请求失败,请稍后再试或联系管理员!`]);
                 }
                 return true;
             }
