@@ -68,6 +68,11 @@ export const helpList = [
       desc: "获取歌词+音频 可配合列表使用 在歌词后方加数字选取不同版本"
     },
     {
+      icon: 48,
+      title: "#唱鸭",
+      desc: "随机唱鸭"
+    },
+    {
       icon: 39,
       title: "#随机表情包",
       desc: "获取表情包 详情请查看落落表情包帮助"

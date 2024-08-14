@@ -5,9 +5,9 @@
 
  ###### 访问量<br><img src="https://count.moeyy.cn/get/@:yueyuez/"/></br>
 
- ## 插件功能 [v2.3.4](./CHANGELOG.md)
-<img src='https://gitee.com/yll0614/img/raw/master/v2.3.4help.jpg'  alt='Help'></img>  
-<img src='https://gitee.com/yll0614/img/raw/master/v2.3.4bqbhelp.jpg'  alt='BqbHelp'></img>  
+ ## 插件功能 [v2.3.5](./CHANGELOG.md)
+<img src='https://gitee.com/yll0614/img/raw/master/v2.3.5.jpg'  alt='Help'></img>  
+<img src='https://gitee.com/yll0614/img/raw/master/v2.3.5bqb.jpg'  alt='BqbHelp'></img>  
 
  ## 安装教程  
 ### 方式一:通过git下载插件  
