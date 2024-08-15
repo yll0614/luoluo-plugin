@@ -22,10 +22,10 @@ git clone https://github.com/yll0614/luoluo-plugin.git ./plugins/luoluo-plugin/
 ```
 ***若拉取速度慢/无法访问 可通过镜像加速***
 ```sh
-#Github-通过Ghproxy镜像加速
+#Github-通过mirror.ghproxy.com镜像加速
 git clone https://mirror.ghproxy.com/https://github.com/yll0614/luoluo-plugin.git ./plugins/luoluo-plugin/
-#Github-通过Moeyy镜像加速
-git clone https://github.moeyy.xyz/https://github.com/yll0614/luoluo-plugin.git ./plugins/luoluo-plugin/
+#Github-通过ghproxy.net镜像加速
+git clone https://ghproxy.net/https://github.com/yll0614/luoluo-plugin.git ./plugins/luoluo-plugin/
 ```
 ### 方式二:手动下载插件
 下载仓库解压zip文件将luoluo-plugin-main放入Yunzai/Miao-Yunzai的/plugins目录下重命名去掉后面的<u>-main</u>
