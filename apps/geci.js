@@ -50,6 +50,7 @@ export class geci extends plugin {
         try {
             let jx = await fetch(api)
             const Data = await (jx).json()
+            /*
             if (Data['code'] !== '0') {
                 if (Data['code'] === '-201') {
                     e.reply(['暂无搜索结果']);
@@ -58,6 +59,7 @@ export class geci extends plugin {
                 }
                 return true;
             }
+                */
             const lyrics = Data['data']['lrc']['content']
             if (lyrics === undefined) {
                 e.reply(['没有找到歌词数据，请确认歌曲名称是否正确。']);
@@ -79,6 +81,7 @@ export class geci extends plugin {
         let api = API.api1.url + `?name=${type}`
         let jx = await fetch(api)
         const Data = await (jx).json()
+        /*
         if (Data['code'] !== '0') {
             if (Data['code'] === '-100') {
                 e.reply(['暂无搜索结果']);
@@ -87,6 +90,7 @@ export class geci extends plugin {
             }
             return true;
         }
+            */
         let msg = [];
         for (let i = 0; i < Math.min(Data['data'].length, 10); i++) {
             const song = Data['data'][i];
@@ -147,6 +151,7 @@ export class geci extends plugin {
         try {
             let jx = await fetch(api)
             const Data = await (jx).json()
+            /*
             if (Data['code'] !== '0') {
                 if (Data['code'] === '-201') {
                     e.reply(['暂无搜索结果']);
@@ -155,6 +160,7 @@ export class geci extends plugin {
                 }
                 return true;
             }
+                */
             e.reply(`请等待音频输出 具体所需时间视设备性能而定`)
             e.reply(segment.record(Data['data']['src']))
             return true
