@@ -43,6 +43,7 @@ git clone https://ghproxy.net/https://github.com/yll0614/luoluo-plugin.git ./plu
 
 - QQ：[2443958507(高一小白)](https://qm.qq.com/cgi-bin/qm/qr?k=Vzr6Z6yISyfTNKic29xQEattdPxHldPW)
 <br/>
+
 - 有没有觉得这个Readme和哪个插件相似?是的这个Readme就是是借鉴 [@xwy](https://gitee.com/xwy231321)的 [ql-plugin](https://gitee.com/xwy231321/ql-plugin)的Readme,部分逻辑也与其插件相似 (已经其本人同意)
 <br/>
 如果可以的话 给本项目个star 来支持本项目 您的支持就是给我的最大的鼓励 谢谢
