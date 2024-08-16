@@ -129,7 +129,7 @@ export class geci extends plugin {
             }
             const cleaned = clean(lyrics);
              e.reply(`请等待音频输出 具体所需时间视设备性能而定`)
-             await e.reply(segment.record(Data['data']['src']))
+             e.reply(segment.record(Data['data']['src']))
              e.reply(cleaned)           
             return true
         } catch (error) {
@@ -161,7 +161,7 @@ export class geci extends plugin {
                 return true;
             }
                 */
-            await e.reply(`请等待音频输出 具体所需时间视设备性能而定`)
+            e.reply(`请等待音频输出 具体所需时间视设备性能而定`)
             e.reply(segment.record(Data['data']['src']))
             return true
         } catch (error) {
