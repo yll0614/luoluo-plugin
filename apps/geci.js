@@ -18,27 +18,27 @@ export class geci extends plugin {
             priority: 5000,
             rule: [
                 {
-                    reg: '^[#/]?(.*)歌词(.*)$',
+                    reg: '^[#/](.*)歌词(.*)$',
                     fnc: 'geci'
                 },
                 {
-                    reg: '^[#/]?(.*)列表$',
+                    reg: '^[#/](.*)列表$',
                     fnc: 'gecilb'
                 },
                 {
-                    reg: '^[#/]?(.*)歌曲(.*)$',
+                    reg: '^[#/](.*)歌曲(.*)$',
                     fnc: 'gequ'
                 },
                 {
-                    reg: '^[#/]?(.*)音频(.*)$',
+                    reg: '^[#/](.*)音频(.*)$',
                     fnc: 'yp'
                 }
             ]
         })
     }
     async geci(e) {
-        const type = e.msg.match(/^[#/]?(.*)歌词(.*)?$/)[1]
-        const n = e.msg.match(/^[#/]?(.*)歌词(.*)?$/)[2]
+        const type = e.msg.match(/^[#/](.*)歌词(.*)?$/)[1]
+        const n = e.msg.match(/^[#/](.*)歌词(.*)?$/)[2]
         let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
         const API = JSON.parse(data)
         let api;
@@ -75,7 +75,7 @@ export class geci extends plugin {
         }
     }
     async gecilb(e) {
-        const type = e.msg.match(/^[#/]?(.*)列表$/)[1]
+        const type = e.msg.match(/^[#/](.*)列表$/)[1]
         let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
         const API = JSON.parse(data)
         let api = API.api1.url + `?name=${type}`
@@ -100,8 +100,8 @@ export class geci extends plugin {
         return true
     }
     async gequ(e) {
-        const type = e.msg.match(/^[#/]?(.*)歌曲(.*)?$/)[1]
-        const n = e.msg.match(/^[#/]?(.*)歌曲(.*)?$/)[2]
+        const type = e.msg.match(/^[#/](.*)歌曲(.*)?$/)[1]
+        const n = e.msg.match(/^[#/](.*)歌曲(.*)?$/)[2]
         let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
         const API = JSON.parse(data)
         let api;
@@ -138,8 +138,8 @@ export class geci extends plugin {
             return true
         }
     } async yp(e) {
-        const type = e.msg.match(/^[#/]?(.*)音频(.*)?$/)[1]
-        const n = e.msg.match(/^[#/]?(.*)音频(.*)?$/)[2]
+        const type = e.msg.match(/^[#/](.*)音频(.*)?$/)[1]
+        const n = e.msg.match(/^[#/](.*)音频(.*)?$/)[2]
         let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
         const API = JSON.parse(data)
         let api;
