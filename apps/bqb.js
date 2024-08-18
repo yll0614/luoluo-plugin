@@ -48,7 +48,7 @@ export class bqb extends plugin {
         ) {
             let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`);
             const API = JSON.parse(data)
-            let api = API.api5.url + `?name=猫羽雫`
+            let api = API.api5.url + `?name=甘城猫猫`
             await e.reply(segment.image(api));
             return true
         }
