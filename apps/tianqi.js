@@ -24,20 +24,20 @@ export class tianqi extends plugin {
         const API = JSON.parse(data);
         let api = API.api6.url + `?city=${msg}`;
         let jx = await fetch(api);
-        const Data = await jx.json();
+        const Data = await jx.json();    
         let code = Data['code'];
         if (code === '-2') {
             e.reply(['请确认您的城市是否填写正确']);
             return true;
-        }
+        } 
         if (code === '-4') {
             e.reply(['缺少参数，请在命令前添加城市名称']);
             return true;
-        }
+        }/*
         if (code !== '200') {
             e.reply(['请求失败,请稍后再试或联系管理员!']);
             return true;
-        }
+        }*/
         let citymsg = Data['data']['city'];
         let msg0 = Data['data']['data'][0]['date'];
         let msg1 = Data['data']['data'][0]['air_quality'];
