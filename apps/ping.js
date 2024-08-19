@@ -26,10 +26,10 @@ export class ping extends plugin {
         let jx = await fetch(api);
         const Data = await jx.json();
         let code = Data['code'];
-        if (code !== '200') {
+       /* if (code !== '200') {
             e.reply([`访问主机失败,请检查IP地址或域名是否正确输入或稍后再试!`]);
             return true;
-        }
+        }*/
         let msg0 = Data['data']['node'];
         let msg1 = Data['data']['host'];
         let msg2 = Data['data']['ip'];
