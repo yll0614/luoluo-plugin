@@ -90,7 +90,7 @@ export const helpList = [
     {
       icon: 132,
       title: "#谁艾特我",  
-      desc: "查看10天内的艾特你的人及其内容"
+      desc: "查看4天内的艾特你的人及其内容,不支持face表情"
     },
     {
       icon: 164,
