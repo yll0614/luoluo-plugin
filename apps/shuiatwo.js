@@ -1,11 +1,10 @@
 import plugin from '../../../lib/plugins/plugin.js'
 import moment from "moment"
 
-let time = 240 //这里设置at数据保留多久 单位:小时 填大于0的纯数字
+let time = 96 //这里设置at数据保留多久 单位:小时 填大于0的纯数字
 
 Bot.on("message.group", async (e) => {
   let imgUrls = []
-  let faceId = []
   let AtQQ = []
   for (let msg of e.message) {
 
@@ -15,9 +14,6 @@ Bot.on("message.group", async (e) => {
     }
     if (msg.type == 'image') {
       imgUrls.push(msg.url)
-    }
-    if (msg.type == 'face') {
-      faceId.push(msg.id)
     }
 
   }
@@ -51,8 +47,7 @@ Bot.on("message.group", async (e) => {
         User: e.user_id,
         message: e.raw_message,
         image: imgUrls,
-        name: e.nickname,
-        faceId: faceId,
+        name: e.sender.card,
         time: e.time,
         messageId: reply ? reply.message_id : ''
       }
@@ -72,8 +67,7 @@ Bot.on("message.group", async (e) => {
       User: e.user_id,
       message: e.raw_message,
       image: imgUrls,
-      name: e.nickname,
-      faceId: faceId,
+      name: e.sender.card,
       time: e.time,
       endTime: dateTime,
       messageId: reply ? reply.message_id : ''
@@ -131,25 +125,26 @@ export class whoAtme extends plugin {
 
     for (let i = 0; i < data.length; i++) {
       let msg = []
+
       msg.push(data[i].messageId ? {
         type: 'reply',
         id: data[i].messageId
       } : '')
       msg.push(data[i].message)
+      /*
       for (let face of data[i].faceId) {
-        msg.push(segment.face(face))
+        msg.push(`\n该消息含有Face表情,暂不支持Face表情消息!`)
       }
-
+*/
       for (let img of data[i].image) {
-        msg.push(segment.image(img))
+        msg.push(`\n该消息含有图片,不支持图片消息!`)
       }
-
       msgList.push({
-        message: msg,
-        user_id: data[i].User,
-        nickname: data[i].name,
-        time: data[i].time
-      })
+        message: `发送者名称: ${data[i].name}\n` +
+        `发送者QQ:${data[i].User}\n` +
+        `发送时间:${moment(data[i].time * 1000).format('YYYY-MM-DD HH:mm:ss')}\n` +
+        `消息内容:${msg.filter(Boolean).join('')}`,
+        });
     }
 
     let forwardMsg = await e.group.makeForwardMsg(msgList)
