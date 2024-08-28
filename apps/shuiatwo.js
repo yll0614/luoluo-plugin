@@ -33,7 +33,7 @@ Bot.on("message.group", async (e) => {
     for (let i of gm) {
       groupMember.push(i[0])
     }
-     AtQQ = groupMember
+    AtQQ = groupMember
   }
   for (let i = 0; i < AtQQ.length; i++) {
     data = JSON.parse(await redis.get(`Yz:whoAtme:${e.group_id}_${AtQQ[i]}`))
@@ -87,18 +87,18 @@ export class whoAtme extends plugin {
       event: 'message',
       priority: -114514,
       rule: [{
-          reg: '^(谁(艾特|@|at)(我|他|她|它)|哪个逼(艾特|@|at)我)$',
-          fnc: 'whoAtme',
-        },
-        {
-          reg: '^(/clear_at|清除(艾特|at)数据)$',
-          fnc: 'clearAt',
-        },
-        {
-          reg: '^(/clear_all|清除全部(艾特|at)数据)$',
-          fnc: 'clearAll',
-          permission: 'master'
-        }
+        reg: '^(谁(艾特|@|at)(我|他|她|它)|哪个逼(艾特|@|at)我)$',
+        fnc: 'whoAtme',
+      },
+      {
+        reg: '^(/clear_at|清除(艾特|at)数据)$',
+        fnc: 'clearAt',
+      },
+      {
+        reg: '^(/clear_all|清除全部(艾特|at)数据)$',
+        fnc: 'clearAll',
+        permission: 'master'
+      }
       ]
     })
   }
@@ -131,20 +131,16 @@ export class whoAtme extends plugin {
         id: data[i].messageId
       } : '')
       msg.push(data[i].message)
-      /*
-      for (let face of data[i].faceId) {
-        msg.push(`\n该消息含有Face表情,暂不支持Face表情消息!`)
-      }
-*/
+
       for (let img of data[i].image) {
         msg.push(`\n该消息含有图片,不支持图片消息!`)
       }
       msgList.push({
-        message: `发送者名称: ${data[i].name}\n` +
-        `发送者QQ:${data[i].User}\n` +
-        `发送时间:${moment(data[i].time * 1000).format('YYYY-MM-DD HH:mm:ss')}\n` +
-        `消息内容:${msg.filter(Boolean).join('')}`,
-        });
+        message: `发送者名称: ${data[i].name}\n` + 
+          `发送者QQ:${data[i].User}\n` +
+          `发送时间:${moment(data[i].time * 1000).format('YYYY-MM-DD HH:mm:ss')}\n` +
+          `消息内容:${msg.filter(Boolean).join('')}`,
+      });
     }
 
     let forwardMsg = await e.group.makeForwardMsg(msgList)
