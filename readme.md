@@ -55,7 +55,8 @@ git clone https://ghproxy.net/https://github.com/yll0614/luoluo-plugin.git ./plu
 |-----|-----------|
 | [@xwy](https://gitee.com/xwy231321) | Readme及部分逻辑   | 
 | [@Tloml-Starry](https://gitee.com/Tloml-Starry) | JSON读取方式  |
-| [@心愿XY](https://gitee.com/hgh123520) | 插件热更新  |
+| [@维拉](https://gitee.com/com190238) | 好耶~ 是奶茶一杯~  |
+| [@心愿XY](https://gitee.com/hgh123520) | 插件更新  |
 | [@TenAPI](https://tenapi.cn/) | 部分API*10 |
 | [@山河API](https://shanhey.cn/) | 部分API*3  |
 | [@故梦API](https://www.gumengya.com/) | 部分API*2  |
