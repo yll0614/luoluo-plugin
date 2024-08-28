@@ -77,9 +77,9 @@ Yunzai-Bot插件库：[☞Github](https://github.com/yhArcadia/Yunzai-Bot-plugin
 
 Yunzai-Bot（V3）：[☞Github](https://github.com/Le-niao/Yunzai-Bot)/[☞Gitee](https://gitee.com/Le-niao/Yunzai-Bot) 
 
-luolo-plugin：[☞Gitee](https://gitee.com/yll0614/luoluo-plugin)/[☞Github](https://github.com/yll0614/luoluo-plugin)
+luolo-plugin：[☞Github](https://github.com/yll0614/luoluo-plugin)/[☞Gitee](https://gitee.com/yll0614/luoluo-plugin)
 
-ql-plugin：[☞Gitee](https://gitee.com/xwy231321/ql-plugin)/[☞Github](https://github.com/xwy231321/ql-plugin)
+ql-plugin：[☞Github](https://github.com/xwy231321/ql-plugin)/[☞Gitee](https://gitee.com/xwy231321/ql-plugin)
 
 
 </div>
