@@ -6,7 +6,7 @@
  ###### 访问量<br><img src="https://count.moeyy.cn/get/@:yueyuez/"/></br>
 
  ## 插件功能 [v2.3.7](./CHANGELOG.md)
-<img src='https://itee.com/yll0614/img/raw/master/v2.3.7.jpg'  alt='Help'></img>  
+<img src='https://gitee.com/yll0614/img/raw/master/v2.3.7.jpg'  alt='Help'></img>  
 <img src='https://gitee.com/yll0614/img/raw/master/v2.3.7bqb.jpg'  alt='BqbHelp'></img>  
 
  ## 安装教程  
