@@ -11,14 +11,14 @@ export class wyjt extends plugin {
             priority: 5000,
             rule: [
                 {
-                    reg: '^[#/]?截图(.*)$',
+                    reg: '^[#/]?网页截图(.*)$',
                     fnc: 'wyjt'
                 }
             ]
         })
     }
     async wyjt(e) {
-        const msg = e.msg.match(/^[#/]?截图(.*)$/)[1]
+        const msg = e.msg.match(/^[#/]?网页截图(.*)$/)[1]
         let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
         const API = JSON.parse(data)
         let api = API.api9.url + `?url=${msg}`
