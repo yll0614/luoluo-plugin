@@ -153,6 +153,11 @@ export const helpList = [
       desc: "生成一张小人举牌图片 在举牌后面加内容"
     },
     {
+      icon: 25,
+      title: "#网页截图",
+      desc: "网页截图 在命令后加网址"
+    },
+    {
       icon: 211,
       title: "#落落表情包帮助",
       desc: "表情包帮助"
