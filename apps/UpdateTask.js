@@ -12,6 +12,17 @@ init();
 
 export class CodeUpdateTask extends plugin {
     constructor() {
+        super({
+            name: "落落插件检查更新",
+            event: "message",
+            priority: 1000,
+            rule: [
+              {
+                reg: "^#?(ll|LL|Ll|lL|luoluo|落落|luoluo插件|ll插件|LL插件|Ll插件|lL插件|luoluo插件)检查更新$",
+                fnc: "autoUpdatePush"
+              }
+            ]
+          })
         this.task = {
             cron: '0 */5 * * * *', // Cron表达式，(秒 分 时 日 月 星期)
             name: 'luoluo-plugin定时检查更新',
