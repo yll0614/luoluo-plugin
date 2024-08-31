@@ -19,6 +19,10 @@ export class wyjt extends plugin {
         })
     }
     async wyjt(e) {
+        if (CONFIG_YAML.wyjt == false) {
+            logger.error('网页截图已关闭');
+            return false
+        }
         const msg = e.msg.match(/^[#/]?网页截图(.*)$/)[1]
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
         const API = JSON.parse(data)

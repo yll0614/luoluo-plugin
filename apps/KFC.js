@@ -20,6 +20,10 @@ export class KFC extends plugin {
         })
     }
     async KFC(e) {
+        if (CONFIG_YAML.KFC == false) {
+            logger.error('哔哩哔哩热搜榜已关闭');
+            return false
+        }
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
         const API = JSON.parse(data)
         let api = API.api21.url

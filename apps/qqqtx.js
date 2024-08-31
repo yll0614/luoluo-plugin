@@ -19,6 +19,10 @@ export class qqqtx extends plugin {
         })
     }
     async qqqtx(e) {
+        if (CONFIG_YAML.qqqtx == false) {
+            logger.error('QQ群头像已关闭');
+            return false
+        }
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
         const API = JSON.parse(data)
         let api = API.api11.url + `?qun=${e.group_id}`

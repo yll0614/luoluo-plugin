@@ -19,6 +19,10 @@ export class qqtx extends plugin {
         })
     }
     async qqtx(e) {
+        if (CONFIG_YAML.qqtx == false) {
+            logger.error('举牌已关闭');
+            return false
+        }
         let user_id = e.at || e.user_id
         user_id = Number(user_id) || String(user_id)
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)

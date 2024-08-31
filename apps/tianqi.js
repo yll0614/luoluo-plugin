@@ -20,6 +20,10 @@ export class tianqi extends plugin {
         });
     }
     async cstq(e) {
+        if (CONFIG_YAML.tianqi == false) {
+            logger.error('天气已关闭');
+            return false
+        }
         const msg = e.msg.match(/^[#/]?(.*)天气$/)[1];
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`);
         const API = JSON.parse(data);

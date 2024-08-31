@@ -19,6 +19,10 @@ export class ljfl extends plugin {
         })
     }
     async ljfl(e) {
+        if (CONFIG_YAML.ljfl == false) {
+            logger.error('哔哩哔哩热搜榜已关闭');
+            return false
+        }
         const msg = e.msg.match(/^[#/]?(.*)是什么垃圾$/)[1]
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
         const API = JSON.parse(data)

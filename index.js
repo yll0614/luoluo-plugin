@@ -1,5 +1,6 @@
+import { fileURLToPath } from 'url';
 import fs from 'fs/promises';
-import path from 'path'
+import path from 'path';
 let is_icqq = false;
 let is_oicq = false;
 let loadedFilesCount = 0;
@@ -19,6 +20,33 @@ try {
 if (!global.segment) {
     global.segment = (await import("oicq")).segment
 }
+
+// 获取当前文件的绝对路径
+let __filename = fileURLToPath(import.meta.url);
+// 获取当前文件所在目录的绝对路径
+let __dirname = path.dirname(__filename);
+
+let ConfigPath = __dirname;
+
+async function ensureFileExists(src, dest) {
+  try {
+    const fileExists = await fs.access(dest).then(() => true).catch(() => false);
+    if (!fileExists) {
+      await fs.copyFile(src, dest);
+    }
+  } catch (err) {
+    console.error(`落落插件载入错误`, err.message);
+    
+  }
+}
+
+async function main() {
+  await ensureFileExists(path.join(ConfigPath, 'config/defSet/config.yaml'), path.join(ConfigPath, 'config/config.yaml'));
+  await ensureFileExists(path.join(ConfigPath, 'config/defSet/QQskey.json'), path.join(ConfigPath, 'config/QQskey.json'));
+}
+
+main();
+
 logger.info('------（-＾〇＾-）-----')
 logger.info('落落插件初始化完成')
 logger.info('-----(/^▽^)/------')
@@ -70,10 +98,9 @@ async function appsOut({ AppsName }) {
   } catch (error) {
     logger.error('读取插件目录失败:', error.message);
   }
-
+  
   return { apps, loadedFilesCount, loadedFilesCounterr };
 }
-
 
 async function traverseDirectory(dir) {
   try {

@@ -20,6 +20,10 @@ export class toutiaohot extends plugin {
         })
     }
     async toutiaohot(e) {
+        if (CONFIG_YAML.toutiaohot == false) {
+            logger.error('今日头条热搜榜已关闭');
+            return false
+        }
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
         const API = JSON.parse(data)
         let api = API.api17.url

@@ -19,6 +19,10 @@ export class sjdmt extends plugin {
         })
     }
         async sjdmt(e) {
+        if (CONFIG_YAML.sjdmt == false) {
+            logger.error('随机动漫图已关闭');
+            return false
+        }
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
         const API = JSON.parse(data)
         let api = API.api12.url + `?format=json`

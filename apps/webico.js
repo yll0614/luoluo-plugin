@@ -19,6 +19,10 @@ export class webico extends plugin {
         })
     }
     async webico(e) {
+        if (CONFIG_YAML.webico == false) {
+            logger.error('网站图标已关闭');
+            return false
+        }
         const msg = e.msg.match(/^[#/]?网站图标(.*)$/)[1]
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
         const API = JSON.parse(data)
