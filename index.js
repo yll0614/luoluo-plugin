@@ -42,7 +42,7 @@ async function ensureFileExists(src, dest) {
 
 async function main() {
   await ensureFileExists(path.join(ConfigPath, 'config/defSet/config.yaml'), path.join(ConfigPath, 'config/config.yaml'));
-  await ensureFileExists(path.join(ConfigPath, 'config/defSet/QQSkey.json'), path.join(ConfigPath, 'config/QQSkey.json'));
+  await ensureFileExists(path.join(ConfigPath, 'config/defSet/QQskey.json'), path.join(ConfigPath, 'config/QQskey.json'));
 }
 
 main();
