@@ -66,7 +66,7 @@ export class setting extends plugin {
             '谁艾特我': 'shuianwo',
             '是什么垃圾': 'ljfl',
             '随机动漫图': 'sjdmt',
-            '哔哩哔哩热搜榜': 'bilhot',
+            '哔哩哔哩热搜榜': 'bilihot',
             '知乎热搜榜': 'zhihuhot',
             '抖音热搜榜': 'douyinhot',
             '今日头条热搜榜': 'toutiaohot',
