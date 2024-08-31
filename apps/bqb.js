@@ -1,7 +1,8 @@
 import fs from 'fs';
 import plugin from '../../../lib/plugins/plugin.js';
 import { Plugin_Path } from '../components/index.js'
-
+import YAML from 'yaml'
+let CONFIG_YAML = YAML.parse(fs.readFileSync(`${Plugin_Path}/config/config.yaml`, 'utf8'));
 export class bqb extends plugin {
     constructor() {
         super({
@@ -18,6 +19,10 @@ export class bqb extends plugin {
         })
     }
     async bqb(e) {
+        if (CONFIG_YAML.bilhot == false) {
+            logger.error('随机表情包已关闭');
+            return true
+        }
         const type = e.msg.match(/^#?随机(.*)表情包$/)[1];
         if (
             type !== '甘城' &&
