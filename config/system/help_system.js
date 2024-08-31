@@ -163,6 +163,11 @@ export const helpList = [
       desc: "表情包帮助"
     },
     {
+      icon: 66,
+      title: "#落落设置帮助",
+      desc: "设置帮助"
+    },
+    {
       icon: 67,
       title: "#落落插件更新",
       desc: "更新插件"
@@ -272,6 +277,43 @@ export const bqbhelpList = [
         icon: 312,
         title: "#随机表情包",
         desc: "随机输出一张表情包"
+      }
+    ]
+  }
+]
+
+export const settinghelpCfg = {
+  title: '设置帮助',
+  subTitle: 'Yunzai-Bot & luoluo-Plugin',
+  columnCount: 3,
+  colWidth: 265,
+  theme: 'all',
+  themeExclude: ['default'],
+  style: {
+    fontColor: '#ceb78b',
+    descColor: '#eee',
+    contBgColor: 'rgba(6, 21, 31, .5)',
+    contBgBlur: 3,
+    headerBgColor: 'rgba(6, 21, 31, .4)',
+    rowBgColor1: 'rgba(6, 21, 31, .2)',
+    rowBgColor2: 'rgba(6, 21, 31, .35)'
+  },
+  bgBlur: false
+}
+
+export const settinghelpList = [
+  {
+    group: '可不加#前缀',
+    list: [
+      {
+        icon: 8,
+        title: "#落落设置更新推送开启/关闭",
+        desc: "开启/关闭更新推送 默认开启"
+      },
+      {
+        icon: 79,
+        title: "#落落设置哔哩哔哩解析开启/关闭",
+        desc: "开启/关闭哔哩哔哩视频解析 默认开启"
       }
     ]
   }
