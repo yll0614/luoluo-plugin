@@ -1,6 +1,6 @@
 import fs from 'fs'
 import plugin from '../../../lib/plugins/plugin.js'
-import { Plugin_Name } from '../components/index.js'
+import { Plugin_Path } from '../components/index.js'
 
 export class qqtx extends plugin {
 
@@ -21,7 +21,7 @@ export class qqtx extends plugin {
     async qqtx(e) {
         let user_id = e.at || e.user_id
         user_id = Number(user_id) || String(user_id)
-        let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
+        let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
         const API = JSON.parse(data)
         let api = API.api10.url + `?qq=${user_id}`
          e.reply([segment.image(`${api}`)])
