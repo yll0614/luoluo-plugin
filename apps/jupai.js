@@ -1,6 +1,6 @@
 import fs from 'fs'
 import plugin from '../../../lib/plugins/plugin.js'
-import { Plugin_Name } from '../components/index.js'
+import {Plugin_Path } from '../components/index.js'
 
 export class jupai extends plugin {
         constructor() {
@@ -19,7 +19,7 @@ export class jupai extends plugin {
     }
     async jupai(e) {
         const msg = e.msg.match(/^[#/]?举牌(.*)$/)[1]
-        let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
+        let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
         const API = JSON.parse(data)
         let api = API.api19.url + `?msg=${msg}`
         e.reply([segment.image(`${api}`)])
