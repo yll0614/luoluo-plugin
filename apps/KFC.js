@@ -1,7 +1,7 @@
 import fetch from "node-fetch"
 import fs from 'fs'
 import plugin from '../../../lib/plugins/plugin.js'
-import { Plugin_Name } from '../components/index.js'
+import { Plugin_Path } from '../components/index.js'
 
 export class KFC extends plugin {
     constructor() {
@@ -19,7 +19,7 @@ export class KFC extends plugin {
         })
     }
     async KFC(e) {
-        let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
+        let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
         const API = JSON.parse(data)
         let api = API.api21.url
         const response = await fetch(api)
