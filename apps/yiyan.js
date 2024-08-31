@@ -1,7 +1,7 @@
 import fetch from "node-fetch"
 import fs from 'fs'
 import plugin from '../../../lib/plugins/plugin.js'
-import { Plugin_Name } from '../components/index.js'
+import { Plugin_Path } from '../components/index.js'
 
 async function LLAPITOGO(e, API) {
         let api = API.api2.url + `?format=json`
@@ -37,7 +37,7 @@ export class yiyan extends plugin {
     }
     async yiyan(e) {
         const emsg = e.msg.match(/^[#/]?一言(.*)$/)[1]
-        let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
+        let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
         const API = JSON.parse(data)
         if (emsg == 'json') {
             return LLAPITOGO(e, API);
