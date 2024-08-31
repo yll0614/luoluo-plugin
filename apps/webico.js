@@ -1,6 +1,6 @@
 import fs from 'fs'
 import plugin from '../../../lib/plugins/plugin.js'
-import { Plugin_Name } from '../components/index.js'
+import { Plugin_Path } from '../components/index.js'
 
 export class webico extends plugin {
     constructor() {
@@ -19,7 +19,7 @@ export class webico extends plugin {
     }
     async webico(e) {
         const msg = e.msg.match(/^[#/]?网站图标(.*)$/)[1]
-        let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
+        let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
         const API = JSON.parse(data)
         let api = API.api20.url + `?url=${msg}`
         e.reply([segment.image(`${api}`)])
