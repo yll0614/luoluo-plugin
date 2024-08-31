@@ -1,7 +1,7 @@
 import fetch from "node-fetch";
 import fs from 'fs';
 import plugin from '../../../lib/plugins/plugin.js';
-import { Plugin_Name } from '../components/index.js';
+import { Plugin_Path } from '../components/index.js';
 
 export class ping extends plugin {
     constructor() {
@@ -20,7 +20,7 @@ export class ping extends plugin {
     }
     async ping(e) {
         const msg = e.msg.match(/^[#/]?ping地址(.*)$/)[1];
-        let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`);
+        let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`);
         const API = JSON.parse(data);
         let api = API.api7.url + `?format=json&ip=${msg}`;
         let jx = await fetch(api);
