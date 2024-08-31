@@ -8,7 +8,7 @@ wyyrp: true
 # 天气查询设置
 tianqi: true
 # 歌单列表设置
-geci-gedan: true
+geci-lb: true
 # 歌词设置
 geci: true
 # 音频设置
