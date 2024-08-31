@@ -22,6 +22,10 @@ export class toutiaohotnew extends plugin {
 
 
     async toutiaohotnew(e) {
+        if (CONFIG_YAML.toutiaohotnew == false) {
+            logger.error('今日头条热点新闻已关闭');
+            return false
+        }
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
         const API = JSON.parse(data)
         let api = API.api14.url

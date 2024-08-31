@@ -20,6 +20,10 @@ export class ping extends plugin {
         });
     }
     async ping(e) {
+        if (CONFIG_YAML.ping == false) {
+            logger.error('ping已关闭');
+            return false
+        }
         const msg = e.msg.match(/^[#/]?ping地址(.*)$/)[1];
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`);
         const API = JSON.parse(data);

@@ -1,0 +1,22 @@
+{
+  "name": "luoluo-plugin",
+  "version": "2.3.8",
+  "description": "喵喵喵？",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/yll0614/luoluo-plugin",
+    "type": "git",
+    "url": "https://github.com/yll0614/luoluo-plugin"
+  },
+  "dependencies": {},
+  "keywords": [
+    "Yunzai",
+    "Miao-Yunzai",
+    "plugin"
+  ],
+  "author": "叶落落",
+  "license": "MIT"
+}

@@ -1,6 +1,8 @@
 import plugin from '../../../lib/plugins/plugin.js'
 import moment from "moment"
+import { Plugin_Path } from '../components/index.js'
 import YAML from 'yaml'
+import fs from 'fs'
 let CONFIG_YAML = YAML.parse(fs.readFileSync(`${Plugin_Path}/config/config.yaml`, 'utf8'));
 let time = 96 //这里设置at数据保留多久 单位:小时 填大于0的纯数字
 
@@ -17,6 +19,11 @@ Bot.on("message.group", async (e) => {
       imgUrls.push(msg.url)
     }
 
+  }
+  
+  if (CONFIG_YAML.shuiatwo == false) {
+      logger.error('谁艾特我已关闭');
+      return false
   }
 
   if (!AtQQ.length) return false

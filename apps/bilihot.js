@@ -2,7 +2,6 @@ import fetch from "node-fetch"
 import fs from 'fs'
 import plugin from '../../../lib/plugins/plugin.js'
 import { Plugin_Path } from '../components/index.js'
-import fs from 'fs'
 import YAML from 'yaml'
 let CONFIG_YAML = YAML.parse(fs.readFileSync(`${Plugin_Path}/config/config.yaml`, 'utf8'));
 
