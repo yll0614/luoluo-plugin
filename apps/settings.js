@@ -51,7 +51,7 @@ export class setting extends plugin {
                 console.log(logMessage);
             } else if (status === '关闭') {
                 CONFIG_YAML[settingKey] = false;
-                console.log(logMessage);
+                console.log(logMessage + `\n开发者落落提醒您:\n为确保配置生效请自行重启`);
             }
 
             fs.writeFileSync(`${Plugin_Path}/config/config.yaml`, YAML.stringify(CONFIG_YAML), 'utf8');
