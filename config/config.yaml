@@ -1,4 +1,4 @@
-# config.yaml
+# config.yam
 # 一言设置
 yiyan: true
 # 疯狂星期四设置
@@ -7,14 +7,8 @@ KFC: true
 wyyrp: true
 # 天气查询设置
 tianqi: true
-# 歌单列表设置
-geci-lb: true
-# 歌词设置
+# 歌曲类设置
 geci: true
-# 音频设置
-geci-yp: true
-# 歌曲设置
-geci-gequ: true
 # 唱鸭设置
 changya: true
 # 随机表情包设置
