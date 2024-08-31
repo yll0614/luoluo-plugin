@@ -1,7 +1,7 @@
 import fetch from "node-fetch"
 import fs from 'fs'
 import plugin from '../../../lib/plugins/plugin.js'
-import { Plugin_Name } from '../components/index.js'
+import { Plugin_Path } from '../components/index.js'
 
 export class wyyrp extends plugin {
     constructor() {
@@ -19,7 +19,7 @@ export class wyyrp extends plugin {
         })
     }
     async wyyrp(e) {
-        let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
+        let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
         const API = JSON.parse(data)
         let api = API.api3.url
         let jx = await fetch(api)
