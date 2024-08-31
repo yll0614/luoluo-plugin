@@ -1,7 +1,7 @@
 import fetch from "node-fetch"
 import fs from 'fs'
 import plugin from '../../../lib/plugins/plugin.js'
-import { Plugin_Name } from '../components/index.js'
+import { Plugin_Path } from '../components/index.js'
 const clean = function clean(Lyrics) {
     Lyrics = Lyrics.replace(/\[(.*?)\]/g, '');//删除时间标签
     //Lyrics = Lyrics.replace(/\n/g, ''); //这个用来删除换行符
@@ -39,7 +39,7 @@ export class geci extends plugin {
     async geci(e) {
         const type = e.msg.match(/^[#/](.*)歌词(.*)?$/)[1]
         const n = e.msg.match(/^[#/](.*)歌词(.*)?$/)[2]
-        let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
+        let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
         const API = JSON.parse(data)
         let api;
         if (!n) {
@@ -76,7 +76,7 @@ export class geci extends plugin {
     }
     async gecilb(e) {
         const type = e.msg.match(/^[#/](.*)列表$/)[1]
-        let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
+        let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
         const API = JSON.parse(data)
         let api = API.api1.url + `?name=${type}`
         let jx = await fetch(api)
@@ -102,7 +102,7 @@ export class geci extends plugin {
     async gequ(e) {
         const type = e.msg.match(/^[#/](.*)歌曲(.*)?$/)[1]
         const n = e.msg.match(/^[#/](.*)歌曲(.*)?$/)[2]
-        let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
+        let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
         const API = JSON.parse(data)
         let api;
         if (!n) {
@@ -140,7 +140,7 @@ export class geci extends plugin {
     } async yp(e) {
         const type = e.msg.match(/^[#/](.*)音频(.*)?$/)[1]
         const n = e.msg.match(/^[#/](.*)音频(.*)?$/)[2]
-        let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`)
+        let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
         const API = JSON.parse(data)
         let api;
         if (!n) {
