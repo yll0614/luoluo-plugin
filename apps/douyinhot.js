@@ -1,8 +1,9 @@
 import fetch from "node-fetch"
 import fs from 'fs'
 import plugin from '../../../lib/plugins/plugin.js'
-import {Plugin_Path } from '../components/index.js'
-
+import { Plugin_Path } from '../components/index.js'
+import YAML from 'yaml'
+let CONFIG_YAML = YAML.parse(fs.readFileSync(`${Plugin_Path}/config/config.yaml`, 'utf8'));
 export class douyinhot extends plugin {
     constructor() {
         super({
@@ -21,6 +22,10 @@ export class douyinhot extends plugin {
 
 
     async douyinhot(e) {
+        if (CONFIG_YAML.douyinhot == false) {
+            logger.error('抖音热搜榜已关闭');
+            return false
+        }
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
         const API = JSON.parse(data)
         let api = API.api16.url

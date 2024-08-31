@@ -2,7 +2,8 @@ import fetch from "node-fetch"
 import fs from 'fs'
 import plugin from '../../../lib/plugins/plugin.js'
 import { Plugin_Path } from '../components/index.js'
-
+import YAML from 'yaml'
+let CONFIG_YAML = YAML.parse(fs.readFileSync(`${Plugin_Path}/config/config.yaml`, 'utf8'));
 async function LLAPITOGO(e, API) {
         let api = API.api2.url + `?format=json`
         let jx = await fetch(api)
@@ -36,6 +37,10 @@ export class yiyan extends plugin {
 
     }
     async yiyan(e) {
+        if (CONFIG_YAML.yiyan == false) {
+            logger.error('一言已关闭');
+            return false
+        }
         const emsg = e.msg.match(/^[#/]?一言(.*)$/)[1]
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
         const API = JSON.parse(data)

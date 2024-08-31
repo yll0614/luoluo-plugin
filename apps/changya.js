@@ -2,7 +2,8 @@ import fetch from "node-fetch"
 import fs from 'fs'
 import plugin from '../../../lib/plugins/plugin.js'
 import { Plugin_Path } from '../components/index.js'
-
+import YAML from 'yaml'
+let CONFIG_YAML = YAML.parse(fs.readFileSync(`${Plugin_Path}/config/config.yaml`, 'utf8'));
 export class changya extends plugin {
     constructor() {
         super({
@@ -20,6 +21,10 @@ export class changya extends plugin {
 
     }
     async changya(e) {
+        if (CONFIG_YAML.changya == false) {
+            logger.error('唱鸭已关闭');
+            return false
+        }
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
         const API = JSON.parse(data)
         let api = API.api23.url + `?type=json`

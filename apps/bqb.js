@@ -19,9 +19,9 @@ export class bqb extends plugin {
         })
     }
     async bqb(e) {
-        if (CONFIG_YAML.bilhot == false) {
+        if (CONFIG_YAML.sjbqb == false) {
             logger.error('随机表情包已关闭');
-            return true
+            return false
         }
         const type = e.msg.match(/^#?随机(.*)表情包$/)[1];
         if (

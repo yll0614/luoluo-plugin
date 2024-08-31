@@ -1,7 +1,8 @@
 import fs from 'fs'
 import plugin from '../../../lib/plugins/plugin.js'
 import { Plugin_Path } from '../components/index.js'
-
+import YAML from 'yaml'
+let CONFIG_YAML = YAML.parse(fs.readFileSync(`${Plugin_Path}/config/config.yaml`, 'utf8'));
 export class wyjt extends plugin {
     constructor() {
         super({

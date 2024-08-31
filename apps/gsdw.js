@@ -2,7 +2,8 @@ import fetch from "node-fetch";
 import fs from 'fs';
 import plugin from '../../../lib/plugins/plugin.js';
 import { Plugin_Path } from '../components/index.js';
-
+import YAML from 'yaml'
+let CONFIG_YAML = YAML.parse(fs.readFileSync(`${Plugin_Path}/config/config.yaml`, 'utf8'));
 export class gsdw extends plugin {
     constructor() {
         super({
@@ -19,6 +20,10 @@ export class gsdw extends plugin {
         });
     }
     async gsdw(e) {
+        if (CONFIG_YAML.gsdw == false) {
+            logger.error('攻受短文已关闭');
+            return false
+        }
         const msga = e.msg.match(/^[#/]?(.*)与(.*)攻受(短)?文$/)[1];
         const msgb = e.msg.match(/^[#/]?(.*)与(.*)攻受(短)?文$/)[2];
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`);

@@ -2,6 +2,8 @@ import fetch from "node-fetch"
 import fs from 'fs'
 import plugin from '../../../lib/plugins/plugin.js'
 import { Plugin_Path } from '../components/index.js'
+import YAML from 'yaml'
+let CONFIG_YAML = YAML.parse(fs.readFileSync(`${Plugin_Path}/config/config.yaml`, 'utf8'));
 const clean = function clean(Lyrics) {
     Lyrics = Lyrics.replace(/\[(.*?)\]/g, '');//删除时间标签
     //Lyrics = Lyrics.replace(/\n/g, ''); //这个用来删除换行符
@@ -37,6 +39,10 @@ export class geci extends plugin {
         })
     }
     async geci(e) {
+        if (CONFIG_YAML.geci == false) {
+            logger.error('该功能已关闭，开启歌曲类即可');
+            return false
+        }
         const type = e.msg.match(/^[#/](.*)歌词(.*)?$/)[1]
         const n = e.msg.match(/^[#/](.*)歌词(.*)?$/)[2]
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
@@ -75,6 +81,10 @@ export class geci extends plugin {
         }
     }
     async gecilb(e) {
+        if (CONFIG_YAML.geci == false) {
+            logger.error('该功能已关闭，开启歌曲类即可');
+            return false
+        }
         const type = e.msg.match(/^[#/](.*)列表$/)[1]
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
         const API = JSON.parse(data)
@@ -100,6 +110,10 @@ export class geci extends plugin {
         return true
     }
     async gequ(e) {
+        if (CONFIG_YAML.geci == false) {
+            logger.error('该功能已关闭，开启歌曲类即可');
+            return false
+        }
         const type = e.msg.match(/^[#/](.*)歌曲(.*)?$/)[1]
         const n = e.msg.match(/^[#/](.*)歌曲(.*)?$/)[2]
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
@@ -138,6 +152,10 @@ export class geci extends plugin {
             return true
         }
     } async yp(e) {
+        if (CONFIG_YAML.geci == false) {
+            logger.error('该功能已关闭，开启歌曲类即可');
+            return false
+        }
         const type = e.msg.match(/^[#/](.*)音频(.*)?$/)[1]
         const n = e.msg.match(/^[#/](.*)音频(.*)?$/)[2]
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
