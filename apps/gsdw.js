@@ -1,7 +1,7 @@
 import fetch from "node-fetch";
 import fs from 'fs';
 import plugin from '../../../lib/plugins/plugin.js';
-import { Plugin_Name } from '../components/index.js';
+import { Plugin_Path } from '../components/index.js';
 
 export class gsdw extends plugin {
     constructor() {
@@ -21,7 +21,7 @@ export class gsdw extends plugin {
     async gsdw(e) {
         const msga = e.msg.match(/^[#/]?(.*)与(.*)攻受(短)?文$/)[1];
         const msgb = e.msg.match(/^[#/]?(.*)与(.*)攻受(短)?文$/)[2];
-        let data = await fs.readFileSync(`./plugins/${Plugin_Name}/config/AllAPI.json`);
+        let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`);
         const API = JSON.parse(data);
         let api = API.api4.url + `?g=${msga}&s=${msgb}`;
         let jx = await fetch(api);
