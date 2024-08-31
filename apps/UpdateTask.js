@@ -2,6 +2,10 @@ import fetch from 'node-fetch';
 import plugin from '../../../lib/plugins/plugin.js';
 import cfg from '../../../lib/config/config.js';
 import moment from 'moment';
+import { Plugin_Path } from '../components/index.js'
+import fs from 'fs'
+import YAML from 'yaml'
+let CONFIG_YAML = YAML.parse(fs.readFileSync(`${Plugin_Path}/config/config.yaml`, 'utf8'));
 
 const prefix = 'bubble:codeUpdateTask:';
 let REPOSITORY_LIST = [];
@@ -10,23 +14,24 @@ const CUSTOM_REPOSITORY = ['https://gitee.com/yll0614/luoluo-plugin'];
 
 init();
 
-export class CodeUpdateTask extends plugin {
+export class UpdateTask extends plugin {
     constructor() {
         super({
             name: "落落插件检查更新",
             event: "message",
             priority: 1000,
             rule: [
-              {
-                reg: "^#?(ll|LL|Ll|lL|luoluo|落落|luoluo插件|ll插件|LL插件|Ll插件|lL插件|luoluo插件)检查更新$",
-                fnc: "autoUpdatePush"
-              }
+                {
+                    reg: "^#?(ll|LL|Ll|lL|luoluo|落落|luoluo插件|ll插件|LL插件|Ll插件|lL插件|luoluo插件)检查更新$",
+                    fnc: "UpdateTask"
+                }
             ]
-          })
+        })
         this.task = {
             cron: '0 */5 * * * *', // Cron表达式，(秒 分 时 日 月 星期)
             name: 'luoluo-plugin定时检查更新',
-            fnc: () => this.autoUpdatePush()
+            log: false,
+            fnc: () => this.UpdateTask()
         };
     }
 
@@ -34,7 +39,11 @@ export class CodeUpdateTask extends plugin {
         return new Promise((resolve) => setTimeout(resolve, ms));
     }
 
-    async autoUpdatePush(e) {
+    async UpdateTask(e) {
+        if (CONFIG_YAML.UpdateTask == false) {
+            logger.error('UpdateTask已关闭');
+            return true
+        }
         if (!GITEE_TOKEN) {
             logger.error('请先设置Gitee令牌');
             return false;
@@ -85,13 +94,6 @@ export class CodeUpdateTask extends plugin {
                 if (master.toString().length > 11) continue;
                 await Bot.pickFriend(master).sendMsg(msg);
                 await this.sleep(2000);
-            }
-
-            if (GROUP_LIST && GROUP_LIST.length > 0) {
-                for (const key of GROUP_LIST) {
-                    Bot.pickGroup(key).sendMsg(msg);
-                    await this.sleep(10000);
-                }
             }
         }
     }
