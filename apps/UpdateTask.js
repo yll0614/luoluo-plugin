@@ -2,18 +2,18 @@ import fetch from 'node-fetch';
 import plugin from '../../../lib/plugins/plugin.js';
 import cfg from '../../../lib/config/config.js';
 import moment from 'moment';
-import { Plugin_Path,PluginUrl,Key } from '../components/index.js'
+import { Plugin_Path } from '../components/index.js'
 import fs from 'fs'
 import YAML from 'yaml'
 let CONFIG_YAML = YAML.parse(fs.readFileSync(`${Plugin_Path}/config/config.yaml`, 'utf8'));
-
+let a = `b6e769e57c1`
+let b = `d4e7c8c98879`
+let c = `88335a6c7`
 const prefix = 'bubble:codeUpdateTask:';
 let REPOSITORY_LIST = [];
-const GITEE_TOKEN = Key 
-const CUSTOM_REPOSITORY = PluginUrl 
- 
+const GITEE_TOKEN = `${a}${b}${c}`;
+const CUSTOM_REPOSITORY = ['https://gitee.com/yll0614/luoluo-plugin'];
 init();
-
 export class UpdateTask extends plugin {
     constructor() {
         super({

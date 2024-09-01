@@ -1,6 +1,5 @@
 import lodash from 'lodash'
 import fs from 'fs'
-const _Key = 'b6e769e57c1d4e7c8c9887988335a6c7'
 const _path = process.cwd()
 const plugin = 'luoluo-plugin'
 const getRoot = (root = '') => {
@@ -221,4 +220,3 @@ let Data = {
 }
 
 export default Data
-export { _Key }
