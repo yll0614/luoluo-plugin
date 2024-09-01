@@ -8,8 +8,6 @@
  ## 插件功能 [v2.3.9](./CHANGELOG.md)
 <img src='https://gitee.com/yll0614/img/raw/master/v2.3.9.jpg'  alt='Help'></img>  
 <img src='https://gitee.com/yll0614/img/raw/master/v2.3.9bqb.jpg'  alt='BqbHelp'></img>
-
-###### *** 已适配锅巴面板 ***  
 <img src='https://gitee.com/yll0614/img/raw/master/v2.3.9setting.jpg'  alt='SettingHelp'></img>  
 
 
