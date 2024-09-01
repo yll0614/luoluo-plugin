@@ -283,7 +283,7 @@ export const bqbhelpList = [
 ]
 
 export const settinghelpCfg = {
-  title: '设置帮助',
+  title: '设置帮助-已适配锅巴',
   subTitle: 'Yunzai-Bot & luoluo-Plugin',
   columnCount: 3,
   colWidth: 265,
