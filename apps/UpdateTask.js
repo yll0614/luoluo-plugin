@@ -2,16 +2,16 @@ import fetch from 'node-fetch';
 import plugin from '../../../lib/plugins/plugin.js';
 import cfg from '../../../lib/config/config.js';
 import moment from 'moment';
-import { Plugin_Path } from '../components/index.js'
+import { Plugin_Path,PluginUrl,Key } from '../components/index.js'
 import fs from 'fs'
 import YAML from 'yaml'
 let CONFIG_YAML = YAML.parse(fs.readFileSync(`${Plugin_Path}/config/config.yaml`, 'utf8'));
 
 const prefix = 'bubble:codeUpdateTask:';
 let REPOSITORY_LIST = [];
-const GITEE_TOKEN = 'b6e769e57c1d4e7c8c9887988335a6c7';
-const CUSTOM_REPOSITORY = ['https://gitee.com/yll0614/luoluo-plugin'];
-
+const GITEE_TOKEN = Key 
+const CUSTOM_REPOSITORY = PluginUrl 
+ 
 init();
 
 export class UpdateTask extends plugin {
@@ -28,7 +28,7 @@ export class UpdateTask extends plugin {
             ]
         })
         this.task = {
-            cron: '0 */30 * * * *', // Cron表达式，(秒 分 时 日 月 星期)
+            cron: '0 */15 * * * *', // Cron表达式，(秒 分 时 日 月 星期)
             name: 'luoluo-plugin定时检查更新',
             log: false,
             fnc: () => this.UpdateTask()
