@@ -1,7 +1,7 @@
-import plugin from '../../../lib/plugins/plugin.js'
-import { Plugin_Path } from '../components/index.js'
-import fs from 'fs'
-import YAML from 'yaml'
+import plugin from '../../../lib/plugins/plugin.js';
+import { Plugin_Path } from '../components/index.js';
+import fs from 'fs';
+import YAML from 'yaml';
 
 let CONFIG_YAML = YAML.parse(fs.readFileSync(`${Plugin_Path}/config/config.yaml`, 'utf8'));
 
@@ -21,7 +21,6 @@ export class setting extends plugin {
             ]
         });
     }
-
     async setting(e) {
         if (!this.e.isMaster) {
             e.reply('仅主人可用！');
@@ -41,17 +40,26 @@ export class setting extends plugin {
         try {
             CONFIG_YAML[settingKey] = status === '开启';
             console.log(logMessage);
-
-            fs.writeFileSync(`${Plugin_Path}/config/config.yaml`, YAML.stringify(CONFIG_YAML), 'utf8');
+            let configContent = fs.readFileSync(`${Plugin_Path}/config/config.yaml`, 'utf8');
+            let lines = configContent.split('\n');
+            for (let i = 0; i < lines.length; i++) {
+                let line = lines[i].trim();
+                if (line.startsWith(`${settingKey}: `)) {
+                    lines[i] = `${settingKey}: ${status === '开启'}`;
+                    break;
+                }
+            }
+            let updatedContent = lines.join('\n');
+            fs.writeFileSync(`${Plugin_Path}/config/config.yaml`, updatedContent, 'utf8');
             e.reply(logMessage);
             return true;
         } catch (error) {
+            // 错误处理
             console.error(`${type} 设置时发生错误:`, error);
             e.reply(`设置${type}时发生错误\n${error}`);
             return false;
         }
     }
-
     getSettingKey(type) {
         const mapping = {
             '一言': 'yiyan',
@@ -83,4 +91,3 @@ export class setting extends plugin {
         return mapping[type];
     }
 }
-
