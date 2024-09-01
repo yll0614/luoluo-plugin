@@ -24,7 +24,7 @@ export class geci extends plugin {
                     fnc: 'geci'
                 },
                 {
-                    reg: '^[#/](.*)列表$',
+                    reg: '^[#/](.*)歌曲列表$',
                     fnc: 'gecilb'
                 },
                 {
@@ -85,7 +85,7 @@ export class geci extends plugin {
             logger.error('该功能已关闭，开启歌曲类即可');
             return false
         }
-        const type = e.msg.match(/^[#/](.*)列表$/)[1]
+        const type = e.msg.match(/^[#/](.*)歌曲列表$/)[1]
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
         const API = JSON.parse(data)
         let api = API.api1.url + `?name=${type}`

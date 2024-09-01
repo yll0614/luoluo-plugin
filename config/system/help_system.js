@@ -50,8 +50,8 @@ export const helpList = [
     },
     {
       icon: 38,
-      title: "#列表",
-      desc: "获取歌曲列表 再列表前面加歌曲名"
+      title: "#歌曲列表",
+      desc: "获取歌曲列表 再歌曲列表前面加歌曲名"
     },
     { icon: 39,
       title: "#歌词",
