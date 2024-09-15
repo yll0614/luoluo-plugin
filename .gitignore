@@ -7,4 +7,4 @@ node_modules/
 # 排除所有的临时文件
 #*~
 # 排除 src 目录下的 config.js 文件
-#src/config.js
+config/config.yaml
