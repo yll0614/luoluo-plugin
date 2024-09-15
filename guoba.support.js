@@ -180,14 +180,6 @@ export function supportGuoba() {
           componentProps: {},
         },
         {
-          field: 'qrcode',
-          label: '生成二维码',
-          helpMessage: '',
-          bottomHelpMessage: '',
-          component: 'Switch',
-          componentProps: {},
-        },
-        {
           field: 'qqtx',
           label: '头像',
           helpMessage: '',

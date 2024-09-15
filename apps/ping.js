@@ -1,14 +1,18 @@
-import fetch from "node-fetch";
+import { exec } from 'child_process';
 import fs from 'fs';
+import os from 'os';
 import plugin from '../../../lib/plugins/plugin.js';
 import { Plugin_Path } from '../components/index.js';
-import YAML from 'yaml'
+import YAML from 'yaml';
+import iconv from 'iconv-lite'; // 添加这个库
+
 let CONFIG_YAML = YAML.parse(fs.readFileSync(`${Plugin_Path}/config/config.yaml`, 'utf8'));
+
 export class ping extends plugin {
     constructor() {
         super({
             name: 'Ping',
-            dsc: 'ping',
+            dsc: '本地Ping',
             event: 'message',
             priority: 5000,
             rule: [
@@ -19,37 +23,44 @@ export class ping extends plugin {
             ]
         });
     }
+
     async ping(e) {
-        if (CONFIG_YAML.ping == false) {
-            logger.error('ping已关闭');
-            return false
+        if (CONFIG_YAML.ping === false) {
+            logger.error('ping功能已关闭');
+            return false;
         }
-        const msg = e.msg.match(/^[#/]?ping地址(.*)$/)[1];
-        let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`);
-        const API = JSON.parse(data);
-        let api = API.api7.url + `?format=json&ip=${msg}`;
-        let jx = await fetch(api);
-        const Data = await jx.json();
-        let code = Data['code'];
-       /* if (code !== '200') {
-            e.reply([`访问主机失败,请检查IP地址或域名是否正确输入或稍后再试!`]);
-            return true;
-        }*/
-        let msg0 = Data['data']['node'];
-        let msg1 = Data['data']['host'];
-        let msg2 = Data['data']['ip'];
-        let msg3 = Data['data']['location'];
-        let msg4 = Data['data']['ping_max'];
-        let msg5 = Data['data']['ping_min'];
-        let msg6 = Data['data']['ping_avg'];
-        e.reply([`Ping节点:${msg0}\n
-主机:${msg1}\n
-主机IP地址:${msg2}\n
-主机地理位置:${msg3}\n
-最大Ping延迟:${msg4}\n
-最小Ping延迟:${msg5}\n
-平均延迟:${msg6}
-`]);
+
+        const msg = e.msg.match(/^[#/]?ping地址(.*)$/)[1].trim();
+        if (!msg) {
+            e.reply('请提供一个有效的IP地址或域名');
+            return false;
+        }
+
+        try {
+            const pingResult = await this.runPingCommand(msg);
+            e.reply(pingResult);
+        } catch (err) {
+            logger.error(`Ping操作出错: ${err.message}`);
+            e.reply('Ping失败，请检查IP地址或域名是否正确');
+        }
+
         return true;
+    }
+
+    runPingCommand(address) {
+        const platform = os.platform(); // 获取操作系统平台
+        const pingCommand = platform === 'win32' ? `ping -n 4 ${address}` : `ping -c 4 ${address}`;
+
+        return new Promise((resolve, reject) => {
+            exec(pingCommand, { encoding: 'buffer' }, (error, stdout, stderr) => {
+                if (error) {
+                    reject(new Error(stderr || error.message));
+                    return;
+                }
+                // 将 Buffer 转换为 UTF-8 编码的字符串
+                const output = iconv.decode(stdout, 'gbk'); 
+                resolve(output);
+            });
+        });
     }
 }

@@ -1,3 +1,22 @@
+# 3.0.0
+* 大量修改逻辑
+* 重构网页截图(脱离API)
+* 重构网页图标获取(脱离API)
+* 修改[Readme.md](./readme.md)
+* 移除二维码生成功能
+* 删除QQSkey.json
+* 删除部分API
+* 修改QQ头像API(更换为官方API)
+* 修改QQ群头像API(更换为官方API)
+* 重构ping(脱离API)
+* 移除用户配置文件中qrcode的配置
+* 移除默认配置文件中qrcode的配置
+* 移除锅巴配置中qrcode的开关
+* 修改[帮助](./config/system/help_system.js)中帮助部分
+* 修改[package.json(新增依赖)](./package.json)
+* 修改[settings.js(移除qrcode配置项)](./apps/settings.js)
+* 修改[帮助](./config/system/help_system.js)中设置部分
+
 # 2.3.9
 * 适配锅巴面板
 * 优化部分逻辑
@@ -26,7 +45,7 @@
 # v2.3.3
 * 更换歌词API [小冰API](https://xiaobapi.top/api/xb/api/lyric.php) :fa-arrow-right: [星之阁API](https://api.xingzhige.com/API/lrc)
 * 完全重构geci.js
-* 成功脱离API付费
+* 脱离付费API
 
 
 # v2.3.2

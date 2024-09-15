@@ -7,11 +7,13 @@
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "https://gitee.com/yll0614/luoluo-plugin",
-    "type": "git",
-    "url": "https://github.com/yll0614/luoluo-plugin"
+    "url": "https://gitee.com/yll0614/luoluo-plugin"
   },
-  "dependencies": {},
+  "dependencies": {
+    "puppeteer": "^21.0.0",
+    "qrcode": "^1.5.0",
+    "iconv-lite": "^0.6.3"
+  },
   "keywords": [
     "Yunzai",
     "Miao-Yunzai",

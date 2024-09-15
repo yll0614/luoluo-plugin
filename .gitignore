@@ -1,0 +1,10 @@
+# 排除特定文件
+#secrets.txt
+# 排除特定目录及其内容
+node_modules/
+# 排除所有的 .log 文件
+#*.log
+# 排除所有的临时文件
+#*~
+# 排除 src 目录下的 config.js 文件
+#src/config.js

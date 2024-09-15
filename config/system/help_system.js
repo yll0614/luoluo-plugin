@@ -128,11 +128,6 @@ export const helpList = [
       desc: "今日头条热点新闻TOP10"
     },
     {
-      icon: 131,
-      title: "#生成二维码",
-      desc: "生成二维码 在生成二维码后面加内容/网址"
-    },
-    {
       icon: 133,
       title: "哔哩哔哩视频解析",
       desc: "发送视频链接即可 注:需将你的FFmpeg所在的文件夹在PATH环境变量中"
@@ -399,11 +394,6 @@ export const settinghelpList = [
             "icon": 199,
             "title": "#落落设置今日头条热点新闻开启/关闭",
             "desc": "开启/关闭今日头条热点新闻 默认开启"
-        },
-        {
-            "icon": 198,
-            "title": "#落落设置生成二维码开启/关闭",
-            "desc": "开启/关闭生成二维码 默认开启"
         },
         {
             "icon": 158,

@@ -1,14 +1,14 @@
 <div align="center">
-<h1>落落插件V2.3.9(luoluo-plugin)</h1>
+<h1>落落插件V3.0.0(luoluo-plugin)</h1>
 
 [![Gitee](https://img.shields.io/badge/Gitee-落落插件-black?style=flat-square&logo=gitee)](https://gitee.com/xwy231321/ql-plugin) [![云崽bot](https://img.shields.io/badge/云崽-v3-black?style=flat-square&logo=dependabot)](https://gitee.com/Le-niao/Yunzai-Bot) [![Group](https://img.shields.io/badge/联系方式-2443958507-red?style=flat-square&logo=GroupMe&logoColor=white)](https://qm.qq.com/cgi-bin/qm/qr?k=Vzr6Z6yISyfTNKic29xQEattdPxHldPW)<a href='https://gitee.com/yll0614/luoluo-plugin/stargazers'><img src='https://gitee.com/yll0614/luoluo-plugin/badge/star.svg?theme=dark' alt='star'></img></a>
 
  ###### 访问量<br><img src="https://count.moeyy.cn/get/@:yueyuez/"/></br>
 
- ## 插件功能 [v2.3.9](./CHANGELOG.md)
-<img src='https://gitee.com/yll0614/img/raw/master/v2.3.9.jpg'  alt='Help'></img>  
-<img src='https://gitee.com/yll0614/img/raw/master/v2.3.9bqb.jpg'  alt='BqbHelp'></img>
-<img src='https://gitee.com/yll0614/img/raw/master/v2.3.9setting.jpg'  alt='SettingHelp'></img>  
+ ## 插件功能 [v3.0.0](./CHANGELOG.md)
+<img src='https://gitee.com/yll0614/img/raw/master/v3.0.0.jpg'  alt='Help'></img>  
+<img src='https://gitee.com/yll0614/img/raw/master/v3.0.0bqb.jpg'  alt='BqbHelp'></img>
+<img src='https://gitee.com/yll0614/img/raw/master/v3.0.0setting.jpg'  alt='SettingHelp'></img>  
 
 
  ## 安装教程  
@@ -59,11 +59,6 @@ git clone --depth=1 https://ghproxy.net/https://github.com/yll0614/luoluo-plugin
 | [@xwy](https://gitee.com/xwy231321) | Readme及部分逻辑 | [@维拉](https://gitee.com/com190238) | 好耶~ 是奶茶一杯~  |
 | [@Tloml-Starry](https://gitee.com/Tloml-Starry) | JSON读取方式 |[@白狐](https://gitee.com/baihu433)|适配锅巴面板| 
 | [@心愿XY](https://gitee.com/hgh123520) | 插件更新  | [@君昭](https://gitee.com/jun-zhaojinzhaoei) | 部分API*1|
-| [@TenAPI](https://tenapi.cn/) | 部分API*10 |[@故梦API](https://www.gumengya.com/) | 部分API*2  |
-| [@星之阁API](https://api.xingzhige.com/) | 部分API*3  |[@山河API](https://shanhey.cn/) | 部分API*3  |
-| [@XY-API](https://api.yugan.love/) | 部分API*1  |[@小小API](https://api-m.com/) | 部分API*1  |
-| [@ZuzoAPI](https://api.zuzo.cc/) | 部分API*1  |
-
 
 
 ## 免责声明

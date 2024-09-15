@@ -33,8 +33,6 @@ douyinhot: true
 toutiaohot: true
 # 今日头条热点新闻设置
 toutiaohotnew: true
-# 生成二维码设置
-qrcode: true
 # 头像设置
 qqtx: true
 # 群头像设置

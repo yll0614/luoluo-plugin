@@ -23,10 +23,16 @@ export class qqqtx extends plugin {
             logger.error('QQ群头像已关闭');
             return false
         }
+        try {
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
         const API = JSON.parse(data)
-        let api = API.api11.url + `?qun=${e.group_id}`
+        let api = API.api11.url + `/${e.group_id}/${e.group_id}/640`
         e.reply([segment.image(`${api}`)])
+    } catch (err) {
+        logger.error(`获取QQ群头像时出错: ${err.message}`);
+        e.reply('获取群头像失败，请稍后再试。');
+    }
+
         return true
     }
 }

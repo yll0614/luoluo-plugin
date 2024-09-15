@@ -23,33 +23,13 @@
         "name": "天气API",
         "url": "https://v2.api-m.com/api/weather"
     },
-    "api7": {
-        "name": "PingAPI",
-        "url": "https://api.gumengya.com/Api/Ping"
-    },
     "api8": {
         "name": "垃圾分类API",
         "url": "https://api.gumengya.com/Api/AiLaji"
     },
-    "api9": {
-        "name": "网页截图API",
-        "url": "https://xiaoapi.cn/API/wzjp.php"
-    },
-    "api10": {
-        "name": "QQ头像API",
-        "url": "https://tenapi.cn/v2/qqimg"
-    },
-    "api11": {
-        "name": "QQ群头像API",
-        "url": "https://tenapi.cn/v2/groupimg"
-    },
     "api12": {
         "name": "随机动漫图API",
         "url": "https://tenapi.cn/v2/acg"
-    },
-    "api13": {
-        "name": "二维码生成API",
-        "url": "https://tenapi.cn/v2/qrcode"
     },
     "api14": {
         "name": "哔哩哔哩热搜榜API",
@@ -74,10 +54,6 @@
     "api19": {
         "name": "小人举牌API",
         "url": "http://shanhe.kim/api/qq/ju2.php"
-    },
-    "api20": {
-        "name": "网站图标API",
-        "url": "http://shanhe.kim/api/wz/ico.php"
     },
     "api21": {
         "name": "疯狂星期四API",
