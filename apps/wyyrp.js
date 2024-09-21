@@ -1,9 +1,11 @@
-import fetch from "node-fetch"
-import fs from 'fs'
-import plugin from '../../../lib/plugins/plugin.js'
-import { Plugin_Path } from '../components/index.js'
-import YAML from 'yaml'
+import fetch from "node-fetch";
+import fs from 'fs';
+import plugin from '../../../lib/plugins/plugin.js';
+import { Plugin_Path } from '../components/index.js';
+import YAML from 'yaml';
+
 let CONFIG_YAML = YAML.parse(fs.readFileSync(`${Plugin_Path}/config/config.yaml`, 'utf8'));
+
 export class wyyrp extends plugin {
     constructor() {
         super({
@@ -17,41 +19,45 @@ export class wyyrp extends plugin {
                     fnc: 'wyyrp'
                 }
             ]
-        })
+        });
     }
+
     async wyyrp(e) {
-        if (CONFIG_YAML.wyyrp == false) {
+        if (CONFIG_YAML.wyyrp === false) {
             logger.error('网易云音乐热评已关闭');
-            return false
+            return false;
         }
-        let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
-        const API = JSON.parse(data)
-        let api = API.api3.url
-        let jx = await fetch(api)
-        const Data = await (jx).json()
-        let code = Data['code']
-        if (code != '0') {
-            e.reply([`请求失败,请稍后再试或联系管理员!`])
-            return true
+
+        let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`);
+        const API = JSON.parse(data);
+        let api = API.api3.url;
+
+        try {
+            let response = await fetch(api);
+            let Data = await response.json();
+
+            if (Data['code'] !== '0') {
+                e.reply('请求失败，请稍后再试或联系管理员!');
+                return true;
+            }
+
+            // 构建回复信息
+            let msg = `歌曲名称: ${Data['data']['name']}\n` +
+                      `歌手: ${Data['data']['artist']}\n` +
+                      `歌曲页面地址: ${Data['data']['url']}\n` +
+                      `歌曲播放地址: ${Data['data']['src']}\n` +
+                      `歌曲封面地址: ${Data['data']['picurl']}\n` +
+                      `评论者昵称: ${Data['data']['artistsname']}\n` +
+                      `评论者头像地址: ${Data['data']['avatarurl']}\n` +
+                      `评论内容: ${Data['data']['content']}\n` +
+                      `点赞数: ${Data['data']['likedCount']}`;
+
+            e.reply(msg);
+            return true;
+
+        } catch (error) {
+            e.reply('请求出现错误，请稍后再试或联系管理员!');
+            return true;
         }
-        let msg0 = Data['data']['name']
-        let msg1 = Data['data']['artist']
-        let msg2 = Data['data']['url']
-        let msg3 = Data['data']['src']
-        let msg4 = Data['data']['picurl']
-        let msg5 = Data['data']['artistsname']
-        let msg6 = Data['data']['avatarurl']
-        let msg7 = Data['data']['content']
-        let msg8 = Data['data']['likedCount']
-        e.reply([`歌曲名称:${msg0}\n
-歌手:${msg1}\n
-歌曲页面地址:${msg2}\n
-歌曲播放地址:${msg3}\n
-歌曲封面地址:${msg4}\n
-评论者昵称:${msg5}\n
-评论者头像地址:${msg6}\n
-评论内容:${msg7}\n
-点赞数:${msg8}`])
-        return true
     }
 }

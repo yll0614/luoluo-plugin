@@ -31,10 +31,6 @@ export class changya extends plugin {
         try {
             let jx = await fetch(api)
             const Data = await (jx).json()
-            if (Data.text !== '请求成功!') {
-                e.reply(['请求失败,请稍后再试或联系管理员!']);
-                return true;
-            }
             await e.reply(segment.record(Data.data.song_url))
             e.reply([
                 segment.image(Data.data.user_image),

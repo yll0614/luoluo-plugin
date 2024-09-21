@@ -32,10 +32,6 @@ export class gsdw extends plugin {
         let jx = await fetch(api);
         const Data = await jx.json();
         let code = Data['code'];
-        if (code != '0') {
-            e.reply([`请求失败,请稍后再试或联系管理员!`]);
-            return true;
-        }
         let msg = Data['data']['msg'];
         e.reply(msg);
         return true;

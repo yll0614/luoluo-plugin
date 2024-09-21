@@ -29,10 +29,7 @@ export class sjdmt extends plugin {
         let jx = await fetch(api)
         const Data = await (jx).json()
         let code = Data['code']
-        if (code != '200') {
-            e.reply([`请求失败,请稍后再试或联系管理员!`])
-            return true
-        }
+
         let msg = Data['data']['url']
          e.reply([segment.image(`${msg}`)])
          return true

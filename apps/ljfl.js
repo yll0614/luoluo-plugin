@@ -34,10 +34,7 @@ export class ljfl extends plugin {
             e.reply([`未找到相关结果`])
             return true
         }
-        if (code != '200') {
-            e.reply([`请求失败,请稍后再试或联系管理员!`])
-            return true
-        }
+
         let msg0 = Data['data']['name']
         let msg1 = Data['data']['typeName']
         e.reply([`垃圾名称:${msg0}\n该垃圾是:${msg1}`])

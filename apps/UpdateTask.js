@@ -2,18 +2,17 @@ import fetch from 'node-fetch';
 import plugin from '../../../lib/plugins/plugin.js';
 import cfg from '../../../lib/config/config.js';
 import moment from 'moment';
-import { Plugin_Path } from '../components/index.js'
-import fs from 'fs'
-import YAML from 'yaml'
+import { Plugin_Path } from '../components/index.js';
+import fs from 'fs';
+import YAML from 'yaml';
+
 let CONFIG_YAML = YAML.parse(fs.readFileSync(`${Plugin_Path}/config/config.yaml`, 'utf8'));
-let a = `b6e769e57c1`
-let b = `d4e7c8c98879`
-let c = `88335a6c7`
 const prefix = 'bubble:codeUpdateTask:';
 let REPOSITORY_LIST = [];
-const GITEE_TOKEN = `${a}${b}${c}`;
 const CUSTOM_REPOSITORY = ['https://gitee.com/yll0614/luoluo-plugin'];
+
 init();
+
 export class UpdateTask extends plugin {
     constructor() {
         super({
@@ -26,27 +25,19 @@ export class UpdateTask extends plugin {
                     fnc: "UpdateTask"
                 }
             ]
-        })
+        });
         this.task = {
-            cron: '0 */15 * * * *', // Cron表达式，(秒 分 时 日 月 星期)
+            cron: '0 */15 * * * *',
             name: 'luoluo-plugin定时检查更新',
             log: false,
             fnc: () => this.UpdateTask()
         };
     }
 
-    async sleep(ms) {
-        return new Promise((resolve) => setTimeout(resolve, ms));
-    }
-
     async UpdateTask(e) {
         if (CONFIG_YAML.UpdateTask == false) {
             logger.error('UpdateTask已关闭');
-            return true
-        }
-        if (!GITEE_TOKEN) {
-            logger.error('请先设置Gitee令牌');
-            return false;
+            return true;
         }
 
         // 去重
@@ -59,6 +50,7 @@ export class UpdateTask extends plugin {
         logger.info(`检测到${REPOSITORY_LIST.length}个仓库地址`);
         let content = [];
         let index = -1;
+
         for (const item of REPOSITORY_LIST) {
             logger.info(`仓库地址：${item.owner}/${item.repo}`);
             index++;
@@ -75,11 +67,10 @@ export class UpdateTask extends plugin {
             logger.info(`Gitee仓库地址：${item.owner}/${item.repo}，最新提交：${repositoryData.date}`);
             const redisKey = `${prefix}${item.owner}/${item.repo}`;
             let redisSha = await redis.get(redisKey);
-            if (redisSha) {
-                if (String(redisSha) === String(repositoryData.sha)) {
-                    logger.info(`仓库地址：${item.owner}/${item.repo} 暂无更新`);
-                    continue;
-                }
+
+            if (redisSha && String(redisSha) === String(repositoryData.sha)) {
+                logger.info(`仓库地址：${item.owner}/${item.repo} 暂无更新`);
+                continue;
             }
 
             await redis.set(redisKey, repositoryData.sha);
@@ -100,13 +91,9 @@ export class UpdateTask extends plugin {
 
     async getGiteeLatestCommit(owner, repo) {
         const apiUrl = `https://gitee.com/api/v5/repos/${owner}/${repo}/commits`;
-        const headers = {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${GITEE_TOKEN}`
-        };
 
         try {
-            const response = await fetch(apiUrl, { headers });
+            const response = await fetch(apiUrl);
             const commits = await response.json();
 
             if (commits.length > 0) {
@@ -118,7 +105,7 @@ export class UpdateTask extends plugin {
                     author: latestCommit.commit.author.name,
                     email: latestCommit.commit.author.email,
                     date: moment(latestCommit.commit.author.date).format('YYYY-MM-DD HH:mm:ss'),
-                    message: latestCommit.commit.message.replace(/\n\s*$/, '')
+                    message: latestCommit.commit.message.trim()
                 };
             } else {
                 return { error: '该仓库没有提交记录。' };
@@ -126,6 +113,10 @@ export class UpdateTask extends plugin {
         } catch (error) {
             return { error: '查询出错：' + error.message };
         }
+    }
+
+    async sleep(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
     }
 }
 
@@ -159,7 +150,5 @@ function init() {
         });
     }
 
-    // 删除了 traverseDirectory 调用
-    // traverseDirectory('.\\plugins');
     logger.info('初始化完成，已处理 CUSTOM_REPOSITORY 列表');
 }
