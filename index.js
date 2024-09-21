@@ -53,7 +53,7 @@ async function ensureFileExists(src, dest, defaultContent = '') {
 async function initializePlugin() {
   // 自动创建配置文件并写入默认内容
   const yamlContent = `
- # config.yam
+# config.yaml
 # 一言设置
 yiyan: true
 # 疯狂星期四设置
