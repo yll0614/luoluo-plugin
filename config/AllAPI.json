@@ -29,11 +29,11 @@
     },
     "api10": {
         "name": "QQ头像API",
-        "url": "q.qlogo.cn/headimg_dl"
+        "url": "https://q.qlogo.cn/headimg_dl"
     },
     "api11": {
         "name": "QQ群头像API",
-        "url": "p.qlogo.cn/gh"
+        "url": "https://p.qlogo.cn/gh"
     },
     "api12": {
         "name": "随机动漫图API",
