@@ -27,6 +27,14 @@
         "name": "垃圾分类API",
         "url": "https://api.gumengya.com/Api/AiLaji"
     },
+    "api10": {
+        "name": "QQ头像API",
+        "url": "q.qlogo.cn/headimg_dl"
+    },
+    "api11": {
+        "name": "QQ群头像API",
+        "url": "p.qlogo.cn/gh"
+    },
     "api12": {
         "name": "随机动漫图API",
         "url": "https://tenapi.cn/v2/acg"

@@ -28,7 +28,7 @@ export class qqtx extends plugin {
         user_id = Number(user_id) || String(user_id)
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)
         const API = JSON.parse(data)
-        let api = API.api10.url + `?b=qq&nk=${user_id}&s=640`
+        let api = API.api10.url + `?dst_uin=${user_id}&spec=640&img_type=jpg`
          e.reply([segment.image(`${api}`)])
         } catch (err) {
             logger.error(`获取QQ头像时出错: ${err.message}`);
