@@ -13,7 +13,7 @@ export class Example extends plugin {
             priority: 5000,
             rule: [
                 {
-                    reg: '网页截图(.*)', 
+                    reg: '网页截图(.*)',
                     fnc: 'autoScreenshot'
                 }
             ]
@@ -48,22 +48,35 @@ export class Example extends plugin {
         if (blockedPrefixes.some(prefix => url.startsWith(prefix))) return;
 
         try {
+            const completionTime = new Date().toLocaleString();
+            await e.reply('正在等待网页响应，响应后将开始截图，请稍候', false);
             if (url.includes('gchat.qpic.cn')) {
                 await e.reply(segment.image(url), true);
             } else {
                 const img = await this.captureScreenshot(url);
-                await e.reply(segment.image(img), true);
+                await e.reply(`截图完成时间：${completionTime}`,
+                    segment.image(img), true);
             }
         } catch (err) {
             console.error(`截图错误 ${url}: ${err.message}`);
+            e.reply(`截图错误 ${url}: ${err.message}`);
         }
     }
+
 
     async captureScreenshot(url) {
         try {
             const browser = await puppeteer.launch({
-                headless: 'new', // 选择新的 headless 模式
-                defaultViewport: { width: 1280, height: 720 }
+                headless: true,
+                headless: "new",
+                defaultViewport: { width: 1280, height: 720 },
+                args: [
+                    '--no-sandbox',
+                    '--disable-setuid-sandbox',
+                    '--disable-gpu',
+                    '--disable-dev-shm-usage',
+                    '--remote-debugging-port=9222'
+                ]
             });
             const page = await browser.newPage();
 
@@ -77,10 +90,12 @@ export class Example extends plugin {
                 throw err;
             } finally {
                 await page.close();
-                await browser.close(); // 确保在完成后关闭浏览器
+                await browser.close();
             }
         } catch (err) {
             throw new Error(`启动浏览器或截图时出错: ${err.message}`);
         }
     }
+
+
 }

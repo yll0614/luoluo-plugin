@@ -27,7 +27,7 @@ export class UpdateTask extends plugin {
             ]
         });
         this.task = {
-            cron: '0 */15 * * * *',
+            cron: '*/30 * * * * *', 
             name: 'luoluo-plugin定时检查更新',
             log: false,
             fnc: () => this.UpdateTask()
@@ -39,47 +39,42 @@ export class UpdateTask extends plugin {
             logger.error('UpdateTask已关闭');
             return true;
         }
-
+    
         // 去重
         REPOSITORY_LIST = Array.from(new Set(REPOSITORY_LIST));
         if (REPOSITORY_LIST.length === 0) {
             logger.info('未检测到有效的仓库地址');
             return false;
         }
-
-        logger.info(`检测到${REPOSITORY_LIST.length}个仓库地址`);
+    
         let content = [];
         let index = -1;
-
+    
         for (const item of REPOSITORY_LIST) {
-            logger.info(`仓库地址：${item.owner}/${item.repo}`);
             index++;
             if (index > 1) {
                 await this.sleep(1000);
             }
-
+    
             let repositoryData = await this.getGiteeLatestCommit(item.owner, item.repo);
             if (!repositoryData?.sha) {
-                logger.info(`Gitee仓库地址：${item.owner}/${item.repo}，未检测到提交记录`);
-                continue;
+                continue; // 跳过无提交记录的仓库
             }
-
-            logger.info(`Gitee仓库地址：${item.owner}/${item.repo}，最新提交：${repositoryData.date}`);
+    
             const redisKey = `${prefix}${item.owner}/${item.repo}`;
             let redisSha = await redis.get(redisKey);
-
+    
             if (redisSha && String(redisSha) === String(repositoryData.sha)) {
-                logger.info(`仓库地址：${item.owner}/${item.repo} 暂无更新`);
-                continue;
+                continue; // 跳过无更新的仓库
             }
-
+    
             await redis.set(redisKey, repositoryData.sha);
             content.push(repositoryData);
         }
-
+    
         if (content.length > 0) {
             const msg = '检测到luoluo-plugin更新...\n' + content.map(i => `项目名称：${i.owner}/${i.repo}\n开发者名称：${i.author}\n开发者邮箱：${i.email}\n更新信息：${i.message}\n更新时间：${i.date}\n`).join('\n');
-
+    
             const masters = cfg.masterQQ;
             for (const master of masters) {
                 if (master.toString().length > 11) continue;
@@ -88,6 +83,7 @@ export class UpdateTask extends plugin {
             }
         }
     }
+    
 
     async getGiteeLatestCommit(owner, repo) {
         const apiUrl = `https://gitee.com/api/v5/repos/${owner}/${repo}/commits`;
