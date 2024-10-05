@@ -35,7 +35,7 @@ export class setting extends plugin {
 
         let [, type, status] = reg;
         let settingKey = this.getSettingKey(type);
-        let logMessage = `${type}已${status}\n开发者落落提醒您:\n为确保配置生效请自行重启`;
+        let logMessage = `${type}已${status}\n开发者洛洛提醒您:\n为确保配置生效请自行重启`;
 
         try {
             CONFIG_YAML[settingKey] = status === '开启';
