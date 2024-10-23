@@ -31,8 +31,6 @@ git clone https://ghproxy.net/https://github.com/yll0614/luoluo-plugin.git ./plu
 下载仓库解压zip文件将luoluo-plugin-main放入Yunzai/Miao-Yunzai的/plugins目录下重命名去掉后面的<u>-main</u>
 ```
 #### 2. 安装依赖
-
-```
 pnpm install --filter=luoluo-plugin
 ```
 
