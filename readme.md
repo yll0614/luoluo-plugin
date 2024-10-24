@@ -35,7 +35,7 @@ git clone --depth=1 https://ghproxy.net/https://github.com/yll0614/luoluo-plugin
 <img src='https://gitee.com/yll0614/img/raw/master/Download-luoluo-plugin.png'  alt='Download-luoluo-plugin.png'></img>
 </div>
 
-### 安装依赖 一定要安装依赖!!!
+### - 安装依赖 <span style="color: red;"> 一定要安装依赖!!! </span>
 
 ```
 pnpm install --filter=luoluo-plugin
