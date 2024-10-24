@@ -31,13 +31,15 @@ git clone --depth=1 https://ghproxy.net/https://github.com/yll0614/luoluo-plugin
 ```
 ### 方式二:手动下载插件
 下载仓库解压zip文件将luoluo-plugin-main放入Yunzai/Miao-Yunzai的/plugins目录下重命名去掉后面的<u>-main</u>
-```
-#### 2. 安装依赖
-pnpm install --filter=luoluo-plugin
-```
 
 <img src='https://gitee.com/yll0614/img/raw/master/Download-luoluo-plugin.png'  alt='Download-luoluo-plugin.png'></img>
 </div>
+
+### 安装依赖 一定要安装依赖!!!
+
+```
+pnpm install --filter=luoluo-plugin
+```
 
  ## 其他  
  - 由于插件性质 某些API可能会失效 若发现失效API 可联系作者或发起pr以更改失效api
