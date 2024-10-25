@@ -48,7 +48,8 @@ pnpm install --filter=luoluo-plugin
 
  - 注意 如果您发起pr来更改API链接 您在进行pr之前须经本地测试以保证这是一个可供使用的api 若确认某api失效 发起pr后作者也会审查后才将其合并
 <br/>
-
+- 请注明来意及来源
+<br/>
 - QQ：[2443958507(高一小白)](https://qm.qq.com/cgi-bin/qm/qr?k=Vzr6Z6yISyfTNKic29xQEattdPxHldPW)
 <br/>
 
