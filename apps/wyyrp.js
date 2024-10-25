@@ -36,11 +36,6 @@ export class wyyrp extends plugin {
             let response = await fetch(api);
             let Data = await response.json();
 
-            if (Data['code'] !== '0') {
-                e.reply('请求失败，请稍后再试或联系管理员!');
-                return true;
-            }
-
             // 构建回复信息
             let msg = `歌曲名称: ${Data['data']['name']}\n` +
                       `歌手: ${Data['data']['artist']}\n` +

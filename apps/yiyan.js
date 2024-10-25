@@ -8,11 +8,6 @@ async function LLAPITOGO(e, API) {
         let api = API.api2.url + `?format=json`
         let jx = await fetch(api)
         const Data = await (jx).json()
-        let code = Data['code']
-        if (code != '200') {
-            e.reply([`请求失败,请稍后再试或联系管理员!`])
-            return true
-        }
         let msg = '一言分类名称：'+Data['data']['catname']
         let msg2 = '一言作者：'+Data['data']['author']
         let msg1 = '一言来源：'+Data['data']['source']
