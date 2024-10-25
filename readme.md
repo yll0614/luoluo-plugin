@@ -35,6 +35,12 @@ git clone --depth=1 https://ghproxy.net/https://github.com/yll0614/luoluo-plugin
 <img src='https://gitee.com/yll0614/img/raw/master/Download-luoluo-plugin.png'  alt='Download-luoluo-plugin.png'></img>
 </div>
 
+### 安装依赖 一定要安装依赖!!!
+
+```
+pnpm install --filter=luoluo-plugin
+```
+
  ## 其他  
  - 由于插件性质 某些API可能会失效 若发现失效API 可联系作者或发起pr以更改失效api
 
@@ -44,6 +50,10 @@ git clone --depth=1 https://ghproxy.net/https://github.com/yll0614/luoluo-plugin
 <br/>
 
 - QQ：[2443958507(高一小白)](https://qm.qq.com/cgi-bin/qm/qr?k=Vzr6Z6yISyfTNKic29xQEattdPxHldPW)
+<br/>
+
+- [企业微信联系方式(扫码添加)](https://gitee.com/yll0614/img/raw/master/work.weixin.jpg)
+<img src='https://gitee.com/yll0614/img/raw/master/work.weixin.jpg'  alt='work.weixin.png'>
 <br/>
 
 - 有没有觉得这个Readme和哪个插件相似?是的这个Readme就是是借鉴 [@xwy](https://gitee.com/xwy231321)的 [ql-plugin](https://gitee.com/xwy231321/ql-plugin)的Readme,部分逻辑也与其插件相似 (已经其本人同意)
