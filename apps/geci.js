@@ -91,7 +91,7 @@ export class geci extends plugin {
                 return true;
             }
 
-            e.reply(`请等待音频输出 具体所需时间视设备性能而定`);
+          //  e.reply(`请等待音频输出 具体所需时间视设备性能而定`);
             e.reply(segment.record(Data['data']['src']));
             e.reply(clean(lyrics));
             return true;
@@ -113,7 +113,7 @@ export class geci extends plugin {
 
         try {
             const Data = await this.fetchData(api);
-            e.reply(`请等待音频输出 具体所需时间视设备性能而定`);
+          //  e.reply(`请等待音频输出 具体所需时间视设备性能而定`);
             e.reply(segment.record(Data['data']['src']));
             return true;
         } catch (error) {
