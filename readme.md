@@ -61,11 +61,11 @@ pnpm install --filter=luoluo-plugin
 
 - ***邮箱联系方式***
 
-- ```txt yll@yll.info ```
+- ``` yll@yll.info ```
 
-- ```txt 2443958507@qq.com```
+- ``` 2443958507@qq.com```
 
-- ```txt czh0614@outlook.com ```
+- ``` czh0614@outlook.com ```
 
 
 - 有没有觉得这个Readme和哪个插件相似?是的这个Readme就是是借鉴 [@xwy](https://gitee.com/xwy231321)的 [ql-plugin](https://gitee.com/xwy231321/ql-plugin)的Readme,部分逻辑也与其插件相似 (已经其本人同意)
