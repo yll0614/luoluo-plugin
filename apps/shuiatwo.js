@@ -85,7 +85,7 @@ export class whoAtme extends plugin {
     }
 
     async whoAtme(e) {
-        if (!CONFIG_YAML.shuiatwo) {
+        if (!CONFIG_YAML.shuianwo) {
             logger.error('谁艾特我已关闭');
             return false;
         }
