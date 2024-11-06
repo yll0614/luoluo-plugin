@@ -27,13 +27,20 @@ function formatNumber(num) {
     }
 }
 
+function fail(e, msg, id) {
+    if (e.msg != id || !e.msg.includes(`bilibili`)) { return true }
+
+    e.reply(`[${id}]解析失败\n信息: ${msg}`, { recallMsg: 5 })
+    return
+}
+
 export class bilitv extends plugin {
     constructor() {
         super({
             name: "bilitv-ll",
             dsc: "b站解析",
             event: "message",
-            priority: -114514,
+            priority: 114514,
             rule: [
                 {
                     reg: regBV,
@@ -62,6 +69,7 @@ export class bilitv extends plugin {
             ]
         })
     }
+
     async jxsp(e) {
         if (CONFIG_YAML.bilitv == false) {
             logger.error('哔哩哔哩解析已关闭');
@@ -83,6 +91,7 @@ export class bilitv extends plugin {
             }
             bvid = r.join("")
             if (!(bvid.match(regBV))) {
+                fail(e, "转换AV号失败", e.msg)
                 return true
             }
         }
@@ -91,11 +100,11 @@ export class bilitv extends plugin {
             try {
                 bvid = regBV.exec((await fetch("https://" + (regB23.exec(e.msg)[0]).replace(/\\/g, ""))).url)
                 if (bvid == null) {
-                    e.reply("解析失败", true)
+                    fail(e, "解析B23链接失败", e.msg)
                     return true
                 }
             } catch (e) {
-                e.reply("解析失败", true)
+                fail(e, "解析B23链接失败", e.msg)
                 return true
             }
         } else {
@@ -109,7 +118,8 @@ export class bilitv extends plugin {
         })
         res = await res.json()
         if (res.code != 0) {
-            return e.reply("解析失败\n信息:" + res.message)
+            fail(e, res.message, e.msg)
+            return true
         } else {
             e.reply([segment.image(res.data.pic), `${res.data.title}\nhttps://www.bilibili.com/video/${bvid}\n作者: ${res.data.owner.name}\n播放: ${formatNumber(res.data.stat.view)} | 弹幕: ${formatNumber(res.data.stat.danmaku)}\n点赞: ${formatNumber(res.data.stat.like)} | 投币: ${formatNumber(res.data.stat.coin)}\n收藏: ${formatNumber(res.data.stat.favorite)} | 评论: ${formatNumber(res.data.stat.reply)}`], true)
         }
@@ -122,7 +132,7 @@ export class bilitv extends plugin {
         })
         res = await res.json()
         if (!res || res.code != 0) {
-            e.reply("视频解析失败")
+            fail(e, "视频解析失败", e.msg)
             return true
         }
         e.reply(segment.video(Buffer.from(await (await fetch(res.data.durl[0].url, {
@@ -133,7 +143,6 @@ export class bilitv extends plugin {
         })).arrayBuffer())))
         return true
     }
-
 
     async jxfj(e) {
         let epid = ""
@@ -149,11 +158,12 @@ export class bilitv extends plugin {
                         }
                     })).json()
                     if (temp.code != 0) {
-                        return e.reply("解析失败\n信息:" + temp.message)
+                        fail(e, temp.message, e.msg)
+                        return true
                     }
                     ssid = temp.result.media.season_id
                 } catch (e) {
-                    e.reply("解析失败")
+                    fail(e, "解析MD信息失败", e.msg)
                     return true
                 }
             } else {
@@ -166,7 +176,8 @@ export class bilitv extends plugin {
                 }
             })).json()
             if (temp.code != 0) {
-                return e.reply("解析失败\n信息:" + temp.message)
+                fail(e, temp.message, e.msg)
+                return true
             }
             epid = (temp.result.main_section.episodes[0].share_url).replace("https://www.bilibili.com/bangumi/play/ep", "")
         } else {
@@ -179,7 +190,8 @@ export class bilitv extends plugin {
             }
         })).json()
         if (res.code != 0) {
-            return e.reply("解析失败\n信息:" + res.message)
+            fail(e, res.message, e.msg)
+            return true
         }
         e.reply([
             segment.image(res.result.cover),
