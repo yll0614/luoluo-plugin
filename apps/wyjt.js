@@ -1,5 +1,4 @@
 import puppeteer from 'puppeteer'; // 直接从 puppeteer 导入
-import { segment } from 'oicq';
 import YAML from 'yaml';
 import fs from 'fs';
 import { Plugin_Path } from '../components/index.js';
@@ -48,21 +47,18 @@ export class Example extends plugin {
         if (blockedPrefixes.some(prefix => url.startsWith(prefix))) return;
 
         try {
-            const completionTime = new Date().toLocaleString();
             await e.reply('正在等待网页响应，响应后将开始截图，请稍候', false);
             if (url.includes('gchat.qpic.cn')) {
-                await segment.image(url), true;
+                await e.reply(segment.image(url), true);
             } else {
                 const img = await this.captureScreenshot(url);
-              //  await e.reply(`截图完成时间：${completionTime}`,
-                    segment.image(img), true;
+                await e.reply(segment.image(img), true);
             }
         } catch (err) {
             console.error(`截图错误 ${url}: ${err.message}`);
             e.reply(`截图错误 ${url}: ${err.message}`);
         }
     }
-
 
     async captureScreenshot(url) {
         try {
@@ -96,6 +92,4 @@ export class Example extends plugin {
             throw new Error(`启动浏览器或截图时出错: ${err.message}`);
         }
     }
-
-
 }
