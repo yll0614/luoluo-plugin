@@ -14,8 +14,8 @@ const getRoot = (root = '') => {
 let Data = {
   /*
   * 根据指定的path依次检查与创建目录
-  * */
-  createDir (path = '', root = '', includeFile = false) {
+  **/
+  createDir(path = '', root = '', includeFile = false) {
     root = getRoot(root)
     let pathList = path.split('/')
     let nowPath = root
@@ -34,8 +34,8 @@ let Data = {
 
   /*
   * 读取json
-  * */
-  readJSON (file = '', root = '') {
+  **/
+  readJSON(file = '', root = '') {
     root = getRoot(root)
     if (fs.existsSync(`${root}/${file}`)) {
       try {
@@ -49,8 +49,8 @@ let Data = {
 
   /*
   * 写JSON
-  * */
-  writeJSON (file, data, space = '\t', root = '') {
+  **/
+  writeJSON(file, data, space = '\t', root = '') {
     // 检查并创建目录
     Data.createDir(file, root, true)
     root = getRoot(root)
@@ -58,7 +58,7 @@ let Data = {
     return fs.writeFileSync(`${root}/${file}`, JSON.stringify(data, null, space))
   },
 
-  async getCacheJSON (key) {
+  async getCacheJSON(key) {
     try {
       let txt = await redis.get(key)
       if (txt) {
@@ -70,11 +70,11 @@ let Data = {
     return {}
   },
 
-  async setCacheJSON (key, data, EX = 3600 * 24 * 90) {
+  async setCacheJSON(key, data, EX = 3600 * 24 * 90) {
     await redis.set(key, JSON.stringify(data), { EX })
   },
 
-  async importModule (file, root = '') {
+  async importModule(file, root = '') {
     root = getRoot(root)
     if (!/\.js$/.test(file)) {
       file = file + '.js'
@@ -90,16 +90,16 @@ let Data = {
     return {}
   },
 
-  async importDefault (file, root) {
+  async importDefault(file, root) {
     let ret = await Data.importModule(file, root)
     return ret.default || {}
   },
 
-  async import (name) {
+  async import(name) {
     return await Data.importModule(`components/optional-lib/${name}.js`)
   },
 
-  async importCfg (key) {
+  async importCfg(key) {
     let sysCfg = await Data.importModule(`config/system/${key}_system.js`)
     let diyCfg = await Data.importModule(`config/${key}.js`)
     if (diyCfg.isSys) {
@@ -122,9 +122,9 @@ let Data = {
   * defaultData: 当某个字段为空时会选取defaultData的对应内容
   * toKeyPrefix：返回数据的字段前缀，默认为空。defaultData中的键值无需包含toKeyPrefix
   *
-  * */
+  **/
 
-  getData (target, keyList = '', cfg = {}) {
+  getData(target, keyList = '', cfg = {}) {
     target = target || {}
     let defaultData = cfg.defaultData || {}
     let ret = {}
@@ -151,12 +151,12 @@ let Data = {
     return ret
   },
 
-  getVal (target, keyFrom, defaultValue) {
+  getVal(target, keyFrom, defaultValue) {
     return lodash.get(target, keyFrom, defaultValue)
   },
 
   // 异步池，聚合请求
-  async asyncPool (poolLimit, array, iteratorFn) {
+  async asyncPool(poolLimit, array, iteratorFn) {
     const ret = [] // 存储所有的异步任务
     const executing = [] // 存储正在执行的异步任务
     for (const item of array) {
@@ -180,12 +180,12 @@ let Data = {
   },
 
   // sleep
-  sleep (ms) {
+  sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms))
   },
 
   // 获取默认值
-  def () {
+  def() {
     for (let idx in arguments) {
       if (!lodash.isUndefined(arguments[idx])) {
         return arguments[idx]
@@ -208,7 +208,7 @@ let Data = {
     })
   },
 
-  regRet (reg, txt, idx) {
+  regRet(reg, txt, idx) {
     if (reg && txt) {
       let ret = reg.exec(txt)
       if (ret && ret[idx]) {
