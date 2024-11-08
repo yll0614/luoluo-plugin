@@ -1,122 +1,56 @@
-import { fileURLToPath } from 'url';
-import fs from 'fs/promises';
-import path from 'path';
-let is_icqq = false;
-let is_oicq = false;
-let loadedFilesCount = 0;
-let loadedFilesCounterr = 0;
-let apps;
-const moduleCache = new Map();
-try {
-  let icqq = await import("icqq");
-  if (icqq) is_icqq = true;
-} catch (err) {
-  try {
-    let oicq = await import("oicq");
-    if (oicq) is_oicq = true;
-  } catch (err) { }
-}
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import chalk from 'chalk';
+import { fileURLToPath, pathToFileURL } from 'url';
 
-if (!global.segment) {
-  global.segment = (await import("oicq")).segment
-}
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-// 获取当前文件的绝对路径
-let __filename = fileURLToPath(import.meta.url);
-// 获取当前文件所在目录的绝对路径
-let __dirname = path.dirname(__filename);
+const appsDir = path.join(__dirname, 'apps');
 
-let ConfigPath = __dirname;
+let successCount = 0;
+let failureCount = 0;
 
-async function ensureFileExists(src, dest) {
-  try {
-    const fileExists = await fs.access(dest).then(() => true).catch(() => false);
-    if (!fileExists) {
-      await fs.copyFile(src, dest);
-    }
-  } catch (err) {
-    console.error(`落落插件载入错误`, err.message);
-
-  }
-}
-
-async function main() {
-  await ensureFileExists(path.join(ConfigPath, 'config/defSet/config.yaml'), path.join(ConfigPath, 'config/config.yaml'));
-}
-
-main();
-
-logger.info('------（-＾〇＾-）-----')
-logger.info('落落插件初始化完成')
-logger.info('-----(/^▽^)/------')
-let AppName = 'luoluo-plugin'
 const startTime = Date.now();
-const { apps: loadedApps, loadedFilesCount: count, loadedFilesCounterr: counterr } = await appsOut({ AppsName: 'apps' });
-const endTime = Date.now();
-apps = loadedApps;
-loadedFilesCount = count;
-loadedFilesCounterr = counterr;
-logger.info(logger.yellow(`[${AppName}] 共加载了 ${loadedFilesCount} 个函数 ${loadedFilesCounterr} 个失败 耗时 ${endTime - startTime} 毫秒`))
-export { apps };
+let apps = {};
 
-async function appsOut({ AppsName }) {
-  const firstName = path.join('plugins', AppName);
-  const filepath = path.resolve(firstName, AppsName);
-  let loadedFilesCount = 0;
-  let loadedFilesCounterr = 0;
-  const apps = {};
+logger.info(`\t${chalk.cyan('LuoLuo插件载入中···')}`);
 
-  try {
-    const jsFilePaths = await traverseDirectory(filepath);
-    await Promise.all(jsFilePaths.map(async (item) => {
-      try {
-        const allExport = moduleCache.has(item)
-          ? moduleCache.get(item)
-          : await import(`file://${item}`);
+try {
+  const files = (await fs.readdir(appsDir)).filter(file => file.endsWith('.js'));
 
-        for (const key of Object.keys(allExport)) {
-          if (typeof allExport[key] === 'function' && allExport[key].prototype) {
-            let className = key;
-            if (Object.prototype.hasOwnProperty.call(apps, className)) {
-              let counter = 1;
-              while (Object.prototype.hasOwnProperty.call(apps, `${className}_${counter}`)) {
-                counter++;
-              }
-              className = `${className}_${counter}`;
-              logger.info(`[${AppName}] 同名导出 ${key} 重命名为 ${className} : ${item}`);
-            }
-            apps[className] = allExport[key];
-            loadedFilesCount++;
-          }
-        }
-      } catch (error) {
-        logger.error(`[${AppName}] 加载 ${item} 文件失败: ${error.message}`);
-        loadedFilesCounterr++;
-      }
-    }));
-  } catch (error) {
-    logger.error('读取插件目录失败:', error.message);
-  }
-
-  return { apps, loadedFilesCount, loadedFilesCounterr };
-}
-
-async function traverseDirectory(dir) {
-  try {
-    const files = await fs.readdir(dir, { withFileTypes: true });
-    const jsFiles = [];
-    for (const file of files) {
-      const pathname = path.join(dir, file.name);
-      if (file.isDirectory()) {
-        jsFiles.push(...await traverseDirectory(pathname));
-      } else if (file.isFile() && file.name.endsWith('.js')) {
-        jsFiles.push(pathname);
-      }
+  const filePaths = files.map(file => ({
+    name: path.basename(file, '.js'),
+    filePath: pathToFileURL(path.join(appsDir, file)).href
+  }));
+  const loadModules = filePaths.map(async ({ name, filePath }) => {
+    try {
+      const moduleExports = await import(filePath);
+      const defaultExport = moduleExports?.default || moduleExports[Object.keys(moduleExports)[0]];
+      apps[name] = defaultExport;
+      logger.debug(`LuoLuo插件成功载入：${chalk.green(name)}`);
+      successCount++;
+    } catch (error) {
+      logger.error(`LuoLuo插件载入错误：${chalk.red(name)}`);
+      logger.error(error);
+      failureCount++;
     }
-    return jsFiles;
-  } catch (error) {
-    console.error('读取插件目录失败:', error.message);
-    return [];
-  }
+  });
+
+  await Promise.allSettled(loadModules);
+
+} catch (error) {
+  logger.error(`读取文件时出错：${chalk.red(error.message)}`);
 }
 
+const endTime = Date.now();
+const elapsedTime = (endTime - startTime);
+
+logger.info(`${chalk.cyan('-------------------')}`);
+logger.info(`${chalk.green('LuoLuo插件载入完成')}`);
+logger.info(`成功加载：${chalk.green(successCount)} 个`);
+logger.info(`加载失败：${chalk.red(failureCount)} 个`);
+logger.info(`总耗时：${chalk.yellow(elapsedTime)} 毫秒`);
+logger.info(`${chalk.cyan('-------------------')}`);
+
+export { apps };
