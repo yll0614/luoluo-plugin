@@ -1,8 +1,14 @@
-import path from 'path'
+import path from 'path';
+import fs from 'fs';
+import yaml from 'yaml';
 import lodash from 'lodash'
-import cfg from "./model/cfg.js";
-import {_paths} from "./model/paths.js";
-
+import { Plugin_Path } from './components/index.js'
+function getconfig(name) {
+  let cfgyaml = `${Plugin_Path}/config/${name}.yaml`
+  const configData = fs.readFileSync(cfgyaml, 'utf8');
+  let config = yaml.parse(configData);
+  return { config };
+}
 // 支持锅巴
 export function supportGuoba() {
   return {
@@ -37,7 +43,7 @@ export function supportGuoba() {
       // 图标颜色，例：#FF0000 或 rgb(255, 0, 0)
       iconColor: '#d19f56',
       // 如果想要显示成图片，也可以填写图标路径（绝对路径），可以使用静图和动图
-      iconPath: path.join(_paths.pluginRoot, 'resources/icon.gif'),
+      iconPath: path.join(Plugin_Path, 'resources/icon.gif'),
     },
     // 配置项信息
     configInfo: {
@@ -228,20 +234,25 @@ export function supportGuoba() {
           componentProps: {},
         },
       ],
-      // 获取配置数据方法（用于前端填充显示数据）
-      getConfigData() {
-        return cfg.merged
+      async getConfigData() {
+        let { config } = getconfig(`config`)
+        return config;
       },
-      // 设置配置的方法（前端点确定后调用的方法）
-      setConfigData(data, {Result}) {
-        let config = {}
-        for (let [keyPath, value] of Object.entries(data)) {
-          lodash.set(config, keyPath, value)
+      async setConfigData(data, { Result }) {
+        const configFilePath = path.join(Plugin_Path, 'config', 'config.yaml');
+        let config = {};
+        if (fs.existsSync(configFilePath)) {
+          const configContent = fs.readFileSync(configFilePath, 'utf8');
+          config = yaml.parse(configContent) || {};
         }
-        config = lodash.merge({}, cfg.merged, config)
-        cfg.config.reader.setData(config)
-        return Result.ok({}, '保存成功~')
-      },
-    },
+        for (const [keyPath, value] of Object.entries(data)) {
+          lodash.set(config, keyPath, value);
+        }
+        const updatedConfigYAML = yaml.stringify(config);
+        fs.writeFileSync(configFilePath, updatedConfigYAML, 'utf8');
+        logger.mark(`[luoluo插件]配置文件更新`)
+        return Result.ok({}, '保存成功~');
+      }
+    }
   }
 }

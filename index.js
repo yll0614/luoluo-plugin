@@ -14,18 +14,18 @@ let failureCount = 0;
 const startTime = Date.now();
 let apps = {};
 
-logger.info(`\t${chalk.cyan('LuoLuo插件载入中···')}`);
-
-const source = path.join(__dirname, 'config/defSet/config.yaml');
-const target = path.join(__dirname, 'config/config.yaml');
-
-fs.copyFile(source, target, (err) => {
-  if (err) {
-    console.error('[LuoLuo插件]配置文件载入失败：', err);
-  } else {
-    logger.debug('[LuoLuo插件]配置文件载入成功');
+async function ensureFileExists(src, dest, defaultContent = '') {
+  try {
+    const fileExists = await fs.access(dest).then(() => true).catch(() => false);
+    if (!fileExists) {
+      await fs.copyFile(src, dest);
+    }
+  } catch (err) {
+    console.error(`落落插件载入错误`, err.message);
   }
-});
+}
+await ensureFileExists(path.join(__dirname, 'config/defSet/config.yaml'), path.join(__dirname, 'config/config.yaml'));
+
 try {
   const files = (await fs.readdir(appsDir)).filter(file => file.endsWith('.js'));
 
