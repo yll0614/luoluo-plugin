@@ -19,7 +19,7 @@ export class ljfl extends plugin {
     }
     async ljfl(e) {
         if (CONFIG_YAML.ljfl == false) {
-            logger.info('[luoluo插件]是什么垃圾');
+            logger.info('[luoluo插件]是什么垃圾已关闭');
             return false
         }
         const msg = e.msg.match(/^[#/]?(.*)是什么垃圾$/)[1]

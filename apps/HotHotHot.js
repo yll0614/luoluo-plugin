@@ -28,6 +28,10 @@ export class 热搜榜 extends plugin {
                 {
                     reg: '^[#/]?今日头条热点新闻$',
                     fnc: 'toutiaohotnew'
+                },
+                {
+                    reg: '^[#/]?今日头条热点新闻$',
+                    fnc: 'toutiaohotnew'
                 }
             ]
         })
@@ -122,6 +126,33 @@ export class 热搜榜 extends plugin {
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`);
         const API = JSON.parse(data);
         let api = API.api17.url;
+
+        try {
+            let response = await fetch(api);
+            let Data = await response.json();
+            let messages = [];
+            for (let i = 0; i < 10; i++) {
+                let name = Data['data'][i]['name'];
+                let url = Data['data'][i]['url'];
+                messages.push(`Top${i + 1}: ${name}\n链接: ${url}`);
+            }
+            e.reply(messages.join('\n\n'));
+            return true;
+
+        } catch (error) {
+            e.reply('请求出现错误，请稍后重试或联系管理员!');
+            return true;
+        }
+    }
+    async toutiaohotnew(e) {
+        if (CONFIG_YAML.toutiaohotnew === false) {
+            logger.info('[luoluo插件]今日头条热点新闻已关闭');
+            return false;
+        }
+
+        let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`);
+        const API = JSON.parse(data);
+        let api = API.api14.url;
 
         try {
             let response = await fetch(api);
