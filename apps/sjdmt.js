@@ -1,5 +1,4 @@
 import fs from 'fs'
-import plugin from '../../../lib/plugins/plugin.js'
 import { Plugin_Path } from '../components/index.js'
 import YAML from 'yaml'
 let CONFIG_YAML = YAML.parse(fs.readFileSync(`${Plugin_Path}/config/config.yaml`, 'utf8'));
@@ -18,7 +17,7 @@ export class sjdmt extends plugin {
             ]
         })
     }
-        async sjdmt(e) {
+    async sjdmt(e) {
         if (CONFIG_YAML.sjdmt == false) {
             logger.error('随机动漫图已关闭');
             return false
@@ -31,7 +30,7 @@ export class sjdmt extends plugin {
         let code = Data['code']
 
         let msg = Data['data']['url']
-         e.reply([segment.image(`${msg}`)])
-         return true
-     }
- }
+        e.reply([segment.image(`${msg}`)])
+        return true
+    }
+}

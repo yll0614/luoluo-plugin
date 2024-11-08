@@ -1,9 +1,8 @@
-import fs from 'fs/promises';  // 使用 promises API
-import plugin from '../../../lib/plugins/plugin.js';
+import fs from 'fs/promises';
 import { Plugin_Path } from '../components/index.js';
 import YAML from 'yaml';
 
-let CONFIG_YAML = YAML.parse(await fs.readFile(`${Plugin_Path}/config/config.yaml`, 'utf8'));  // 确保这里使用 await
+let CONFIG_YAML = YAML.parse(await fs.readFile(`${Plugin_Path}/config/config.yaml`, 'utf8'));
 
 export class qqtx extends plugin {
 
@@ -31,10 +30,10 @@ export class qqtx extends plugin {
         try {
             let user_id = e.at || e.user_id;
             user_id = Number(user_id) || String(user_id);
-            
-            let data = await fs.readFile(`${Plugin_Path}/config/AllAPI.json`, 'utf8');  
+
+            let data = await fs.readFile(`${Plugin_Path}/config/AllAPI.json`, 'utf8');
             const API = JSON.parse(data);
-            
+
             if (!API.api10 || !API.api10.url) {
                 throw new Error('API URL 不存在');
             }

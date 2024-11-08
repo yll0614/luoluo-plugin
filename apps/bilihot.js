@@ -1,6 +1,5 @@
 import fetch from "node-fetch";
 import fs from 'fs';
-import plugin from '../../../lib/plugins/plugin.js';
 import { Plugin_Path } from '../components/index.js';
 import YAML from 'yaml';
 
@@ -36,7 +35,7 @@ export class bilihot extends plugin {
             const response = await fetch(api);
             const Data = await response.json();
 
-            const messages = Data.data.map((item, index) => 
+            const messages = Data.data.map((item, index) =>
                 `Top${index + 1}: 热搜词: ${item.name}\n热搜词链接: ${item.url}`
             );
 

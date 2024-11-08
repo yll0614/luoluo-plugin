@@ -1,7 +1,6 @@
 import { exec } from 'child_process';
 import fs from 'fs';
 import os from 'os';
-import plugin from '../../../lib/plugins/plugin.js';
 import { Plugin_Path } from '../components/index.js';
 import YAML from 'yaml';
 import iconv from 'iconv-lite'; // 添加这个库
@@ -58,7 +57,7 @@ export class ping extends plugin {
                     return;
                 }
                 // 将 Buffer 转换为 UTF-8 编码的字符串
-                const output = iconv.decode(stdout, 'gbk'); 
+                const output = iconv.decode(stdout, 'gbk');
                 resolve(output);
             });
         });

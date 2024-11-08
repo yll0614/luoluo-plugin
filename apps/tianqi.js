@@ -1,6 +1,5 @@
 import fetch from "node-fetch";
 import fs from 'fs';
-import plugin from '../../../lib/plugins/plugin.js';
 import { Plugin_Path } from '../components/index.js';
 import YAML from 'yaml';
 import puppeteer from 'puppeteer';
@@ -145,13 +144,13 @@ export class tianqi extends plugin {
             throw new Error('无法计算有效的高度');
         }
 
-        const buffer = await page.screenshot({ 
-            type: 'png', 
-            clip: { 
-                x: 0, 
-                y: 0, 
-                width: 250, 
-                height: Math.ceil(height) 
+        const buffer = await page.screenshot({
+            type: 'png',
+            clip: {
+                x: 0,
+                y: 0,
+                width: 250,
+                height: Math.ceil(height)
             },
             omitBackground: true,
         });

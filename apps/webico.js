@@ -1,5 +1,4 @@
 import fs from 'fs';
-import plugin from '../../../lib/plugins/plugin.js';
 import { Plugin_Path } from '../components/index.js';
 import puppeteer from 'puppeteer';
 import YAML from 'yaml';

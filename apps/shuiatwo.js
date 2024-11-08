@@ -1,4 +1,3 @@
-import plugin from '../../../lib/plugins/plugin.js';
 import moment from "moment";
 import { Plugin_Path } from '../components/index.js';
 import YAML from 'yaml';
@@ -20,14 +19,14 @@ Bot.on("message.group", async (e) => {
         }
     }
 
-   
+
     if (!AtQQ.length) return false;
 
     let dateTime = moment().add(time, 'hours').format('YYYY-MM-DD HH:mm:ss');
     let new_date = (new Date(dateTime).getTime() - Date.now()) / 1000;
 
     e.raw_message = e.raw_message.replace(/\[(.*?)\]/g, '').trim();
-    
+
     if (e.atall) {
         AtQQ = (await e.group.getMemberMap()).map(member => member[0]);
     }
@@ -89,7 +88,7 @@ export class whoAtme extends plugin {
             logger.error('谁艾特我已关闭');
             return false;
         }
-    
+
         if (!e.isGroup) {
             e.reply('只支持群聊使用');
             return false;

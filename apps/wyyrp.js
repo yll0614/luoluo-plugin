@@ -1,6 +1,5 @@
 import fetch from "node-fetch";
 import fs from 'fs';
-import plugin from '../../../lib/plugins/plugin.js';
 import { Plugin_Path } from '../components/index.js';
 import YAML from 'yaml';
 
@@ -38,14 +37,14 @@ export class wyyrp extends plugin {
 
             // 构建回复信息
             let msg = `歌曲名称: ${Data['data']['name']}\n` +
-                      `歌手: ${Data['data']['artist']}\n` +
-                      `歌曲页面地址: ${Data['data']['url']}\n` +
-                      `歌曲播放地址: ${Data['data']['src']}\n` +
-                      `歌曲封面地址: ${Data['data']['picurl']}\n` +
-                      `评论者昵称: ${Data['data']['artistsname']}\n` +
-                      `评论者头像地址: ${Data['data']['avatarurl']}\n` +
-                      `评论内容: ${Data['data']['content']}\n` +
-                      `点赞数: ${Data['data']['likedCount']}`;
+                `歌手: ${Data['data']['artist']}\n` +
+                `歌曲页面地址: ${Data['data']['url']}\n` +
+                `歌曲播放地址: ${Data['data']['src']}\n` +
+                `歌曲封面地址: ${Data['data']['picurl']}\n` +
+                `评论者昵称: ${Data['data']['artistsname']}\n` +
+                `评论者头像地址: ${Data['data']['avatarurl']}\n` +
+                `评论内容: ${Data['data']['content']}\n` +
+                `点赞数: ${Data['data']['likedCount']}`;
 
             e.reply(msg);
             return true;

@@ -4,7 +4,6 @@
  该插件来自Aliorpse  https://gitee.com/Aliorpse/
  https://gitee.com/Aliorpse/Yunzai-AliorpsePlugins/tree/master/bilitv.js
  */
-import plugin from '../../../lib/plugins/plugin.js'
 import _ from 'lodash'
 import { Plugin_Path } from '../components/index.js'
 import fs from 'fs'
