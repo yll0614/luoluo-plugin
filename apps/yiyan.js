@@ -28,7 +28,7 @@ export class yiyan extends plugin {
         }
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`);
         const API = JSON.parse(data);
-        let apiUrl = API.api2.url;
+        let apiUrl = API.api2.url+`?encode=text`;
         let response = await fetch(apiUrl);
         let text = await response.text();
         e.reply(text, true);

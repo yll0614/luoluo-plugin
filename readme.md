@@ -1,14 +1,14 @@
 <div align="center">
-<h1>落落插件V3.0.0(luoluo-plugin)</h1>
+<h1>洛洛插件V4.0.0(luoluo-plugin)</h1>
 
-[![Gitee](https://img.shields.io/badge/Gitee-落落插件-black?style=flat-square&logo=gitee)](https://gitee.com/xwy231321/ql-plugin) [![云崽bot](https://img.shields.io/badge/云崽-v3-black?style=flat-square&logo=dependabot)](https://gitee.com/Le-niao/Yunzai-Bot) [![Group](https://img.shields.io/badge/联系方式-2443958507-red?style=flat-square&logo=GroupMe&logoColor=white)](https://qm.qq.com/cgi-bin/qm/qr?k=Vzr6Z6yISyfTNKic29xQEattdPxHldPW)<a href='https://gitee.com/yll0614/luoluo-plugin/stargazers'><img src='https://gitee.com/yll0614/luoluo-plugin/badge/star.svg?theme=dark' alt='star'></img></a>
+[![Gitee](https://img.shields.io/badge/Gitee-洛洛插件-black?style=flat-square&logo=gitee)](https://gitee.com/xwy231321/ql-plugin) [![云崽bot](https://img.shields.io/badge/云崽-v3-black?style=flat-square&logo=dependabot)](https://gitee.com/Le-niao/Yunzai-Bot) [![Group](https://img.shields.io/badge/联系方式-2443958507-red?style=flat-square&logo=GroupMe&logoColor=white)](https://qm.qq.com/cgi-bin/qm/qr?k=Vzr6Z6yISyfTNKic29xQEattdPxHldPW)<a href='https://gitee.com/yll0614/luoluo-plugin/stargazers'><img src='https://gitee.com/yll0614/luoluo-plugin/badge/star.svg?theme=dark' alt='star'></img></a>
 
  ###### 访问量<br><img src="https://count.moeyy.cn/get/@:yueyuez/"/></br>
 
- ## 插件功能 [v3.0.0](./CHANGELOG.md)
-<img src='https://gitee.com/yll0614/img/raw/master/v3.0.0.jpg'  alt='Help'></img>  
-<img src='https://gitee.com/yll0614/img/raw/master/v3.0.0bqb.jpg'  alt='BqbHelp'></img>
-<img src='https://gitee.com/yll0614/img/raw/master/v3.0.0setting.jpg'  alt='SettingHelp'></img>  
+ ## 插件功能 [v4.0.0](./CHANGELOG.md)
+<img src='https://gitee.com/yll0614/img/raw/master/v4.0.0.jpg'  alt='Help'></img>  
+<img src='https://gitee.com/yll0614/img/raw/master/v4.0.0bqb.jpg'  alt='BqbHelp'></img>
+<img src='https://gitee.com/yll0614/img/raw/master/v4.0.0setting.jpg'  alt='SettingHelp'></img>  
 
 
  ## 安装教程  
@@ -51,7 +51,7 @@ pnpm install --filter=luoluo-plugin
 - 请注明来意及来源
 <br/>
 
-- QQ：[2443958507(高一小白)](https://qm.qq.com/cgi-bin/qm/qr?k=Vzr6Z6yISyfTNKic29xQEattdPxHldPW)
+- QQ：```2443958507```[(高一小白)](https://qm.qq.com/cgi-bin/qm/qr?k=Vzr6Z6yISyfTNKic29xQEattdPxHldPW)
 
 <br/>
 
@@ -80,8 +80,8 @@ pnpm install --filter=luoluo-plugin
 |:----: |:----: |:----: |:----: |
 | [@xwy](https://gitee.com/xwy231321) | Readme及部分逻辑 | [@维拉](https://gitee.com/com190238) | 好耶~ 是奶茶一杯~  |
 | [@Tloml-Starry](https://gitee.com/Tloml-Starry) | JSON读取方式 |[@白狐](https://gitee.com/baihu433)|适配锅巴面板| 
-| [@心愿XY](https://gitee.com/hgh123520) | 插件更新  | [@君昭](https://gitee.com/jun-zhaojinzhaoei) | 部分API*1|
-
+| [@叶殇](https://gitee.com/https://gitee.com/maple-leaf-sweeping) | 大量逻辑更新优化| [@心愿XY](https://gitee.com/hgh123520) | 插件更新  
+| [@君昭](https://gitee.com/jun-zhaojinzhaoei) | 部分API*1|
 
 ## 免责声明
 
@@ -97,7 +97,6 @@ Yunzai-Bot插件库：[☞Github](https://github.com/yhArcadia/Yunzai-Bot-plugin
 
 Yunzai-Bot（V3）：[☞Github](https://github.com/Le-niao/Yunzai-Bot)/[☞Gitee](https://gitee.com/Le-niao/Yunzai-Bot) 
 
-luolo-plugin：[☞Github](https://github.com/yll0614/luoluo-plugin)/[☞Gitee](https://gitee.com/yll0614/luoluo-plugin)
 
 ql-plugin：[☞Github](https://github.com/xwy231321/ql-plugin)/[☞Gitee](https://gitee.com/xwy231321/ql-plugin)
 

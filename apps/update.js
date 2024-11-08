@@ -3,16 +3,16 @@ import { update as Update } from "../../other/update.js"
 export class luoluoupdate extends plugin {
   constructor() {
     super({
-      name: "落落插件更新",
+      name: "洛洛插件更新",
       event: "message",
       priority: 1000,
       rule: [
         {
-          reg: /^#?(ll|落落|洛洛|luoluo)(插件)?(强制)?更新$/i,
+          reg: /^#?(ll|洛洛|洛洛|luoluo)(插件)?(强制)?更新$/i,
           fnc: "update"
         },
         {
-          reg: /^#?(ll|落落|洛洛|luoluo)(插件)?更新日志$/i,
+          reg: /^#?(ll|洛洛|洛洛|luoluo)(插件)?更新日志$/i,
           fnc: "updateLog"
         }
       ]
