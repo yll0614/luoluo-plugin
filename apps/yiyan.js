@@ -32,7 +32,7 @@ export class yiyan extends plugin {
     }
     async yiyan(e) {
         if (CONFIG_YAML.yiyan == false) {
-            logger.error('一言已关闭');
+            logger.info('[luoluo插件]一言已关闭');
             return false
         }
         const emsg = e.msg.match(/^[#/]?一言(.*)$/)[1]

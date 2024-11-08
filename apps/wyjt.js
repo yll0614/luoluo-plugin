@@ -21,7 +21,7 @@ export class Example extends plugin {
 
     async autoScreenshot(e) {
         if (CONFIG_YAML.wyjt == false) {
-            logger.error('网页截图已关闭');
+            logger.info('[luoluo插件]网页截图已关闭');
             return false;
         }
         const url = this.extractUrl(e.msg);

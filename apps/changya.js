@@ -21,7 +21,7 @@ export class changya extends plugin {
     }
     async changya(e) {
         if (CONFIG_YAML.changya == false) {
-            logger.error('唱鸭已关闭');
+            logger.info('[luoluo插件]唱鸭已关闭');
             return false
         }
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)

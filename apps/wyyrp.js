@@ -23,7 +23,7 @@ export class wyyrp extends plugin {
 
     async wyyrp(e) {
         if (CONFIG_YAML.wyyrp === false) {
-            logger.error('网易云音乐热评已关闭');
+            logger.info('[luoluo插件]网易云音乐热评已关闭');
             return false;
         }
 

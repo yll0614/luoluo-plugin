@@ -25,7 +25,7 @@ export class ping extends plugin {
 
     async ping(e) {
         if (CONFIG_YAML.ping === false) {
-            logger.error('ping功能已关闭');
+            logger.info('[luoluo插件]ping功能已关闭');
             return false;
         }
 

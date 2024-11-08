@@ -19,7 +19,7 @@ export class qqqtx extends plugin {
     }
     async qqqtx(e) {
         if (CONFIG_YAML.qqqtx == false) {
-            logger.error('QQ群头像已关闭');
+            logger.info('[luoluo插件]QQ群头像已关闭');
             return false
         }
         try {

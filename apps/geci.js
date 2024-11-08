@@ -29,7 +29,7 @@ export class geci extends plugin {
 
     async geci(e) {
         if (!CONFIG_YAML.geci) {
-            logger.error('该功能已关闭，开启歌曲类即可');
+            logger.info('[luoluo插件]歌曲类功能已关闭');
             return false;
         }
 

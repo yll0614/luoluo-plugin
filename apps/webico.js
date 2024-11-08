@@ -23,13 +23,13 @@ export class webico extends plugin {
 
     async webico(e) {
         if (CONFIG_YAML.webico === false) {
-            logger.error('网站图标功能已关闭');
+            logger.info('[luoluo插件]网站图标功能已关闭');
             return false;
         }
 
         const msg = e.msg.match(/^[#/]?网站图标(.*)$/)[1].trim();
         if (!msg) {
-            e.reply('请提供一个有效的域名或网址');
+            e.reply('请提供一个有效的域名或网址', true);
             return false;
         }
 

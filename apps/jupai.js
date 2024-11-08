@@ -19,7 +19,7 @@ export class jupai extends plugin {
     }
     async jupai(e) {
         if (CONFIG_YAML.jupai == false) {
-            logger.error('举牌已关闭');
+            logger.info('[luoluo插件]举牌已关闭');
             return false
         }
         const msg = e.msg.match(/^[#/]?举牌(.*)$/)[1]

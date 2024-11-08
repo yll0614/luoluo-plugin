@@ -24,7 +24,7 @@ export class tianqi extends plugin {
 
     async cstq(e) {
         if (!CONFIG_YAML.tianqi) {
-            logger.error('天气功能已关闭');
+            logger.info('[luoluo插件]天气功能已关闭');
             return e.reply('天气功能已关闭');
         }
 

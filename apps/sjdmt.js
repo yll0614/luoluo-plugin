@@ -19,7 +19,7 @@ export class sjdmt extends plugin {
     }
     async sjdmt(e) {
         if (CONFIG_YAML.sjdmt == false) {
-            logger.error('随机动漫图已关闭');
+            logger.info('[luoluo插件]随机动漫图已关闭');
             return false
         }
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)

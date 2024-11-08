@@ -23,7 +23,7 @@ export class bilihot extends plugin {
 
     async bilihot(e) {
         if (CONFIG_YAML.bilhot === false) {
-            logger.error('哔哩哔哩热搜榜已关闭');
+            logger.info('[luoluo插件]哔哩哔哩热搜榜已关闭');
             return true;
         }
 

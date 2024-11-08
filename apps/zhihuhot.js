@@ -23,7 +23,7 @@ export class zhihuhot extends plugin {
 
     async zhihuhot(e) {
         if (CONFIG_YAML.zhihuhot == false) {
-            logger.error('知乎热搜榜已关闭');
+            logger.info('[luoluo插件]知乎热搜榜已关闭');
             return false;
         }
 

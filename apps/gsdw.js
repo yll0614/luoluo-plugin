@@ -20,7 +20,7 @@ export class gsdw extends plugin {
     }
     async gsdw(e) {
         if (CONFIG_YAML.gsdw == false) {
-            logger.error('攻受短文已关闭');
+            logger.info('[luoluo插件]攻受短文已关闭');
             return false
         }
         const msga = e.msg.match(/^[#/]?(.*)与(.*)攻受(短)?文$/)[1];

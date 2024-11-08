@@ -20,7 +20,7 @@ export class KFC extends plugin {
     }
     async KFC(e) {
         if (CONFIG_YAML.KFC == false) {
-            logger.error('哔哩哔哩热搜榜已关闭');
+            logger.info('[luoluo插件]疯狂星期四已关闭');
             return false
         }
         let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`)

@@ -23,7 +23,7 @@ export class douyinhot extends plugin {
 
     async douyinhot(e) {
         if (CONFIG_YAML.douyinhot === false) {
-            logger.error('抖音热搜榜已关闭');
+            logger.info('[luoluo插件]抖音热搜榜已关闭');
             return false;
         }
 

@@ -23,7 +23,7 @@ export class toutiaohot extends plugin {
 
     async toutiaohot(e) {
         if (CONFIG_YAML.toutiaohot === false) {
-            logger.error('今日头条热搜榜已关闭');
+            logger.info('[luoluo插件]今日头条热搜榜已关闭');
             return false;
         }
 

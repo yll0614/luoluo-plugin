@@ -19,7 +19,7 @@ export class bqb extends plugin {
     }
     async bqb(e) {
         if (CONFIG_YAML.sjbqb == false) {
-            logger.error('随机表情包已关闭');
+            logger.info('[luoluo插件]随机表情包已关闭');
             return false
         }
         const type = e.msg.match(/^#?随机(.*)表情包$/)[1];

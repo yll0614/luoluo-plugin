@@ -71,7 +71,7 @@ export class bilitv extends plugin {
 
     async jxsp(e) {
         if (CONFIG_YAML.bilitv == false) {
-            logger.error('哔哩哔哩解析已关闭');
+            logger.info('[luoluo插件]哔哩哔哩解析已关闭');
             return false
         }
         let bvid = ""
