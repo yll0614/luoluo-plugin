@@ -50,7 +50,7 @@ export class wyyrp extends plugin {
             return true;
 
         } catch (error) {
-            e.reply('请求出现错误，请稍后再试或联系管理员!');
+            e.reply('请求出现错误，请稍后再试或联系管理员!', true);
             return true;
         }
     }

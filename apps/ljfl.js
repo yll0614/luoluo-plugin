@@ -36,6 +36,6 @@ export class ljfl extends plugin {
 
         let msg0 = Data['data']['name']
         let msg1 = Data['data']['typeName']
-        e.reply([`垃圾名称:${msg0}\n该垃圾是:${msg1}`])
+        e.reply([`垃圾名称:${msg0}\n该垃圾是:${msg1}`, true])
     }
 }

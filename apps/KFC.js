@@ -28,7 +28,7 @@ export class KFC extends plugin {
         let api = API.api21.url
         const response = await fetch(api)
         let text = await response.text()
-        e.reply([`${text}`])
+        e.reply(text)
         return true
     }
 

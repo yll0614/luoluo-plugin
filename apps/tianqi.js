@@ -30,7 +30,7 @@ export class tianqi extends plugin {
 
         const city = e.msg.match(/^[#/]?(.*)天气$/)?.[1];
         if (!city) {
-            return e.reply('请提供城市名称');
+            return e.reply('请提供城市名称', true);
         }
 
         let data = await fs.promises.readFile(`${Plugin_Path}/config/AllAPI.json`, 'utf8');

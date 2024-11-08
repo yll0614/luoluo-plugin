@@ -37,8 +37,8 @@ export class changya extends plugin {
             ]);
             return true
         } catch (error) {
-            console.error('Error occurred:', error);
-            e.reply([`发生错误: ${error.message}`]);
+            logger.error('Error occurred:', error);
+            e.reply(`发生错误: ${error.message}`);
             return true
         }
     }

@@ -50,7 +50,7 @@ export class yiyan extends plugin {
         let api = API.api2.url
         const response = await fetch(api)
         let text = await response.text()
-        e.reply([`${text}`])
+        e.reply(text)
         return true
     }
 
