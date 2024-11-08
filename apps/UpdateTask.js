@@ -26,7 +26,7 @@ export class UpdateTask extends plugin {
             ]
         });
         this.task = {
-            cron: '*/30 * * * * *',
+            cron: '0 0,30 * * * ? *',
             name: 'luoluo-plugin定时检查更新',
             log: false,
             fnc: () => this.UpdateTask()
