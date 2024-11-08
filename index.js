@@ -18,7 +18,7 @@ try {
 }
 
 if (!global.segment) {
-    global.segment = (await import("oicq")).segment
+  global.segment = (await import("oicq")).segment
 }
 
 // 获取当前文件的绝对路径
@@ -36,13 +36,12 @@ async function ensureFileExists(src, dest) {
     }
   } catch (err) {
     console.error(`落落插件载入错误`, err.message);
-    
+
   }
 }
 
 async function main() {
   await ensureFileExists(path.join(ConfigPath, 'config/defSet/config.yaml'), path.join(ConfigPath, 'config/config.yaml'));
-  await ensureFileExists(path.join(ConfigPath, 'config/defSet/QQskey.json'), path.join(ConfigPath, 'config/QQskey.json'));
 }
 
 main();
@@ -98,7 +97,7 @@ async function appsOut({ AppsName }) {
   } catch (error) {
     logger.error('读取插件目录失败:', error.message);
   }
-  
+
   return { apps, loadedFilesCount, loadedFilesCounterr };
 }
 
