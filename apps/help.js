@@ -11,15 +11,15 @@ export class luoluo_help extends plugin {
       priority: 1000,
       rule: [
         {
-          reg: /^#?(ll|落落|luoluo)(插件)?(帮助|help|指令|菜单|命令)$/i,
+          reg: /^#?(ll|洛洛|luoluo)(插件)?(帮助|help|指令|菜单|命令)$/i,
           fnc: 'ahelp'
         },
         {
-          reg: /^#?(ll|落落|luoluo)(插件)?表情包帮助$/i,
+          reg: /^#?(ll|洛洛|luoluo)(插件)?表情包帮助$/i,
           fnc: 'bqbhelp'
         },
         {
-          reg: /^#?(ll|落落|luoluo)(插件)?设置帮助$/i,
+          reg: /^#?(ll|洛洛|luoluo)(插件)?设置帮助$/i,
           fnc: 'settinghelp'
         }
       ]

@@ -15,12 +15,12 @@ init();
 export class UpdateTask extends plugin {
     constructor() {
         super({
-            name: "落落插件检查更新",
+            name: "洛洛插件检查更新",
             event: "message",
             priority: 1000,
             rule: [
                 {
-                    reg: /^#?(ll|落落|洛洛|luoluo)(插件)?检查更新$/i,
+                    reg: /^#?(ll|洛洛|洛洛|luoluo)(插件)?检查更新$/i,
                     fnc: "UpdateTask"
                 }
             ]
