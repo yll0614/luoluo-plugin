@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import lodash from 'lodash'
-import {_paths} from './paths.js'
+import { _paths } from './paths.js'
 import YamlReader from './YamlReader.js'
 
 /** 配置文件 */
@@ -35,14 +35,14 @@ class GuobaExampleConfig {
       this.defSet.reader = new YamlReader(this.defSet.path, false)
       this.config.reader = new YamlReader(this.config.path, true)
     } catch (error) {
-      logger.error(`[GuobaExample] 配置文件格式错误! `, error)
+      logger.error(`[luoluo插件] 配置文件格式错误! `, error)
       throw error
     }
     if (isInit) {
     }
     this.config.reader.watcher.on('change', () => {
       if (!this.config.reader.isSave) {
-        logger.mark(`[GuobaExample] 配置文件重载成功~`)
+        logger.mark(`[luoluo插件] 配置文件重载成功~`)
       }
     })
   }
