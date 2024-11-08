@@ -16,6 +16,16 @@ let apps = {};
 
 logger.info(`\t${chalk.cyan('LuoLuo插件载入中···')}`);
 
+const source = path.join(__dirname, 'config/defSet/config.yaml');
+const target = path.join(__dirname, 'config/config.yaml');
+
+fs.copyFile(source, target, (err) => {
+  if (err) {
+    console.error('[LuoLuo插件]配置文件载入失败：', err);
+  } else {
+    logger.debug('[LuoLuo插件]配置文件载入成功');
+  }
+});
 try {
   const files = (await fs.readdir(appsDir)).filter(file => file.endsWith('.js'));
 
