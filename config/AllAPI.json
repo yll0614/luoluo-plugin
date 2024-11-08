@@ -5,7 +5,7 @@
     },
     "api2": {
         "name": "一言API",
-        "url": "https://tenapi.cn/v2/yiyan"
+        "url": "http://yiyan.yll.info"
     },
     "api3": {
         "name": "网易云音乐热评API",
