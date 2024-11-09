@@ -1,5 +1,5 @@
-import { Plugin_Name } from "../components/index.js"
-import { update as Update } from "../../other/update.js"
+import { Plugin_Name } from "../components/index.js";
+import { update as Update } from "../../other/update.js";
 export class luoluoupdate extends plugin {
   constructor() {
     super({
@@ -9,28 +9,28 @@ export class luoluoupdate extends plugin {
       rule: [
         {
           reg: /^#?(ll|洛洛|luoluo)(插件)?(强制)?更新$/i,
-          fnc: "update"
+          fnc: "update",
         },
         {
           reg: /^#?(ll|洛洛|luoluo)(插件)?更新日志$/i,
-          fnc: "updateLog"
-        }
-      ]
-    })
+          fnc: "updateLog",
+        },
+      ],
+    });
   }
 
   async update(e = this.e) {
-    const Type = e.msg.includes("强制") ? "#强制更新" : "#更新"
-    e.msg = Type + Plugin_Name
-    const up = new Update(e)
-    up.e = e
-    return up.update()
+    const Type = e.msg.includes("强制") ? "#强制更新" : "#更新";
+    e.msg = Type + Plugin_Name;
+    const up = new Update(e);
+    up.e = e;
+    return up.update();
   }
 
   async updateLog(e = this.e) {
-    e.msg = "#更新日志" + Plugin_Name
-    const up = new Update(e)
-    up.e = e
-    return up.updateLog()
+    e.msg = "#更新日志" + Plugin_Name;
+    const up = new Update(e);
+    up.e = e;
+    return up.updateLog();
   }
 }
