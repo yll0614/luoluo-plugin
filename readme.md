@@ -1,7 +1,7 @@
 <div align="center">
 <h1>洛洛插件V4.0.0(luoluo-plugin)</h1>
 
-[![Gitee](https://img.shields.io/badge/Gitee-洛洛插件-black?style=flat-square&logo=gitee)](https://gitee.com/xwy231321/ql-plugin) [![云崽bot](https://img.shields.io/badge/云崽-v3-black?style=flat-square&logo=dependabot)](https://gitee.com/Le-niao/Yunzai-Bot) [![Group](https://img.shields.io/badge/联系方式-2443958507-red?style=flat-square&logo=GroupMe&logoColor=white)](https://qm.qq.com/cgi-bin/qm/qr?k=Vzr6Z6yISyfTNKic29xQEattdPxHldPW)<a href='https://gitee.com/yll0614/luoluo-plugin/stargazers'><img src='https://gitee.com/yll0614/luoluo-plugin/badge/star.svg?theme=dark' alt='star'></img></a>
+[![洛洛/luoluo-plugin](https://gitee.com/yll0614/luoluo-plugin/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/yll0614/luoluo-plugin)
 
  ###### 访问量<br><img src="https://count.moeyy.cn/get/@:yueyuez/"/></br>
 
