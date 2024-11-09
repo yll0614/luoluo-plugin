@@ -80,8 +80,8 @@ pnpm install --filter=luoluo-plugin
 |:----: |:----: |:----: |:----: |
 | [@xwy](https://gitee.com/xwy231321) | Readme及部分逻辑 | [@维拉](https://gitee.com/com190238) | 好耶~ 是奶茶一杯~  |
 | [@Tloml-Starry](https://gitee.com/Tloml-Starry) | JSON读取方式 |[@白狐](https://gitee.com/baihu433)|适配锅巴面板| 
-| [@叶殇](https://gitee.com/https://gitee.com/maple-leaf-sweeping) | 大量逻辑更新优化| [@心愿XY](https://gitee.com/hgh123520) | 插件更新  
-| [@君昭](https://gitee.com/jun-zhaojinzhaoei) | 部分API*1|
+| [@叶殇](https://gitee.com/https://gitee.com/maple-leaf-sweeping) | 大量逻辑更新优化| [@Admilk](https://gitee.com/adrae) | 优化冗余|  
+| [@君昭](https://gitee.com/jun-zhaojinzhaoei) | 部分API*1| [@心愿XY](https://gitee.com/hgh123520) | 插件更新
 
 ## 免责声明
 
