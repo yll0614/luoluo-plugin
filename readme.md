@@ -1,7 +1,6 @@
 <div align="center">
 <h1>洛洛插件V4.0.0(luoluo-plugin)</h1>
 
-[![洛洛/luoluo-plugin](https://gitee.com/yll0614/luoluo-plugin/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/yll0614/luoluo-plugin)
 
  ###### 访问量<br><img src="https://count.moeyy.cn/get/@:yueyuez/"/></br>
 
