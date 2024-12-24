@@ -1,95 +1,95 @@
-import fs from "fs";
-import lodash from "lodash";
-import cfg from "../../../lib/config/config.js";
+import fs from 'fs'
+import lodash from 'lodash'
+import cfg from '../../../lib/config/config.js'
 
-const PluginPath = `${process.cwd()}/plugins/luoluo-plugin`;
-const README_path = `${PluginPath}/README.md`;
-const CHANGELOG_path = `${PluginPath}/CHANGELOG.md`;
-const yunzai_ver = `v${cfg.package.version}`;
-let logs = {};
-let changelogs = [];
-let currentVersion;
-let versionCount = 6;
+const PluginPath = `${process.cwd()}/plugins/luoluo-plugin`
+const README_path = `${PluginPath}/README.md`
+const CHANGELOG_path = `${PluginPath}/CHANGELOG.md`
+const yunzai_ver = `v${cfg.package.version}`
+let logs = {}
+let changelogs = []
+let currentVersion
+let versionCount = 6
 const getLine = function (line) {
-  line = line.replace(/(^\s*\*|\r)/g, "");
-  line = line.replace(/\s*`([^`]+`)/g, '<span class="cmd">$1');
-  line = line.replace(/`\s*/g, "</span>");
-  line = line.replace(/\s*\*\*([^\*]+\*\*)/g, '<span class="strong">$1');
-  line = line.replace(/\*\*\s*/g, "</span>");
-  line = line.replace(/ⁿᵉʷ/g, '<span class="new"></span>');
-  return line;
-};
+  line = line.replace(/(^\s*\*|\r)/g, '')
+  line = line.replace(/\s*`([^`]+`)/g, '<span class="cmd">$1')
+  line = line.replace(/`\s*/g, '</span>')
+  line = line.replace(/\s*\*\*([^\*]+\*\*)/g, '<span class="strong">$1')
+  line = line.replace(/\*\*\s*/g, '</span>')
+  line = line.replace(/ⁿᵉʷ/g, '<span class="new"></span>')
+  return line
+}
 try {
   if (fs.existsSync(CHANGELOG_path)) {
-    logs = fs.readFileSync(CHANGELOG_path, "utf8") || "";
-    logs = logs.replace(/\t/g, "   ").split("\n");
-    let temp = {};
-    let lastLine = {};
+    logs = fs.readFileSync(CHANGELOG_path, 'utf8') || ''
+    logs = logs.replace(/\t/g, '   ').split('\n')
+    let temp = {}
+    let lastLine = {}
     lodash.forEach(logs, (line) => {
       if (versionCount <= -1) {
-        return false;
+        return false
       }
-      let versionRet = /^#\s*([0-9a-zA-Z\\.~\s]+?)\s*$/.exec(line.trim());
+      let versionRet = /^#\s*([0-9a-zA-Z\\.~\s]+?)\s*$/.exec(line.trim())
       if (versionRet && versionRet[1]) {
-        let v = versionRet[1].trim();
+        let v = versionRet[1].trim()
         if (!currentVersion) {
-          currentVersion = v;
+          currentVersion = v
         } else {
-          changelogs.push(temp);
+          changelogs.push(temp)
           if (/0\s*$/.test(v) && versionCount > 0) {
-            //versionCount = 0
-            versionCount--;
+            // versionCount = 0
+            versionCount--
           } else {
-            versionCount--;
+            versionCount--
           }
         }
         temp = {
           version: v,
-          logs: [],
-        };
+          logs: []
+        }
       } else {
         if (!line.trim()) {
-          return;
+          return
         }
         if (/^\*/.test(line)) {
           lastLine = {
             title: getLine(line),
-            logs: [],
-          };
+            logs: []
+          }
           if (!temp.logs) {
             temp = {
               version: line,
-              logs: [],
-            };
+              logs: []
+            }
           }
-          temp.logs.push(lastLine);
+          temp.logs.push(lastLine)
         } else if (/^\s{2,}\*/.test(line)) {
-          lastLine.logs.push(getLine(line));
+          lastLine.logs.push(getLine(line))
         }
       }
-    });
+    })
   }
 } catch (e) {
-  logger.error(e);
+  logger.error(e)
 }
 try {
   if (fs.existsSync(README_path)) {
-    let README = fs.readFileSync(README_path, "utf8") || "";
-    let reg = /版本：(.*)/.exec(README);
+    let README = fs.readFileSync(README_path, 'utf8') || ''
+    let reg = /版本：(.*)/.exec(README)
     if (reg) {
-      currentVersion = reg[1];
+      currentVersion = reg[1]
     }
   }
 } catch (err) {}
 let Version = {
-  get ver() {
-    return currentVersion;
+  get ver () {
+    return currentVersion
   },
-  get yunzai() {
-    return yunzai_ver;
+  get yunzai () {
+    return yunzai_ver
   },
-  get logs() {
-    return changelogs;
-  },
-};
-export default Version;
+  get logs () {
+    return changelogs
+  }
+}
+export default Version

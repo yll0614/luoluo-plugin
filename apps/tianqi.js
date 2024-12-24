@@ -1,84 +1,84 @@
-import fetch from "node-fetch";
-import fs from "fs";
-import { PluginPath } from "../components/index.js";
-import YAML from "yaml";
-import puppeteer from "puppeteer";
+import fetch from 'node-fetch'
+import fs from 'fs'
+import { PluginPath } from '../components/index.js'
+import YAML from 'yaml'
+import puppeteer from 'puppeteer'
 
 let CONFIG_YAML = YAML.parse(
-  fs.readFileSync(`${PluginPath}/config/config.yaml`, "utf8"),
-);
+  fs.readFileSync(`${PluginPath}/config/config.yaml`, 'utf8')
+)
 
 export class tianqi extends plugin {
-  constructor() {
+  constructor () {
     super({
-      name: "天气",
-      dsc: "tianqi",
-      event: "message",
+      name: '天气',
+      dsc: 'tianqi',
+      event: 'message',
       priority: 5000,
       rule: [
         {
-          reg: "^[#/]?(.*)天气$",
-          fnc: "cstq",
-        },
-      ],
-    });
+          reg: '^[#/]?(.*)天气$',
+          fnc: 'cstq'
+        }
+      ]
+    })
   }
 
-  async cstq(e) {
+  async cstq (e) {
     if (!CONFIG_YAML.tianqi) {
-      logger.info("[luoluo插件]天气功能已关闭");
-      return e.reply("天气功能已关闭");
+      logger.info('[luoluo插件]天气功能已关闭')
+      return e.reply('天气功能已关闭')
     }
 
-    const city = e.msg.match(/^[#/]?(.*)天气$/)?.[1];
+    const city = e.msg.match(/^[#/]?(.*)天气$/)?.[1]
     if (!city) {
-      return e.reply("请提供城市名称", true);
+      return e.reply('请提供城市名称', true)
     }
 
     let data = await fs.promises.readFile(
       `${PluginPath}/config/AllAPI.json`,
-      "utf8",
-    );
-    const API = JSON.parse(data);
-    const api = `${API.api6.url}?city=${city}`;
+      'utf8'
+    )
+    const API = JSON.parse(data)
+    const api = `${API.api6.url}?city=${city}`
 
     try {
-      let response = await fetch(api);
-      let Data = await response.json();
+      let response = await fetch(api)
+      let Data = await response.json()
 
-      const code = Data["code"];
-      if (code === "-2") {
-        return e.reply("城市名称填写有误，请检查");
+      const code = Data.code
+      if (code === '-2') {
+        return e.reply('城市名称填写有误，请检查')
       }
-      if (code === "-4") {
-        return e.reply("缺少参数，请在命令前添加城市名称");
+      if (code === '-4') {
+        return e.reply('缺少参数，请在命令前添加城市名称')
       }
 
-      const citymsg = Data["data"]["city"];
-      const days = ["昨天", "今天", "明天", "后天"];
-      const weatherInfo = Data["data"]["data"]
+      const citymsg = Data.data.city
+      const days = ['昨天', '今天', '明天', '后天']
+      const weatherInfo = Data.data.data
         .slice(0, 4)
         .map((weatherData, i) => ({
           day: days[i],
-          date: weatherData["date"],
-          airQuality: weatherData["air_quality"],
-          weather: weatherData["weather"],
-          temperature: weatherData["temperature"],
-          wind: weatherData["wind"],
-        }));
+          date: weatherData.date,
+          airQuality: weatherData.air_quality,
+          weather: weatherData.weather,
+          temperature: weatherData.temperature,
+          wind: weatherData.wind
+        }))
 
-      const htmlContent = this.generateHTML(citymsg, weatherInfo);
-      const buffer = await this.captureScreenshot(htmlContent);
+      const htmlContent = this.generateHTML(citymsg, weatherInfo)
+      const buffer = await this.captureScreenshot(htmlContent)
 
-      await e.reply(segment.image(buffer));
-      return true;
+      await e.reply(segment.image(buffer))
+      return true
     } catch (error) {
-      logger.error("天气数据获取失败:", error);
-      return e.reply("天气数据获取失败，请稍后重试");
+      logger.error('天气数据获取失败:', error)
+      return e.reply('天气数据获取失败，请稍后重试')
     }
   }
 
-  generateHTML(citymsg, weatherInfo) {
+  generateHTML (citymsg, weatherInfo) {
     return `
             <html>
                 <head>
@@ -127,45 +127,46 @@ export class tianqi extends plugin {
                                 <div>温度: ${info.temperature}</div>
                                 <div>风向及强度: ${info.wind}</div>
                             </div>
-                        `,
+                        `
                           )
-                          .join("")}
+                          .join('')}
                     </div>
                     <div class="footer-text"> </div> 
                 </body>
             </html>
-        `;
+        `
   }
-  async captureScreenshot(htmlContent) {
-    const browser = await puppeteer.launch();
-    const page = await browser.newPage();
-    await page.setContent(htmlContent);
+
+  async captureScreenshot (htmlContent) {
+    const browser = await puppeteer.launch()
+    const page = await browser.newPage()
+    await page.setContent(htmlContent)
 
     // 等待页面加载完成
-    await page.waitForTimeout(100);
+    await page.waitForTimeout(100)
 
     // 计算内容的高度
-    const bodyHandle = await page.$("body");
-    const { height } = (await bodyHandle.boundingBox()) || { height: 0 };
-    await bodyHandle.dispose();
+    const bodyHandle = await page.$('body')
+    const { height } = (await bodyHandle.boundingBox()) || { height: 0 }
+    await bodyHandle.dispose()
 
     // 确保 height 是有效的
     if (height <= 0) {
-      throw new Error("无法计算有效的高度");
+      throw new Error('无法计算有效的高度')
     }
 
     const buffer = await page.screenshot({
-      type: "png",
+      type: 'png',
       clip: {
         x: 0,
         y: 0,
         width: 250,
-        height: Math.ceil(height),
+        height: Math.ceil(height)
       },
-      omitBackground: true,
-    });
+      omitBackground: true
+    })
 
-    await browser.close();
-    return buffer;
+    await browser.close()
+    return buffer
   }
 }
