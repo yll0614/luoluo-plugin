@@ -5,11 +5,11 @@
  https://gitee.com/Aliorpse/Yunzai-AliorpsePlugins/tree/master/bilitv.js
  */
 import _ from "lodash";
-import { Plugin_Path } from "../components/index.js";
+import { PluginPath } from "../components/index.js";
 import fs from "fs";
 import YAML from "yaml";
 let CONFIG_YAML = YAML.parse(
-  fs.readFileSync(`${Plugin_Path}/config/config.yaml`, "utf8"),
+  fs.readFileSync(`${PluginPath}/config/config.yaml`, "utf8"),
 );
 
 const returnVideo = true; //是否返回原视频

@@ -1,10 +1,10 @@
 import fetch from "node-fetch";
 import fs from "fs";
-import { Plugin_Path } from "../components/index.js";
+import { PluginPath } from "../components/index.js";
 import YAML from "yaml";
 
 let CONFIG_YAML = YAML.parse(
-  fs.readFileSync(`${Plugin_Path}/config/config.yaml`, "utf8"),
+  fs.readFileSync(`${PluginPath}/config/config.yaml`, "utf8"),
 );
 
 export class yiyan extends plugin {
@@ -28,7 +28,7 @@ export class yiyan extends plugin {
       logger.info("[luoluo插件]一言已关闭");
       return false;
     }
-    let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`);
+    let data = await fs.readFileSync(`${PluginPath}/config/AllAPI.json`);
     const API = JSON.parse(data);
     let apiUrl = API.api2.url + `?encode=text`;
     let response = await fetch(apiUrl);

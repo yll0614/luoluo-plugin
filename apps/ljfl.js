@@ -1,9 +1,9 @@
 import fetch from "node-fetch";
 import fs from "fs";
-import { Plugin_Path } from "../components/index.js";
+import { PluginPath } from "../components/index.js";
 import YAML from "yaml";
 let CONFIG_YAML = YAML.parse(
-  fs.readFileSync(`${Plugin_Path}/config/config.yaml`, "utf8"),
+  fs.readFileSync(`${PluginPath}/config/config.yaml`, "utf8"),
 );
 export class ljfl extends plugin {
   constructor() {
@@ -25,7 +25,7 @@ export class ljfl extends plugin {
       return false;
     }
     const msg = e.msg.match(/^[#/]?(.*)是什么垃圾$/)[1];
-    let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`);
+    let data = await fs.readFileSync(`${PluginPath}/config/AllAPI.json`);
     const API = JSON.parse(data);
     let api = API.api8.url + `?format=json&kw=${msg}`;
     let jx = await fetch(api);

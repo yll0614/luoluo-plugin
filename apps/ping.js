@@ -1,11 +1,11 @@
 import { exec } from "child_process";
 import fs from "fs";
 import os from "os";
-import { Plugin_Path } from "../components/index.js";
+import { PluginPath } from "../components/index.js";
 import YAML from "yaml";
 import iconv from "iconv-lite";
 let CONFIG_YAML = YAML.parse(
-  fs.readFileSync(`${Plugin_Path}/config/config.yaml`, "utf8"),
+  fs.readFileSync(`${PluginPath}/config/config.yaml`, "utf8"),
 );
 export class ping extends plugin {
   constructor() {

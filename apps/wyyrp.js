@@ -1,10 +1,10 @@
 import fetch from "node-fetch";
 import fs from "fs";
-import { Plugin_Path } from "../components/index.js";
+import { PluginPath } from "../components/index.js";
 import YAML from "yaml";
 
 let CONFIG_YAML = YAML.parse(
-  fs.readFileSync(`${Plugin_Path}/config/config.yaml`, "utf8"),
+  fs.readFileSync(`${PluginPath}/config/config.yaml`, "utf8"),
 );
 
 export class wyyrp extends plugin {
@@ -29,7 +29,7 @@ export class wyyrp extends plugin {
       return false;
     }
 
-    let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`);
+    let data = await fs.readFileSync(`${PluginPath}/config/AllAPI.json`);
     const API = JSON.parse(data);
     let api = API.api3.url;
 

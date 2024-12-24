@@ -1,12 +1,12 @@
 import fetch from "node-fetch";
 import cfg from "../../../lib/config/config.js";
 import moment from "moment";
-import { Plugin_Path } from "../components/index.js";
+import { PluginPath } from "../components/index.js";
 import fs from "fs";
 import YAML from "yaml";
 
 let CONFIG_YAML = YAML.parse(
-  fs.readFileSync(`${Plugin_Path}/config/config.yaml`, "utf8"),
+  fs.readFileSync(`${PluginPath}/config/config.yaml`, "utf8"),
 );
 const prefix = "bubble:codeUpdateTask:";
 let REPOSITORY_LIST = [];

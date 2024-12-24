@@ -1,9 +1,9 @@
 import fs from "fs/promises";
-import { Plugin_Path } from "../components/index.js";
+import { PluginPath } from "../components/index.js";
 import YAML from "yaml";
 
 let CONFIG_YAML = YAML.parse(
-  await fs.readFile(`${Plugin_Path}/config/config.yaml`, "utf8"),
+  await fs.readFile(`${PluginPath}/config/config.yaml`, "utf8"),
 );
 
 export class qqtx extends plugin {

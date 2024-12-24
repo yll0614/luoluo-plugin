@@ -1,10 +1,10 @@
 import fetch from "node-fetch";
 import fs from "fs";
-import { Plugin_Path } from "../components/index.js";
+import { PluginPath } from "../components/index.js";
 import YAML from "yaml";
 
 let CONFIG_YAML = YAML.parse(
-  fs.readFileSync(`${Plugin_Path}/config/config.yaml`, "utf8"),
+  fs.readFileSync(`${PluginPath}/config/config.yaml`, "utf8"),
 );
 
 export class 热搜榜 extends plugin {
@@ -45,7 +45,7 @@ export class 热搜榜 extends plugin {
       return false;
     }
 
-    let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`);
+    let data = await fs.readFileSync(`${PluginPath}/config/AllAPI.json`);
     const API = JSON.parse(data);
     let api = API.api15.url;
 
@@ -71,7 +71,7 @@ export class 热搜榜 extends plugin {
       return true;
     }
 
-    const data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`);
+    const data = await fs.readFileSync(`${PluginPath}/config/AllAPI.json`);
     const API = JSON.parse(data);
     const api = API.api14.url;
 
@@ -97,7 +97,7 @@ export class 热搜榜 extends plugin {
       return false;
     }
 
-    const data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`);
+    const data = await fs.readFileSync(`${PluginPath}/config/AllAPI.json`);
     const API = JSON.parse(data);
     const api = API.api16.url;
 
@@ -123,7 +123,7 @@ export class 热搜榜 extends plugin {
       return false;
     }
 
-    let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`);
+    let data = await fs.readFileSync(`${PluginPath}/config/AllAPI.json`);
     const API = JSON.parse(data);
     let api = API.api17.url;
 
@@ -149,7 +149,7 @@ export class 热搜榜 extends plugin {
       return false;
     }
 
-    let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`);
+    let data = await fs.readFileSync(`${PluginPath}/config/AllAPI.json`);
     const API = JSON.parse(data);
     let api = API.api14.url;
 

@@ -1,11 +1,11 @@
 import fetch from "node-fetch";
 import fs from "fs";
-import { Plugin_Path } from "../components/index.js";
+import { PluginPath } from "../components/index.js";
 import YAML from "yaml";
 import puppeteer from "puppeteer";
 
 let CONFIG_YAML = YAML.parse(
-  fs.readFileSync(`${Plugin_Path}/config/config.yaml`, "utf8"),
+  fs.readFileSync(`${PluginPath}/config/config.yaml`, "utf8"),
 );
 
 export class tianqi extends plugin {
@@ -36,7 +36,7 @@ export class tianqi extends plugin {
     }
 
     let data = await fs.promises.readFile(
-      `${Plugin_Path}/config/AllAPI.json`,
+      `${PluginPath}/config/AllAPI.json`,
       "utf8",
     );
     const API = JSON.parse(data);

@@ -1,10 +1,10 @@
 import plugin from "../../../lib/plugins/plugin.js";
-import { Plugin_Path } from "../components/index.js";
+import { PluginPath } from "../components/index.js";
 import fs from "fs";
 import YAML from "yaml";
 
 let CONFIG_YAML = YAML.parse(
-  fs.readFileSync(`${Plugin_Path}/config/config.yaml`, "utf8"),
+  fs.readFileSync(`${PluginPath}/config/config.yaml`, "utf8"),
 );
 
 export class setting extends plugin {
@@ -45,7 +45,7 @@ export class setting extends plugin {
       CONFIG_YAML[settingKey] = status === "开启";
       console.log(logMessage);
       let configContent = fs.readFileSync(
-        `${Plugin_Path}/config/config.yaml`,
+        `${PluginPath}/config/config.yaml`,
         "utf8",
       );
       let lines = configContent.split("\n");
@@ -58,7 +58,7 @@ export class setting extends plugin {
       }
       let updatedContent = lines.join("\n");
       fs.writeFileSync(
-        `${Plugin_Path}/config/config.yaml`,
+        `${PluginPath}/config/config.yaml`,
         updatedContent,
         "utf8",
       );

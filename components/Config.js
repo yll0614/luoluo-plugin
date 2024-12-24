@@ -5,7 +5,7 @@ import lodash from "lodash";
 
 const Path = process.cwd();
 const Plugin_Name = "luoluo-plugin";
-const Plugin_Path = `${Path}/plugins/${Plugin_Name}`;
+const PluginPath = `${Path}/plugins/${Plugin_Name}`;
 
 if (!Bot.luoluo_plugin) Bot.luoluo_plugin = {};
 class Config {
@@ -70,7 +70,7 @@ class Config {
       this.watcher[type] = {};
     }
 
-    let config_path = `${Plugin_Path}/${type}/`;
+    let config_path = `${PluginPath}/${type}/`;
     let file = `${config_path}${app}.${name}.yaml`;
     try {
       if (!fs.existsSync(file)) {

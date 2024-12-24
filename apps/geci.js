@@ -1,10 +1,10 @@
 import fetch from "node-fetch";
 import fs from "fs";
-import { Plugin_Path } from "../components/index.js";
+import { PluginPath } from "../components/index.js";
 import YAML from "yaml";
 
 let CONFIG_YAML = YAML.parse(
-  fs.readFileSync(`${Plugin_Path}/config/config.yaml`, "utf8"),
+  fs.readFileSync(`${PluginPath}/config/config.yaml`, "utf8"),
 );
 
 const clean = (Lyrics) => {
@@ -134,7 +134,7 @@ export class geci extends plugin {
   }
 
   async getAPI() {
-    const data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`);
+    const data = await fs.readFileSync(`${PluginPath}/config/AllAPI.json`);
     return JSON.parse(data);
   }
 }

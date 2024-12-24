@@ -2,9 +2,9 @@ import path from "path";
 import fs from "fs";
 import yaml from "yaml";
 import lodash from "lodash";
-import { Plugin_Path } from "./components/index.js";
+import { PluginPath } from "./components/index.js";
 function getconfig(name) {
-  let cfgyaml = `${Plugin_Path}/config/${name}.yaml`;
+  let cfgyaml = `${PluginPath}/config/${name}.yaml`;
   const configData = fs.readFileSync(cfgyaml, "utf8");
   let config = yaml.parse(configData);
   return { config };
@@ -39,7 +39,7 @@ export function supportGuoba() {
       // 图标颜色，例：#FF0000 或 rgb(255, 0, 0)
       iconColor: "#d19f56",
       // 如果想要显示成图片，也可以填写图标路径（绝对路径），可以使用静图和动图
-      iconPath: path.join(Plugin_Path, "resources/icon.gif"),
+      iconPath: path.join(PluginPath, "resources/icon.gif"),
     },
     // 配置项信息
     configInfo: {
@@ -235,7 +235,7 @@ export function supportGuoba() {
         return config;
       },
       async setConfigData(data, { Result }) {
-        const configFilePath = path.join(Plugin_Path, "config", "config.yaml");
+        const configFilePath = path.join(PluginPath, "config", "config.yaml");
         let config = {};
         if (fs.existsSync(configFilePath)) {
           const configContent = fs.readFileSync(configFilePath, "utf8");

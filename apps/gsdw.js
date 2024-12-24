@@ -1,9 +1,9 @@
 import fetch from "node-fetch";
 import fs from "fs";
-import { Plugin_Path } from "../components/index.js";
+import { PluginPath } from "../components/index.js";
 import YAML from "yaml";
 let CONFIG_YAML = YAML.parse(
-  fs.readFileSync(`${Plugin_Path}/config/config.yaml`, "utf8"),
+  fs.readFileSync(`${PluginPath}/config/config.yaml`, "utf8"),
 );
 export class gsdw extends plugin {
   constructor() {
@@ -27,7 +27,7 @@ export class gsdw extends plugin {
     }
     const msga = e.msg.match(/^[#/]?(.*)与(.*)攻受(短)?文$/)[1];
     const msgb = e.msg.match(/^[#/]?(.*)与(.*)攻受(短)?文$/)[2];
-    let data = await fs.readFileSync(`${Plugin_Path}/config/AllAPI.json`);
+    let data = await fs.readFileSync(`${PluginPath}/config/AllAPI.json`);
     const API = JSON.parse(data);
     let api = API.api4.url + `?g=${msga}&s=${msgb}`;
     let jx = await fetch(api);
