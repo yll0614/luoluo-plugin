@@ -22,9 +22,8 @@ export class KFC extends plugin {
   }
 
   async KFC (e) {
-    if (CONFIG_YAML.KFC == false) {
-      logger.info('[luoluo插件]疯狂星期四已关闭')
-      return false
+    if (!CONFIG_YAML.KFC) {
+      return logger.info('[luoluo插件]疯狂星期四已关闭')
     }
     let data = await fs.readFileSync(`${PluginPath}/config/AllAPI.json`)
     const API = JSON.parse(data)

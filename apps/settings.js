@@ -25,9 +25,8 @@ export class setting extends plugin {
   }
 
   async setting (e) {
-    if (!this.e.isMaster) {
-      e.reply('仅主人可用！')
-      return true
+    if (!e.isMaster) {
+      return e.reply('仅主人可用！')
     }
 
     let reg = /(?:一言|疯狂星期四|网易云热评|天气|歌曲类|唱鸭|随机表情包|攻受短文|ping地址|谁艾特我|是什么垃圾|随机动漫图|哔哩哔哩热搜榜|知乎热搜榜|抖音热搜榜|今日头条热搜榜|今日头条热点新闻|头像|群头像|举牌|网页截图|哔哩哔哩解析|更新推送)(开启|关闭)/i.exec(e.msg)

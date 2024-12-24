@@ -24,9 +24,8 @@ export class wyyrp extends plugin {
   }
 
   async wyyrp (e) {
-    if (CONFIG_YAML.wyyrp === false) {
-      logger.info('[luoluo插件]网易云音乐热评已关闭')
-      return false
+    if (!CONFIG_YAML.wyyrp) {
+      return logger.info('[luoluo插件]网易云音乐热评已关闭')
     }
 
     let data = await fs.readFileSync(`${PluginPath}/config/AllAPI.json`)

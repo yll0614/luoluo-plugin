@@ -31,8 +31,7 @@ export class geci extends plugin {
 
   async geci (e) {
     if (!CONFIG_YAML.geci) {
-      logger.info('[luoluo插件]歌曲类功能已关闭')
-      return false
+      return logger.info('[luoluo插件]歌曲类功能已关闭')
     }
 
     const [type, n] = e.msg.match(/^[#/](.*)歌词(.*)?$/)
@@ -58,8 +57,7 @@ export class geci extends plugin {
 
   async gecilb (e) {
     if (!CONFIG_YAML.geci) {
-      logger.error('该功能已关闭，开启歌曲类即可')
-      return false
+      return logger.error('该功能已关闭，开启歌曲类即可')
     }
 
     const type = e.msg.match(/^[#/](.*)歌曲列表$/)[1]
@@ -80,8 +78,7 @@ export class geci extends plugin {
 
   async gequ (e) {
     if (!CONFIG_YAML.geci) {
-      logger.error('该功能已关闭，开启歌曲类即可')
-      return false
+      return logger.error('该功能已关闭，开启歌曲类即可')
     }
 
     const [type, n] = e.msg.match(/^[#/](.*)歌曲(.*)?$/)
@@ -109,8 +106,7 @@ export class geci extends plugin {
 
   async yp (e) {
     if (!CONFIG_YAML.geci) {
-      logger.error('该功能已关闭，开启歌曲类即可')
-      return false
+      return logger.error('该功能已关闭，开启歌曲类即可')
     }
 
     const [type, n] = e.msg.match(/^[#/](.*)音频(.*)?$/)

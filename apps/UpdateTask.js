@@ -36,7 +36,7 @@ export class UpdateTask extends plugin {
   }
 
   async UpdateTask (e) {
-    if (CONFIG_YAML.UpdateTask == false) {
+    if (!CONFIG_YAML.UpdateTask) {
       // logger.error('UpdateTask已关闭');
       return true
     }

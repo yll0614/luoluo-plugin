@@ -21,9 +21,8 @@ export class ljfl extends plugin {
   }
 
   async ljfl (e) {
-    if (CONFIG_YAML.ljfl == false) {
-      logger.info('[luoluo插件]是什么垃圾已关闭')
-      return false
+    if (!CONFIG_YAML.ljfl) {
+      return logger.info('[luoluo插件]是什么垃圾已关闭')
     }
     const msg = e.msg.match(/^[#/]?(.*)是什么垃圾$/)[1]
     let data = await fs.readFileSync(`${PluginPath}/config/AllAPI.json`)

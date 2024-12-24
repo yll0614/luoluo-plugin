@@ -90,8 +90,7 @@ export class whoAtme extends plugin {
 
   async whoAtme (e) {
     if (!CONFIG_YAML.shuianwo) {
-      logger.info('[luoluo插件]谁艾特我已关闭')
-      return false
+      return logger.info('[luoluo插件]谁艾特我已关闭')
     }
 
     if (!e.isGroup) {

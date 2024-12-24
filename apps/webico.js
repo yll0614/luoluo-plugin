@@ -24,9 +24,8 @@ export class webico extends plugin {
   }
 
   async webico (e) {
-    if (CONFIG_YAML.webico === false) {
-      logger.info('[luoluo插件]网站图标功能已关闭')
-      return false
+    if (!CONFIG_YAML.webico) {
+      return logger.info('[luoluo插件]网站图标功能已关闭')
     }
 
     const msg = e.msg.match(/^[#/]?网站图标(.*)$/)[1].trim()

@@ -23,9 +23,8 @@ export class qqtx extends plugin {
   }
 
   async qqtx (e) {
-    if (CONFIG_YAML.qqtx == false) {
-      logger.info('[luoluo插件]QQ头像已关闭')
-      return false
+    if (!CONFIG_YAML.qqtx) {
+      return logger.info('[luoluo插件]QQ头像已关闭')
     } else {
       e.reply(
         e.msg.match(/(\d+)/)

@@ -40,9 +40,8 @@ export class 热搜榜 extends plugin {
   }
 
   async zhihuhot (e) {
-    if (CONFIG_YAML.zhihuhot == false) {
-      logger.info('[luoluo插件]知乎热搜榜已关闭')
-      return false
+    if (!CONFIG_YAML.zhihuhot) {
+      return logger.info('[luoluo插件]知乎热搜榜已关闭')
     }
 
     let data = await fs.readFileSync(`${PluginPath}/config/AllAPI.json`)
@@ -67,9 +66,8 @@ export class 热搜榜 extends plugin {
   }
 
   async bilihot (e) {
-    if (CONFIG_YAML.bilhot === false) {
-      logger.info('[luoluo插件]哔哩哔哩热搜榜已关闭')
-      return true
+    if (!CONFIG_YAML.bilhot) {
+      return logger.info('[luoluo插件]哔哩哔哩热搜榜已关闭')
     }
 
     const data = await fs.readFileSync(`${PluginPath}/config/AllAPI.json`)
@@ -94,9 +92,8 @@ export class 热搜榜 extends plugin {
   }
 
   async douyinhot (e) {
-    if (CONFIG_YAML.douyinhot === false) {
-      logger.info('[luoluo插件]抖音热搜榜已关闭')
-      return false
+    if (!CONFIG_YAML.douyinhot) {
+      return logger.info('[luoluo插件]抖音热搜榜已关闭')
     }
 
     const data = await fs.readFileSync(`${PluginPath}/config/AllAPI.json`)
@@ -121,9 +118,8 @@ export class 热搜榜 extends plugin {
   }
 
   async toutiaohot (e) {
-    if (CONFIG_YAML.toutiaohot === false) {
-      logger.info('[luoluo插件]今日头条热搜榜已关闭')
-      return false
+    if (!CONFIG_YAML.toutiaohot) {
+      return logger.info('[luoluo插件]今日头条热搜榜已关闭')
     }
 
     let data = await fs.readFileSync(`${PluginPath}/config/AllAPI.json`)
@@ -148,9 +144,8 @@ export class 热搜榜 extends plugin {
   }
 
   async toutiaohotnew (e) {
-    if (CONFIG_YAML.toutiaohotnew === false) {
-      logger.info('[luoluo插件]今日头条热点新闻已关闭')
-      return false
+    if (!CONFIG_YAML.toutiaohotnew) {
+      return logger.info('[luoluo插件]今日头条热点新闻已关闭')
     }
 
     let data = await fs.readFileSync(`${PluginPath}/config/AllAPI.json`)

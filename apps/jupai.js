@@ -21,9 +21,8 @@ export class jupai extends plugin {
   }
 
   async jupai (e) {
-    if (CONFIG_YAML.jupai == false) {
-      logger.info('[luoluo插件]举牌已关闭')
-      return false
+    if (!CONFIG_YAML.jupai) {
+      return logger.info('[luoluo插件]举牌已关闭')
     }
     const msg = e.msg.match(/^[#/]?举牌(.*)$/)[1]
     let data = await fs.readFileSync(`${PluginPath}/config/AllAPI.json`)

@@ -21,9 +21,13 @@ export class qqqtx extends plugin {
   }
 
   async qqqtx (e) {
-    if (CONFIG_YAML.qqqtx == false && e.isGroup) {
-      logger.info('[luoluo插件]QQ群头像已关闭')
-      return false
-    } else { return e.isGroup ? e.reply(segment.image(e.group.getAvatarUrl())) : false }
+    if (!CONFIG_YAML.qqqtx) {
+      return logger.info('[luoluo插件]QQ群头像已关闭')
+    }
+    if (!e.isGroup) {
+      return e.reply('[luoluo插件]QQ群头像只能在群聊中使用', true)
+    } else {
+      return e.isGroup ? e.reply(segment.image(e.group.getAvatarUrl())) : false
+    }
   }
 }

@@ -24,9 +24,8 @@ export class yiyan extends plugin {
   }
 
   async yiyan (e) {
-    if (CONFIG_YAML.yiyan == false) {
-      logger.info('[luoluo插件]一言已关闭')
-      return false
+    if (!CONFIG_YAML.yiyan) {
+      return logger.info('[luoluo插件]一言已关闭')
     }
     let data = await fs.readFileSync(`${PluginPath}/config/AllAPI.json`)
     const API = JSON.parse(data)

@@ -21,9 +21,8 @@ export class bqb extends plugin {
   }
 
   async bqb (e) {
-    if (CONFIG_YAML.sjbqb == false) {
-      logger.info('[luoluo插件]随机表情包已关闭')
-      return false
+    if (!CONFIG_YAML.sjbqb) {
+      return logger.info('[luoluo插件]随机表情包已关闭')
     }
     const type = e.msg.match(/^#?随机(.*)表情包$/)[1]
     if (

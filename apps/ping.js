@@ -24,9 +24,8 @@ export class ping extends plugin {
   }
 
   async ping (e) {
-    if (CONFIG_YAML.ping === false) {
-      logger.info('[luoluo插件]ping功能已关闭')
-      return false
+    if (!CONFIG_YAML.ping) {
+      return logger.info('[luoluo插件]ping功能已关闭')
     }
 
     const msg = e.msg.match(/^[#/]?ping地址(.*)$/)[1].trim()
